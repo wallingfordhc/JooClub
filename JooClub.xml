@@ -27,7 +27,7 @@
 		in this section are copied from /site/ in the package -->
   <files folder="site">
     <filename>index.html</filename>
-    <filename>Jooclub.php</filename>
+    <filename>JooClub.php</filename>
   </files>
 
   <administration>
