@@ -27,12 +27,12 @@
 		in this section are copied from /site/ in the package -->
   <files folder="site">
     <filename>index.html</filename>
-    <filename>JooClub.php</filename>
+    <filename>helloworld.php</filename>
   </files>
 
   <administration>
     <!-- Administration Menu Section -->
-    <menu link='index.php?option=com_JooClub'>Club Manager</menu>
+    <menu link='index.php?option=com_helloworld'>Club Manager</menu>
     <!-- Administration Main File Copy Section -->
     <!-- Note the folder attribute: This attribute describes the folder
 			to copy FROM in the package to install therefore files copied
@@ -40,7 +40,7 @@
     <files folder="admin">
       <!-- Admin Main File Copy Section -->
       <filename>index.html</filename>
-      <filename>JooClub.php</filename>
+      <filename>helloworld.php</filename>
       <!-- SQL files section -->
       <folder>sql</folder>
     </files>
