@@ -12,7 +12,7 @@
   <!--  The version string is recorded in the components table -->
   <version>0.0.1</version>
   <!-- The description is optional and defaults to the name -->
-  <description>Description of the Club Manager COmponent</description>
+  <description>Description of the Club Manager Component</description>
 
   <update>
     <!-- Runs on update; New since J2.5 -->
