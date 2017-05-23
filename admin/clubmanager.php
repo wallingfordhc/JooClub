@@ -1,22 +1,20 @@
 <?php
 /**
- * @package    Joomla.Administrator
- * @subpackage com_weblinks
- * @copyright  Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license      GNU General Public License version 2 or later; see LICENSE.txt
+ * @package     Joomla.Administrator
+ * @subpackage  com_helloworld
+ *
+ * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
-
-// no direct access
-defined('_JEXEC') or die;
-
-// Access check.
-if (!JFactory::getUser()->authorise('core.manage', 'com_clubmanager')) {
-       return JError::raiseWarning(404, JText::_('JERROR_ALERTNOAUTHOR'));
-}
-
-// Include dependancies
-jimport('joomla.application.component.controller');
-
-$controller = JController::getInstance('clubmanager');
-$controller->execute(JRequest::getCmd('task'));
+ 
+// No direct access to this file
+defined('_JEXEC') or die('Restricted access');
+ 
+// Get an instance of the controller prefixed by ClubManager
+$controller = JControllerLegacy::getInstance('clubmanager');
+ 
+// Perform the Request task
+$controller->execute(JFactory::getApplication()->input->get('task'));
+ 
+// Redirect if set by the controller
 $controller->redirect();
