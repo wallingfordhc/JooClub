@@ -1,14 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\admin",
+    "\\admin\\models",
     "\\admin\\sql",
-    "\\admin\\sql\\Updates",
-    "\\admin\\sql\\Updates\\mysql",
+    "\\admin\\sql\\updates",
+    "\\admin\\sql\\updates\\mysql",
+    "\\admin\\tables",
+    "\\admin\\views\\clubmanager",
+    "\\admin\\views\\clubmanager\\tmpl",
     "\\site",
-    "\\site\\models",
     "\\site\\views",
-    "\\site\\views\\clubmanager",
-    "\\site\\views\\clubmanager\\tmpl"
+    "\\site\\views\\clubmanager"
   ],
   "PreviewInSolutionExplorer": true
 }
