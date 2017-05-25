@@ -12,7 +12,7 @@
   <!--  The version string is recorded in the components table -->
   <version>0.0.7</version>
   <!-- The description is optional and defaults to the name -->
-  <description>COM_CLUB_MANAGER_XML_DESCRIPTION</description>
+  <description>COM_CLUBMANAGER_XML_DESCRIPTION</description>
   
   <scriptfile>script.php</scriptfile>
 
