@@ -29,7 +29,7 @@ class clubmanagerModelclubmanager extends JModelList
  
 		// Create the base select statement.
 		$query->select('*')
-                ->from($db->quoteName('#__clubmanager'));
+                ->from($db->quoteName('#__match'));
  
 		return $query;
 	}
