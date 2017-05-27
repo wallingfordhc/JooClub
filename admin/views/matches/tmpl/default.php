@@ -16,7 +16,7 @@ $listDirn  = '';
             <input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
           </th>
           <th class="title">
-            <?php echo JHtml::_('grid.sort', 'JGLOBAL_TITLE', 'a.title', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort', 'JGLOBAL_TITLE', 'a.matchid', $listDirn, $listOrder); ?>
           </th>
         </tr>
       </thead>
