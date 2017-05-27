@@ -15,6 +15,10 @@ defined('_JEXEC') or die;
           <div class="control-label"><?php echo $this->form->getLabel('hometeamID'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('hometeamID'); ?></div>
         </div>
+		<div class="control-group">
+          <div class="control-label"><?php echo $this->form->getLabel('awayteamID'); ?></div>
+          <div class="controls"><?php echo $this->form->getInput('awayteamID'); ?></div>
+        </div>
       <?php echo JHtml::_('bootstrap.endPanel'); ?>
 
       <input type="hidden" name="task" value="" />
