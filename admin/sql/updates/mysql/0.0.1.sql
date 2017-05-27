@@ -14,7 +14,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Table `#__person`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `#__person` (
+CREATE TABLE IF NOT EXISTS `#__cmperson` (
   `personID` INT NOT NULL AUTO_INCREMENT,
   `memberID` INT NULL DEFAULT NULL,
   `firstname` VARCHAR(50) NULL DEFAULT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `#__person` (
 -- -----------------------------------------------------
 -- Table `#__group`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `#__group` (
+CREATE TABLE IF NOT EXISTS `#__cmgroup` (
   `groupID` INT NOT NULL,
   `groupname` VARCHAR(256) NULL DEFAULT NULL,
   `grouplogo` VARCHAR(512) NULL DEFAULT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `#__group` (
 -- -----------------------------------------------------
 -- Table `#__match`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `#__match` (
+CREATE TABLE IF NOT EXISTS `#__cmmatch` (
   `matchID` INT NOT NULL AUTO_INCREMENT,
   `hometeamID` INT NULL DEFAULT NULL,
   `awayteamID` INT NULL DEFAULT NULL,
@@ -59,16 +59,16 @@ CREATE TABLE IF NOT EXISTS `#__match` (
   INDEX `FK2_match` (`awayteamID` ASC),
   CONSTRAINT `FK1_match`
     FOREIGN KEY (`hometeamID`)
-    REFERENCES `#__group` (`groupID`),
+    REFERENCES `#__cmgroup` (`groupID`),
   CONSTRAINT `FK2_match`
     FOREIGN KEY (`awayteamID`)
-    REFERENCES `#__group` (`groupID`));
+    REFERENCES `#__cmgroup` (`groupID`));
 
 
 -- -----------------------------------------------------
 -- Table `#__attendance`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `#__attendance` (
+CREATE TABLE IF NOT EXISTS `#__cmattendance` (
   `attendanceID` INT NOT NULL AUTO_INCREMENT,
   `personID` INT NULL DEFAULT NULL,
   `eventID` INT NULL DEFAULT NULL,
@@ -80,16 +80,16 @@ CREATE TABLE IF NOT EXISTS `#__attendance` (
   INDEX `FK2_attendance` (`matchID` ASC),
   CONSTRAINT `FK1_attendance`
     FOREIGN KEY (`personID`)
-    REFERENCES `#__person` (`personID`),
+    REFERENCES `#__cmperson` (`personID`),
   CONSTRAINT `FK2_attendance`
     FOREIGN KEY (`matchID`)
-    REFERENCES `#__match` (`matchID`));
+    REFERENCES `#__cmmatch` (`matchID`));
 
 
 -- -----------------------------------------------------
 -- Table `#__grouproster`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `#__grouproster` (
+CREATE TABLE IF NOT EXISTS `#__cmgrouproster` (
   `rosterID` INT NOT NULL,
   `personID` INT NULL DEFAULT NULL,
   `groupID` INT NULL DEFAULT NULL,
@@ -99,16 +99,16 @@ CREATE TABLE IF NOT EXISTS `#__grouproster` (
   INDEX `FK2_grouproster` (`groupID` ASC),
   CONSTRAINT `FK1_grouproster`
     FOREIGN KEY (`personID`)
-    REFERENCES `#__person` (`personID`),
+    REFERENCES `#__cmperson` (`personID`),
   CONSTRAINT `FK2_grouproster`
     FOREIGN KEY (`groupID`)
-    REFERENCES `#__group` (`groupID`));
+    REFERENCES `#__cmgroup` (`groupID`));
 
 
 -- -----------------------------------------------------
 -- Table `#__relationship`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `#__relationship` (
+CREATE TABLE IF NOT EXISTS `#__cmrelationship` (
   `relationshipID` INT NOT NULL,
   `person1ID` INT NULL DEFAULT NULL,
   `person2ID` INT NULL DEFAULT NULL,
@@ -119,16 +119,16 @@ CREATE TABLE IF NOT EXISTS `#__relationship` (
   INDEX `FK2_relationship` (`person2ID` ASC),
   CONSTRAINT `FK1_relationship`
     FOREIGN KEY (`person1ID`)
-    REFERENCES `#__person` (`personID`),
+    REFERENCES `#__cmperson` (`personID`),
   CONSTRAINT `FK2_relationship`
     FOREIGN KEY (`person2ID`)
-    REFERENCES `#__person` (`personID`));
+    REFERENCES `#__cmperson` (`personID`));
 
 
 -- -----------------------------------------------------
 -- Table `#__event`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `#__event` (
+CREATE TABLE IF NOT EXISTS `#__cmevent` (
   `eventID` INT NOT NULL AUTO_INCREMENT,
   `event_time` DATETIME NULL DEFAULT NULL,
   `actorID` INT NULL DEFAULT NULL,
@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `#__event` (
 -- -----------------------------------------------------
 -- Table `#__consent`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `#__consent` (
+CREATE TABLE IF NOT EXISTS `#__cmconsent` (
   `consentID` INT NOT NULL AUTO_INCREMENT,
   `type` VARCHAR(50) NULL DEFAULT NULL,
   `consentforID` INT NULL DEFAULT NULL,
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `#__consent` (
 -- -----------------------------------------------------
 -- Table `#__certificates`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `#__certificates` (
+CREATE TABLE IF NOT EXISTS `#__cmcertificates` (
   `certificateID` INT NOT NULL AUTO_INCREMENT,
   `type` VARCHAR(50) NULL DEFAULT NULL,
   `title` VARCHAR(200) NULL DEFAULT NULL,

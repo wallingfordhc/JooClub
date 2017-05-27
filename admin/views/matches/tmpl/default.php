@@ -25,11 +25,11 @@ $listDirn  = '';
         ?>
         <tr class="row<?php echo $i % 2; ?>">
           <td class="center hidden-phone">
-            <?php echo JHtml::_('grid.id', $i, $item->id); ?>
+            <?php echo JHtml::_('grid.id', $i, $item->matchid); ?>
           </td>
           <td class="nowrap has-context">
-            <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=match.edit&id='.(int) $item->id); ?>">
-              <?php echo $this->escape($item->title); ?>
+            <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=match.edit&matchid='.(int) $item->matchid); ?>">
+              <?php echo $this->escape($item->hometeamid); ?>
             </a>
           </td>
         </tr>
