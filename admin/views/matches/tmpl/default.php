@@ -29,7 +29,7 @@ $listDirn  = '';
           </td>
           <td class="nowrap has-context">
             <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=match.edit&matchID='.(int) $item->matchID); ?>">
-              <?php echo $this->escape($item->hometeamid); ?>
+              <?php echo $this->escape($item->hometeamID); ?>
             </a>
           </td>
         </tr>

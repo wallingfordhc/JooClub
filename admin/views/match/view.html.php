@@ -30,7 +30,7 @@ class clubmanagerViewmatch extends JViewLegacy
 
     JToolbarHelper::save('match.save');
 
-    if (empty($this->item->id))
+    if (empty($this->item->matchID))
     {
       JToolbarHelper::cancel('match.cancel');
     }

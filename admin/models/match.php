@@ -37,6 +37,6 @@ class clubmanagerModelmatch extends JModelAdmin
 
   protected function prepareTable($table)
   {
-    $table->hometeamid    = htmlspecialchars_decode($table->hometeamid, ENT_QUOTES);
+    $table->hometeamID    = htmlspecialchars_decode($table->hometeamID, ENT_QUOTES);
   }
 }
