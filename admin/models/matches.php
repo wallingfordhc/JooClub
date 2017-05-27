@@ -24,7 +24,7 @@ class clubmanagerModelmatches extends JModelList
     $query->select(
       $this->getState(
         'list.select',
-        'a.matchID, a.hometeamID'
+        'a.matchID, a.hometeamID , a.awayteamID'
       )
     );
     $query->from($db->quoteName('#__cmmatch').' AS a');
