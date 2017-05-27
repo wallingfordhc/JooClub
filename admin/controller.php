@@ -28,7 +28,7 @@ class clubmanagerController extends JControllerLegacy
 	protected $default_view = 'clubdashboard';
 	public function display($cachable = false, $urlparams = false)
   {
-    require_once JPATH_COMPONENT.'/helpers/folio.php';
+    require_once JPATH_COMPONENT.'/helpers/clubmanager.php';
 
     $view   = $this->input->get('view', 'dashboard');
     $layout = $this->input->get('layout', 'default');
