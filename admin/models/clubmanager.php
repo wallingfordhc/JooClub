@@ -1,36 +1,42 @@
 <?php
-/**
- * @package     Joomla.Administrator
- * @subpackage  com_clubmanager
- *
- * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- */
-// No direct access to this file
-defined('_JEXEC') or die('Restricted access');
- 
-/**
- * clubmanagerList Model
- *
- * @since  0.0.1
- */
-class clubmanagerModelclubmanager extends JModelList
+defined('_JEXEC') or die;
+
+class FolioModelFolio extends JModelAdmin
 {
-	/**
-	 * Method to build an SQL query to load the list data.
-	 *
-	 * @return      string  An SQL query
-	 */
-	protected function getListQuery()
-	{
-		// Initialize variables.
-		$db    = JFactory::getDbo();
-		$query = $db->getQuery(true);
- 
-		// Create the base select statement.
-		$query->select('*')
-                ->from($db->quoteName('#__match'));
- 
-		return $query;
-	}
+  protected $text_prefix = 'COM_CLUBMANAGER';
+
+  public function getTable($type = 'match', $prefix = 'clubmanagerTable', $config = array())
+  {
+    return JTable::getInstance($type, $prefix, $config);
+  }
+
+  public function getForm($data = array(), $loadData = true)
+  {
+    $app = JFactory::getApplication();
+
+    $form = $this->loadForm('com_clubmanager.match', 'match', array('control' => 'jform', 'load_data' => $loadData));
+    if (empty($form))
+    {
+      return false;
+    }
+
+    return $form;
+  }
+
+  protected function loadFormData()
+  {
+    $data = JFactory::getApplication()->getUserState('com_clubmanager.edit.match.data', array());
+
+    if (empty($data))
+    {
+      $data = $this->getItem();
+    }
+
+    return $data;
+  }
+
+  protected function prepareTable($table)
+  {
+    $table->title    = htmlspecialchars_decode($table->title, ENT_QUOTES);
+  }
 }

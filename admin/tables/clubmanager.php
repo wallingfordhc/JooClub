@@ -1,28 +1,20 @@
 <?php
-/**
- * @package     Joomla.Administrator
- * @subpackage  com_clubmanager
- *
- * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- */
-// No direct access
-defined('_JEXEC') or die('Restricted access');
- 
-/**
- * Hello Table class
- *
- * @since  0.0.7
- */
-class clubmanagerTableclubmanager extends JTable
+defined('_JEXEC') or die;
+
+class FolioTableFolio extends JTable
 {
-	/**
-	 * Constructor
-	 *
-	 * @param   JDatabaseDriver  &$db  A database connector object
-	 */
-	function __construct(&$db)
-	{
-		parent::__construct('#__clubmanager', 'id', $db);
-	}
+  public function __construct(&$db)
+  {
+    parent::__construct('#__cbmatch', 'id', $db);
+  }
+
+  public function bind($array, $ignore = '')
+  {
+    return parent::bind($array, $ignore);
+  }
+
+  public function store($updateNulls = false)
+  {
+    return parent::store($updateNulls);
+  }
 }

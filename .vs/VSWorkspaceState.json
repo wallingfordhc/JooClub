@@ -2,15 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\admin",
-    "\\admin\\controllers",
-    "\\admin\\language",
-    "\\admin\\models",
+    "\\admin\\sql",
     "\\admin\\sql\\updates",
     "\\admin\\sql\\updates\\mysql",
     "\\admin\\views",
     "\\admin\\views\\clubmanager",
     "\\admin\\views\\clubmanager\\tmpl"
   ],
-  "SelectedNode": "\\admin\\models\\clubmanager.php",
+  "SelectedNode": "\\clubmanager.xml",
   "PreviewInSolutionExplorer": true
 }
