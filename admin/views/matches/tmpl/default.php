@@ -32,6 +32,10 @@ $listDirn  = '';
               <?php echo $this->escape($item->hometeamID); ?>
             </a>
           </td>
+		  <td class="nowrap has-context">
+              <?php echo $this->escape($item->awayteamID); ?>
+            </a>
+          </td>
         </tr>
         <?php endforeach; ?>
       </tbody>
