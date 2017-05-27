@@ -16,7 +16,10 @@ $listDirn  = '';
             <input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
           </th>
           <th class="title">
-            <?php echo JHtml::_('grid.sort', 'JGLOBAL_TITLE', 'a.matchID', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_HOMETEAM_TITLE', 'a.hometeamID', $listDirn, $listOrder); ?>
+          </th>
+		  <th class="title">
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_AWAYTEAM_TITLE', 'a.awayteamID', $listDirn, $listOrder); ?>
           </th>
         </tr>
       </thead>
