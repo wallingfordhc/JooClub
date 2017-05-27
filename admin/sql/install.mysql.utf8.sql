@@ -56,10 +56,10 @@ CREATE TABLE IF NOT EXISTS `#__cmmatch` (
   INDEX `FK2_match` (`awayteamID` ASC),
   CONSTRAINT `FK1_match`
     FOREIGN KEY (`hometeamID`)
-    REFERENCES `#__group` (`groupID`),
+    REFERENCES `#__cmgroup` (`groupID`),
   CONSTRAINT `FK2_match`
     FOREIGN KEY (`awayteamID`)
-    REFERENCES `#__group` (`groupID`));
+    REFERENCES `#__cmgroup` (`groupID`));
 
 
 -- -----------------------------------------------------
@@ -77,10 +77,10 @@ CREATE TABLE IF NOT EXISTS `#__cmattendance` (
   INDEX `FK2_attendance` (`matchID` ASC),
   CONSTRAINT `FK1_attendance`
     FOREIGN KEY (`personID`)
-    REFERENCES `#__person` (`personID`),
+    REFERENCES `#__cmperson` (`personID`),
   CONSTRAINT `FK2_attendance`
     FOREIGN KEY (`matchID`)
-    REFERENCES `#__match` (`matchID`));
+    REFERENCES `#__cmmatch` (`matchID`));
 
 
 -- -----------------------------------------------------
@@ -96,10 +96,10 @@ CREATE TABLE IF NOT EXISTS `#__cmgrouproster` (
   INDEX `FK2_grouproster` (`groupID` ASC),
   CONSTRAINT `FK1_grouproster`
     FOREIGN KEY (`personID`)
-    REFERENCES `#__person` (`personID`),
+    REFERENCES `#__cmperson` (`personID`),
   CONSTRAINT `FK2_grouproster`
     FOREIGN KEY (`groupID`)
-    REFERENCES `#__group` (`groupID`));
+    REFERENCES `#__cmgroup` (`groupID`));
 
 
 -- -----------------------------------------------------
@@ -116,10 +116,10 @@ CREATE TABLE IF NOT EXISTS `#__cmrelationship` (
   INDEX `FK2_relationship` (`person2ID` ASC),
   CONSTRAINT `FK1_relationship`
     FOREIGN KEY (`person1ID`)
-    REFERENCES `#__person` (`personID`),
+    REFERENCES `#__cmperson` (`personID`),
   CONSTRAINT `FK2_relationship`
     FOREIGN KEY (`person2ID`)
-    REFERENCES `#__person` (`personID`));
+    REFERENCES `#__cmperson` (`personID`));
 
 
 -- -----------------------------------------------------

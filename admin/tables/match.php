@@ -5,7 +5,7 @@ class FolioTableFolio extends JTable
 {
   public function __construct(&$db)
   {
-    parent::__construct('#__cbmatch', 'id', $db);
+    parent::__construct('#__cmmatch', 'id', $db);
   }
 
   public function bind($array, $ignore = '')
