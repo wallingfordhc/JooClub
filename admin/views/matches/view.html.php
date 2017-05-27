@@ -21,10 +21,10 @@ class clubmanagerViewmatches extends JViewLegacy
 
   protected function addToolbar()
   {
-    $canDo  = FolioHelper::getActions();
+    $canDo  = clubmanagerHelper::getActions();
     $bar = JToolBar::getInstance('toolbar');
 
-    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_FOLIOS'), '');
+    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_MATCHES'), '');
 
     JToolbarHelper::addNew('match.add');
 
