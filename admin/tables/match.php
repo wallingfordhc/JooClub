@@ -1,11 +1,11 @@
 <?php
 defined('_JEXEC') or die;
 
-class FolioTableFolio extends JTable
+class clubmanagerTablematch extends JTable
 {
   public function __construct(&$db)
   {
-    parent::__construct('#__cmmatch', 'id', $db);
+    parent::__construct('#__cmmatch', 'matchid', $db);
   }
 
   public function bind($array, $ignore = '')
