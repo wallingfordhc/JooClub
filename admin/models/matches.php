@@ -8,8 +8,8 @@ class clubmanagerModelmatches extends JModelList
     if (empty($config['filter_fields']))
     {
       $config['filter_fields'] = array(
-        'matchid', 'a.matchid',
-        'hometeamid', 'a.hometeamid',
+        'matchID', 'a.matchID',
+        'hometeamID', 'a.hometeamID',
       );
     }
 
@@ -24,7 +24,7 @@ class clubmanagerModelmatches extends JModelList
     $query->select(
       $this->getState(
         'list.select',
-        'a.matchid, a.hometeamid'
+        'a.matchID, a.hometeamID'
       )
     );
     $query->from($db->quoteName('#__cmmatch').' AS a');

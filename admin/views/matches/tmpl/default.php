@@ -16,7 +16,7 @@ $listDirn  = '';
             <input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
           </th>
           <th class="title">
-            <?php echo JHtml::_('grid.sort', 'JGLOBAL_TITLE', 'a.matchid', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort', 'JGLOBAL_TITLE', 'a.matchID', $listDirn, $listOrder); ?>
           </th>
         </tr>
       </thead>
@@ -25,10 +25,10 @@ $listDirn  = '';
         ?>
         <tr class="row<?php echo $i % 2; ?>">
           <td class="center hidden-phone">
-            <?php echo JHtml::_('grid.id', $i, $item->matchid); ?>
+            <?php echo JHtml::_('grid.id', $i, $item->matchID); ?>
           </td>
           <td class="nowrap has-context">
-            <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=match.edit&matchid='.(int) $item->matchid); ?>">
+            <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=match.edit&matchID='.(int) $item->matchID); ?>">
               <?php echo $this->escape($item->hometeamid); ?>
             </a>
           </td>

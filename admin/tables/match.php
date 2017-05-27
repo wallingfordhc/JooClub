@@ -5,7 +5,7 @@ class clubmanagerTablematch extends JTable
 {
   public function __construct(&$db)
   {
-    parent::__construct('#__cmmatch', 'matchid', $db);
+    parent::__construct('#__cmmatch', 'matchID', $db);
   }
 
   public function bind($array, $ignore = '')
