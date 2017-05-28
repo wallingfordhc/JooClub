@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class clubmanagerModelmatch extends JModelAdmin
+class clubmanagerModelgroup extends JModelAdmin
 {
   protected $text_prefix = 'COM_CLUBMANAGER';
 
