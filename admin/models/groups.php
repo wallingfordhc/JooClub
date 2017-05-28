@@ -20,10 +20,11 @@ class clubmanagerModelgroups extends JModelList
     $db    = $this->getDbo();
     $query  = $db->getQuery(true);
 
-    $query
-	  ->select($db->quoteName('g.groupID','groupID'))
-	  ->select($db->quoteName('g.groupname','groupname'))
-	  ->select($db->quoteName('g.grouplogo','grouplogo'));
+    $query ->select(
+	$this-getState(
+	'list.select','g.groupID,g.groupname,g.grouplogo'
+	)
+	);
 
     $query->from($db->quoteName('#__cmgroup').' AS g');
 	
