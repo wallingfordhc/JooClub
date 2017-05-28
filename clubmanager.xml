@@ -50,10 +50,10 @@
     <!-- Administration Menu Section -->
     <menu link='index.php?option=com_clubmanager'>Club Manager</menu>
     <submenu>
-      <menu link='option=com_clubmanager' view='players'>Players</menu>
-      <menu link='option=com_clubmanager' view='groups'>Groups</menu>
-      <menu link='option=com_clubmanager' view='matches'>Matches</menu>
-      <menu link='option=com_clubmanager' view='attendance'>Attendance</menu>
+      <menu link="option=com_clubmanager" view="players">Players</menu>
+      <menu link="option=com_clubmanager" view="groups">Groups</menu>
+      <menu link="option=com_clubmanager" view="matches">Matches</menu>
+      <menu link="option=com_clubmanager" view="attendance">Attendance</menu>
     </submenu>
     <!-- Administration Main File Copy Section -->
     <!-- Note the folder attribute: This attribute describes the folder
