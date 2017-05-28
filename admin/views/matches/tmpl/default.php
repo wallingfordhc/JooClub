@@ -39,11 +39,11 @@ $listDirn  = '';
           </td>
           <td class="nowrap has-context">
             <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=match.edit&matchID='.(int) $item->matchID); ?>">
-              <?php echo $this->escape($item->hometeamID); ?>
+              <?php echo $this->escape($item->hometeamname); ?>
             </a>
           </td>
 		  <td class="nowrap has-context">
-              <?php echo $this->escape($item->awayteamID); ?>
+              <?php echo $this->escape($item->awayteamname); ?>
             </a>
           </td>
         </tr>
