@@ -29,8 +29,8 @@ class clubmanagerModelmatches extends JModelList
       )
     );
     $query->from($db->quoteName('#__cmmatch').' AS a');
-	$query->join('INNER', $db->quoteName('#__cmgroups', 'b') . ' ON (' . $db->quoteName('a.hometeamID') . ' = ' . $db->quoteName('b.groupID') . ')')
-	$query->join('INNER', $db->quoteName('#__cmgroups', 'c') . ' ON (' . $db->quoteName('a.awayteamID') . ' = ' . $db->quoteName('c.groupID') . ')')
+	$query->join('INNER', $db->quoteName('#__cmgroups', 'b') . ' ON (' . $db->quoteName('a.hometeamID') . ' = ' . $db->quoteName('b.groupID') . ')');
+	$query->join('INNER', $db->quoteName('#__cmgroups', 'c') . ' ON (' . $db->quoteName('a.awayteamID') . ' = ' . $db->quoteName('c.groupID') . ')');
     return $query;
   }
 }
