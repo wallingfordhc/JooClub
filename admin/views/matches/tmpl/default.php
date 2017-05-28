@@ -25,7 +25,7 @@ $listDirn  = '';
             <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_HOMETEAM_SCORE', 'homescore', $listDirn, $listOrder); ?>
           </th>
 		  <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_HOMETEAM_TITLE', 'awayscore', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_AWAYTEAM_SCORE', 'awayscore', $listDirn, $listOrder); ?>
           </th>
 		  <th class="title">
             <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_AWAYTEAM_TITLE', 'awayteamname', $listDirn, $listOrder); ?>
