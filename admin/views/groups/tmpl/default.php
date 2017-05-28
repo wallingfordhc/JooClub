@@ -42,7 +42,7 @@ $listDirn  = '';
             </a>
           </td>
 		  <td class="nowrap has-context">
-              <?php echo $this->escape($item-grouplogo); ?>
+              <?php echo $this->escape($item->grouplogo); ?>
             </a>
           </td>
 		  
