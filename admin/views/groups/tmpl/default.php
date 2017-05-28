@@ -45,10 +45,7 @@ $listDirn  = '';
               <?php echo $this->escape($item-grouplogo); ?>
             </a>
           </td>
-		  <td class="nowrap has-context">
-              <?php echo $this->escape($item->description); ?>
-            </a>
-          </td>
+		  
         </tr>
         <?php endforeach; ?>
       </tbody>

@@ -23,8 +23,7 @@ class clubmanagerModelgroups extends JModelList
     $query
 	  ->select($db->quoteName('g.groupID','groupID'))
 	  ->select($db->quoteName('g.groupname','groupname'))
-	  ->select($db->quoteName('g.grouplogo','grouplogo'))
-	  ->select($db->quoteName('g.description','description'));
+	  ->select($db->quoteName('g.grouplogo','grouplogo'));
 
     $query->from($db->quoteName('#__cmgroup').' AS g');
 	
