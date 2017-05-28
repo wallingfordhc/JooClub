@@ -21,7 +21,7 @@ class clubmanagerModelgroups extends JModelList
     $query  = $db->getQuery(true);
 
     $query ->select(
-	$this-getState(
+	  $this->getState(
 	'list.select','g.groupID,g.groupname,g.grouplogo'
 	)
 	);
