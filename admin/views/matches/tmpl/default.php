@@ -22,8 +22,21 @@ $listDirn  = '';
             <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_HOMETEAM_TITLE', 'hometeamname', $listDirn, $listOrder); ?>
           </th>
 		  <th class="title">
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_HOMETEAM_SCORE', 'homescore', $listDirn, $listOrder); ?>
+          </th>
+		  <th class="title">
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_HOMETEAM_TITLE', 'awayscore', $listDirn, $listOrder); ?>
+          </th>
+		  <th class="title">
             <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_AWAYTEAM_TITLE', 'awayteamname', $listDirn, $listOrder); ?>
           </th>
+		  <th class="title">
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_LOCATION_TITLE', 'location', $listDirn, $listOrder); ?>
+          </th>
+		  <th class="title">
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_MATCHSTATUS_TITLE', 'status', $listDirn, $listOrder); ?>
+          </th>
+		  
         </tr>
       </thead>
       <tbody>
@@ -43,7 +56,23 @@ $listDirn  = '';
             </a>
           </td>
 		  <td class="nowrap has-context">
+              <?php echo $this->escape($item-homescore); ?>
+            </a>
+          </td>
+		  <td class="nowrap has-context">
+              <?php echo $this->escape($item->awayscore); ?>
+            </a>
+          </td>
+		  <td class="nowrap has-context">
               <?php echo $this->escape($item->awayteamname); ?>
+            </a>
+          </td>
+		  <td class="nowrap has-context">
+              <?php echo $this->escape($item->location); ?>
+            </a>
+          </td>
+		  <td class="nowrap has-context">
+              <?php echo $this->escape($item->status); ?>
             </a>
           </td>
         </tr>
