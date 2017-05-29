@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `#__cmperson` (
 -- Table `#__cmgroup`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `#__cmgroup` (
-  `groupID` INT NOT NULL,
+  `groupID` INT NOT NULL AUTO_INCREMENT,
   `groupname` VARCHAR(256) NULL DEFAULT NULL,
   `grouplogo` VARCHAR(512) NULL DEFAULT NULL,
   `groupownerID` INT NULL DEFAULT NULL,

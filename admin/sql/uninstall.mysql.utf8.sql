@@ -5,13 +5,13 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- -----------------------------------------------------
 	-- Table `#__cmlocation`
 	-- -----------------------------------------------------
-	DROP TABLE IF EXISTS `#__ cmlocation`;
+	DROP TABLE IF EXISTS `#__cmlocation`;
 
 
 	-- -----------------------------------------------------
 	-- Table `#__cmattendance`
 	-- -----------------------------------------------------
-	DROP TABLE IF EXISTS `#__ cmattendance`;
+	DROP TABLE IF EXISTS `#__cmattendance`;
 
 
 	-- -----------------------------------------------------
