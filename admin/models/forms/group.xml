@@ -12,7 +12,7 @@
            required="true" />
 
 
-    <field name="grouplogo" type="text" class="inputbox" size="40"
+    <field name="grouplogo" type="media" directory="logos" hide_none="1"   size="40"
            label="COM_CLUBMANAGER_FILED_GROUPLOGO_LABEL"
            description="COM_CLUBMANAGER_GROUPLOGO_DESC" />
 

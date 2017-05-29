@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\admin",
+    "\\admin\\controllers",
     "\\admin\\models",
     "\\admin\\models\\forms",
-    "\\admin\\sql",
     "\\admin\\tables",
     "\\admin\\views",
-    "\\admin\\views\\match",
-    "\\admin\\views\\matches\\tmpl",
-    "\\admin\\views\\match\\tmpl"
+    "\\admin\\views\\group",
+    "\\admin\\views\\groups\\tmpl",
+    "\\admin\\views\\group\\tmpl",
+    "\\admin\\views\\match"
   ],
-  "SelectedNode": "\\admin\\models\\matches.php",
   "PreviewInSolutionExplorer": true
 }
