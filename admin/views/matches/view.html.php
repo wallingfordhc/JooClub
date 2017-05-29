@@ -36,7 +36,7 @@ class clubmanagerViewmatches extends JViewLegacy
     }
 	if ($canDo->get('core.delete'))
     {
-      JToolBarHelper::deleteList('', 'match.delete', 'JTOOLBAR_DELETE');
+      JToolBarHelper::deleteList('', 'matches.delete', 'JTOOLBAR_DELETE');
     }
     if ($canDo->get('core.admin'))
     {
