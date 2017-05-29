@@ -8,7 +8,11 @@ class clubmanagerModelmatches extends JModelList
     if (empty($config['filter_fields']))
     {
       $config['filter_fields'] = array(
-        'matchID', 'm.matchID'
+        'matchID',
+		'pushback',
+		'hometeamname',
+		'awayteamname',
+		'location'
       );
     }
 
