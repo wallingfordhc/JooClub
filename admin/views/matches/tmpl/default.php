@@ -5,7 +5,7 @@ $listOrder = $this->escape($this->state->get('list.ordering'));
 $listDirn = $this->escape($this->state->get('list.direction'));
 ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_clubmanager&view=matches'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_clubmanager&view=matchs'); ?>" method="post" name="adminForm" id="adminForm">
   <div id="j-main-container" class="span10">
 
   <div id="filter-bar" class="btn-toolbar">

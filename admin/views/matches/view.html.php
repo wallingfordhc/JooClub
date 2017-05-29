@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class clubmanagerViewmatches extends JViewLegacy
+class clubmanagerViewmatchs extends JViewLegacy
 {
   protected $items;
   protected $state;
@@ -36,7 +36,7 @@ class clubmanagerViewmatches extends JViewLegacy
     }
 	if ($canDo->get('core.delete'))
     {
-      JToolBarHelper::deleteList('Are you sure?', 'matches.delete', 'JTOOLBAR_DELETE');
+      JToolBarHelper::deleteList('Are you sure?', 'matchs.delete', 'JTOOLBAR_DELETE');
     }
     if ($canDo->get('core.admin'))
     {
