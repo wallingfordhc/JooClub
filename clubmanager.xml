@@ -52,7 +52,7 @@
     <submenu>
       <menu link="option=com_clubmanager&amp;view=players">Players</menu>
       <menu link="option=com_clubmanager&amp;view=groups">Groups</menu>
-      <menu link="option=com_clubmanager&amp;view=matchs">Matches</menu>
+      <menu link="option=com_clubmanager&amp;view=matchs">matchs</menu>
       <menu link="option=com_clubmanager&amp;view=attendance">Attendance</menu>
     </submenu>
     <!-- Administration Main File Copy Section -->

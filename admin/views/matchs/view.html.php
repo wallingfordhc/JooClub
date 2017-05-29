@@ -26,7 +26,7 @@ class clubmanagerViewmatchs extends JViewLegacy
     $canDo  = clubmanagerHelper::getActions();
     $bar = JToolBar::getInstance('toolbar');
 
-    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_MATCHES'), '');
+    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_matchs'), '');
 
     JToolbarHelper::addNew('match.add');
 
