@@ -34,9 +34,14 @@ class clubmanagerViewmatches extends JViewLegacy
     {
       JToolbarHelper::editList('match.edit');
     }
+	if ($canDo->get('core.delete'))
+    {
+      JToolBarHelper::deleteList('', 'match.delete', 'JTOOLBAR_DELETE');
+    }
     if ($canDo->get('core.admin'))
     {
       JToolbarHelper::preferences('com_clubmanager');
     }
   }
+  
 }
