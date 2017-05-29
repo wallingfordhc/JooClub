@@ -146,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `#__cmattendance` (
 -- Table `#__cmgrouproster`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `#__cmgrouproster` (
-  `rosterID` INT NOT NULL,
+  `rosterID` INT NOT NULL AUTO_INCREMENT,
   `personID` INT NULL DEFAULT NULL,
   `groupID` INT NULL DEFAULT NULL,
   `status` VARCHAR(50) NULL DEFAULT NULL,
@@ -169,7 +169,7 @@ CREATE TABLE IF NOT EXISTS `#__cmgrouproster` (
 -- Table `#__cmrelationship`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `#__cmrelationship` (
-  `relationshipID` INT NOT NULL,
+  `relationshipID` INT NOT NULL AUTO_INCREMENT,
   `person1ID` INT NULL DEFAULT NULL,
   `person2ID` INT NULL DEFAULT NULL,
   `relationshiptype` VARCHAR(50) NULL DEFAULT NULL,
