@@ -56,7 +56,7 @@ class clubmanagerModelmatches extends JModelList
         $query->where('matchID= '.(int) substr($search, 3));
       } else {
         $search = $db->Quote('%'.$db->escape($search, true).'%');
-        $query->where('(h.groupname LIKE '.$search.' OR a.groupname LIKE '.$search.' OR location LIKE '.$search.')');
+        $query->where('(h.groupname LIKE '.$search.' OR a.groupname LIKE '.$search.' OR l.shortname LIKE '.$search.')');
       }
 	}
 
