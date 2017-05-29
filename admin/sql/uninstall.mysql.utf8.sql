@@ -1,6 +1,6 @@
 	-- uninstall script for clubmanager module from v0.0.8
 
-
+SET FOREIGN_KEY_CHECKS = 0;
 
 -- -----------------------------------------------------
 	-- Table `#__cmlocation`
@@ -59,3 +59,5 @@
 	-- Table `#__cmperson`
 	-- -----------------------------------------------------
 	DROP TABLE IF EXISTS `#__cmperson`;
+
+	SET FOREIGN_KEY_CHECKS = 1;
