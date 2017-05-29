@@ -28,11 +28,11 @@ class clubmanagerViewmatches extends JViewLegacy
 
     JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_MATCHES'), '');
 
-    JToolbarHelper::addNew('matches.add');
+    JToolbarHelper::addNew('match.add');
 
     if ($canDo->get('core.edit'))
     {
-      JToolbarHelper::editList('matches.edit');
+      JToolbarHelper::editList('match.edit');
     }
 	if ($canDo->get('core.delete'))
     {
