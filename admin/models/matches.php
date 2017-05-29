@@ -15,6 +15,11 @@ class clubmanagerModelmatches extends JModelList
     parent::__construct($config);
   }
   
+  protected function populateState($ordering = null, $direction = null)
+  {
+    parent::populateState('pushback', 'asc');
+  }
+
   protected function getListQuery()
   {
     $db    = $this->getDbo();
@@ -34,6 +39,10 @@ class clubmanagerModelmatches extends JModelList
 	$query->join('LEFT', $db->quoteName('#__cmgroup', 'h') . ' ON (' . $db->quoteName('m.hometeamID') . ' = ' . $db->quoteName('h.groupID') . ')');
 	$query->join('LEFT', $db->quoteName('#__cmgroup', 'a') . ' ON (' . $db->quoteName('m.awayteamID') . ' = ' . $db->quoteName('a.groupID') . ')');
 	$query->join('LEFT', $db->quoteName('#__cmlocation', 'l') . ' ON (' . $db->quoteName('m.locationID') . ' = ' . $db->quoteName('l.locationID') . ')');
-    return $query;
+    
+	$orderCol = $this->state->get('list.ordering');
+    $orderDirn = $this->state->get('list.direction');
+    $query->order($db->escape($orderCol.' '.$orderDirn));
+	return $query;
   }
 }		
