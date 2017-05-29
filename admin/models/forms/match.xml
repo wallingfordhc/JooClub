@@ -16,11 +16,28 @@
       description="COM_CLUBMANAGER_AWAYTEAMID_DESC"
       query="SELECT groupID AS value, groupname AS awayteamID FROM #__cmgroup" />
 
+    <field name="locationID" type="sql" default="0"
+           label="COM_CLUBMANAGER_FILED_AWAYTEAMID_LABEL"
+      description="COM_CLUBMANAGER_AWAYTEAMID_DESC"
+      query="SELECT locationID AS value, shortname AS locationID FROM #__cmlocation" />
+
     <field name="pushback" type="calendar" default="NOW"
            label="COM_CLUBMANAGER_PUSHBACK_LABEL"
       description="COM_CLUBMANAGER_PUSHBACK_DESC"
       class="inputbox" size="22" format="%Y-%m-%d %H:%M:%S"
   filter="user_utc"  showtime="true"      />
+
+    <field name="homescore" type="text" default="0" size="3"
+           label="COM_CLUBMANGER_HOMESCORE_LABEL"
+           description="COM_CLUBMANAGER_HOMESCORE_LABEL_DESC" />
+    
+    <field name="awaycore" type="text" default="0" size="3"
+           label="COM_CLUBMANGER_AWAYSCORE_LABEL"
+           description="COM_CLUBMANAGER_AWAYSCORE_LABEL_DESC" />
+
+    <field name="status" type="text" default="0" size="10"
+           label="COM_CLUBMANGER_MATCHSTATUS_LABEL"
+           description="COM_CLUBMANAGER_MATCHSTATUS_LABEL_DESC" />
 
   </fieldset>
 </form>
