@@ -2,15 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\admin",
-    "\\admin\\controllers",
+    "\\admin\\language\\en-GB",
     "\\admin\\models",
     "\\admin\\models\\forms",
-    "\\admin\\tables",
-    "\\admin\\views",
-    "\\admin\\views\\group",
+    "\\admin\\views\\groups",
     "\\admin\\views\\groups\\tmpl",
-    "\\admin\\views\\group\\tmpl",
-    "\\admin\\views\\match"
+    "\\admin\\views\\group\\tmpl"
   ],
   "PreviewInSolutionExplorer": true
 }
