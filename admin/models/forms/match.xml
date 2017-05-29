@@ -12,12 +12,12 @@
 
 
     <field name="awayteamID" type="sql" default="0"
-           label="COM_CLUBMANAGER_FILED_AWAYTEAMID_LABEL"
+           label="COM_CLUBMANAGER_FIELD_AWAYTEAMID_LABEL"
       description="COM_CLUBMANAGER_AWAYTEAMID_DESC"
       query="SELECT groupID AS value, groupname AS awayteamID FROM #__cmgroup" />
 
     <field name="locationID" type="sql" default="0"
-           label="COM_CLUBMANAGER_FILED_AWAYTEAMID_LABEL"
+           label="COM_CLUBMANAGER_FIELD_LOCATION_LABEL"
       description="COM_CLUBMANAGER_AWAYTEAMID_DESC"
       query="SELECT locationID AS value, shortname AS locationID FROM #__cmlocation" />
 

@@ -56,7 +56,7 @@ $listDirn  = '';
             </a>
           </td>
 		  <td class="nowrap has-context">
-              <?php echo $this->escape($item-homescore); ?>
+              <?php echo $this->escape($item->homescore); ?>
             </a>
           </td>
 		  <td class="nowrap has-context">
