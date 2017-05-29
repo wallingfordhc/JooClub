@@ -21,9 +21,10 @@ class clubmanagerModelmatches extends JModelList
   
   protected function populateState($ordering = null, $direction = null)
   {
-    parent::populateState('pushback', 'asc');
-	$search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
+    $search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
     $this->setState('filter.search', $search);
+	parent::populateState('pushback', 'asc');
+	
   }
 
   protected function getListQuery()
@@ -57,6 +58,7 @@ class clubmanagerModelmatches extends JModelList
         $search = $db->Quote('%'.$db->escape($search, true).'%');
         $query->where('(h.groupname LIKE '.$search.' OR a.groupname LIKE '.$search.' OR location LIKE '.$search.')');
       }
+	}
 
 	$orderCol = $this->state->get('list.ordering');
     $orderDirn = $this->state->get('list.direction');
