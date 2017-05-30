@@ -69,7 +69,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
 
 	  if ($group_date !== substr($item->pushback, 0, 10)) {
         $group_date = substr($item->pushback, 0, 10);
-        echo "<tr><td colspan=0><h1>$group_date</h1></td></tr>\n";
+        echo "<tr><td colspan=5><h1>$group_date</h1></td></tr>\n";
     }
     echo "${row['query']}<br>\n";
         ?>
