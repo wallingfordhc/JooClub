@@ -40,9 +40,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
           <th width="1%" class="hidden-phone">
             <input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
           </th>
-		  <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PUSHBACK_TITLE', 'pushback', $listDirn, $listOrder); ?>
-          </th>
+		  
           <th class="title">
             <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_HOMETEAM_TITLE', 'hometeamname', $listDirn, $listOrder); ?>
           </th>
@@ -65,16 +63,21 @@ $listDirn = $this->escape($this->state->get('list.direction'));
         </tr>
       </thead>
       <tbody>
-      <?php foreach ($this->items as $i => $item) :
+      <?php 
+	  $groupdate=null;
+	  foreach ($this->items as $i => $item) :
+
+	  if ($group_date !== substr($item->pushback, 0, 10)) {
+        $group_date = substr($item->pushback, 0, 10);
+        echo "<tr><td><h1>$group_date</h1></td></tr>\n";
+    }
+    echo "${row['query']}<br>\n";
         ?>
         <tr class="row<?php echo $i % 2; ?>">
           <td class="center hidden-phone">
             <?php echo JHtml::_('grid.id', $i, $item->matchID); ?>
           </td>
-		  <td class="nowrap has-context">
-              <?php echo $this->escape($item->pushback); ?>
-            </a>
-          </td>
+		  
           <td class="nowrap has-context">
             <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=match.edit&matchID='.(int) $item->matchID); ?>">
               <?php echo $this->escape($item->hometeamname); ?>

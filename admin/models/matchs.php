@@ -62,7 +62,7 @@ class clubmanagerModelmatchs extends JModelList
 
 	$orderCol = $this->state->get('list.ordering');
     $orderDirn = $this->state->get('list.direction');
-    $query->order($db->escape($orderCol.' '.$orderDirn));
+    $query->order('m.pushback');
 	return $query;
   }
 }		
