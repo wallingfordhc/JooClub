@@ -36,8 +36,8 @@
            description="COM_CLUBMANAGER_AWAYSCORE_LABEL_DESC" />
 
     <field name="status" type="text" default="0" size="10"
-           label="COM_CLUBMANGER_MATCHSTATUS_LABEL"
-           description="COM_CLUBMANAGER_MATCHSTATUS_LABEL_DESC" />
+           label="COM_CLUBMANGER_matchesTATUS_LABEL"
+           description="COM_CLUBMANAGER_matchesTATUS_LABEL_DESC" />
 
   </fieldset>
 </form>

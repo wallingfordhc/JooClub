@@ -5,7 +5,7 @@ $listOrder = $this->escape($this->state->get('list.ordering'));
 $listDirn = $this->escape($this->state->get('list.direction'));
 ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_clubmanager&view=matchs'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_clubmanager&view=matches'); ?>" method="post" name="adminForm" id="adminForm">
   <div id="j-main-container" class="span10">
 
   <div id="filter-bar" class="btn-toolbar">
@@ -57,7 +57,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
             <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_LOCATION_TITLE', 'location', $listDirn, $listOrder); ?>
           </th>
 		  <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_MATCHSTATUS_TITLE', 'status', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_matchesTATUS_TITLE', 'status', $listDirn, $listOrder); ?>
           </th>
 		  
         </tr>

@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class clubmanagerControllermatchs extends JControllerAdmin
+class clubmanagerControllermatches extends JControllerAdmin
 {
   public function getModel($name = 'match', $prefix = 'clubmanagerModel', $config = array('ignore_request' => true))
   {

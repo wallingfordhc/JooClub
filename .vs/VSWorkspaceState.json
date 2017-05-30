@@ -9,9 +9,9 @@
     "\\admin\\views",
     "\\admin\\views\\clubmanager\\tmpl",
     "\\admin\\views\\group\\tmpl",
-    "\\admin\\views\\matchs",
-    "\\admin\\views\\matchs\\tmpl"
+    "\\admin\\views\\matches",
+    "\\admin\\views\\matches\\tmpl"
   ],
-  "SelectedNode": "\\admin\\controllers\\matchs.php",
+  "SelectedNode": "\\admin\\controllers\\matches.php",
   "PreviewInSolutionExplorer": true
 }

@@ -12,12 +12,12 @@ class clubmanagerController extends JControllerLegacy
 	 * @var string
 	 *
 	 */
-	protected $default_view = 'matchs';
+	protected $default_view = 'matches';
 	public function display($cachable = false, $urlparams = false)
   {
     require_once JPATH_COMPONENT.'/helpers/clubmanager.php';
 
-    $view   = $this->input->get('view', 'matchs');
+    $view   = $this->input->get('view', 'matches');
     $layout = $this->input->get('layout', 'default');
     // $id     = $this->input->getInt('id');
 

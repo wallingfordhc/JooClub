@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class clubmanagerModelmatchs extends JModelList
+class clubmanagerModelmatches extends JModelList
 {
   public function __construct($config = array())
   {
