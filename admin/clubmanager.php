@@ -13,6 +13,10 @@ defined('_JEXEC') or die('Restricted access');
 if (!JFactory::getUser()->authorise('core.manage','com_clubmanager'))
 {return JError::raiseWarning(404,JText::_('JERROR_ALERTNOAUTHOR'));
 }
+
+$document = JFactory::getDocument();
+$cssFile = "./media/com_clubmanager/css/site.stylesheet.css";
+$document->addStyleSheet($cssFile);
  
 // Get an instance of the controller prefixed by ClubManager
 $controller = JControllerLegacy::getInstance('clubmanager');

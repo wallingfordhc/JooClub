@@ -48,6 +48,11 @@
     <folder>controllers</folder>
   </files>
 
+  <media destination="com_clubmanager" folder="media">
+    <filename>index.html</filename>
+    <folder>css</folder>
+  </media>
+
   <administration>
     <!-- Administration Menu Section -->
     <menu link='index.php?option=com_clubmanager'>Club Manager</menu>

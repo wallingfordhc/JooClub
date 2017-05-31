@@ -19,7 +19,7 @@ defined('_JEXEC') or die;
         <tr class="row<?php echo $i % 2; ?>">
 		  
           <td class="nowrap has-context">
-            <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=match.edit&matchID='.(int) $item->matchID); ?>">
+            <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&view=match&matchID='.(int) $item->matchID); ?>">
               <?php echo $this->escape($item->hometeamname); ?>
             </a>
           </td>
