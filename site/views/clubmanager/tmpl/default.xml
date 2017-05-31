@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-  <layout title="COM_CLUBMANAGER_CLUBMANAGER_VIEW_DEFAULT_TITLE">
+  <layout title="COM_CLUBMANAGER_CLUBMANAGER_VIEW_DEFAULT_TITLE" OPTION="COM_CLUBMANAGER_CLUBMANAGER_VIEW_DEFAULT_OPTION">
     <message>COM_CLUBMANAGER_CLUBMANAGER_VIEW_DEFAULT_DESC</message>
   </layout>
-  <fields name="request">
-    <fieldset name="request">
-      <field
-					name="id"
-					type="list"
-					label="COM_CLUBMANAGER_CLUBMANAGER_FIELD_GREETING_LABEL"
-					description="COM_CLUBMANAGER_CLUBMANAGER_FIELD_GREETING_DESC"
-					default="1">
-        <option value="1">Hello Club World2!</option>
-        <option value="2">Good bye World!</option>
-      </field>
-    </fieldset>
-  </fields>
+  
 </metadata>

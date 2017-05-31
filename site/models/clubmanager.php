@@ -1,50 +1,68 @@
 <?php
-/**
- * @package     Joomla.Administrator
- * @subpackage  com_clubmanager
- * @copyright   Copyright (C) 2005 - 2016 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
- */
- 
-// No direct access to this file
-defined('_JEXEC') or die('Restricted access');
- 
-/**
- *clubmanager Model
- *
- * @since  0.0.5
- */
-class clubmanagerModelclubmanager extends JModelItem
+defined('_JEXEC') or die;
+
+class clubmanagerModelclubmanager extends JModelList
 {
-	/**
-	 * @var string message
-	 */
-	protected $message;
- 
-	/**
-	 * Get the message
-         *
-	 * @return  string  The message to be displayed to the user
-	 */
-	public function getMsg()
-	{
-		if (!isset($this->message))
-		{
-			$jinput = JFactory::getApplication()->input;
-			$id     = $jinput->get('id', 1, 'INT');
- 
-			switch ($id)
-			{
-				case 2:
-					$this->message = 'Good bye World!';
-					break;
-				default:
-				case 1:
-					$this->message = 'Hello World!';
-					break;
-			}
-		}
- 
-		return $this->message;
+  public function __construct($config = array())
+  {
+    if (empty($config['filter_fields']))
+    {
+      $config['filter_fields'] = array(
+        'matchID',
+		'pushback',
+		'hometeamname',
+		'awayteamname',
+		'location'
+      );
+    }
+
+    parent::__construct($config);
+  }
+  
+  protected function populateState($ordering = null, $direction = null)
+  {
+    $search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
+    $this->setState('filter.search', $search);
+	parent::populateState('pushback', 'asc');
+	
+  }
+
+  protected function getListQuery()
+  {
+    $db    = $this->getDbo();
+    $query  = $db->getQuery(true);
+
+    $query
+	  ->select($db->quoteName('m.matchID','matchID'))
+	  ->select($db->quoteName('h.groupname','hometeamname'))
+	  ->select($db->quoteName('a.groupname','awayteamname'))
+	  ->select($db->quoteName('m.homescore','homescore'))
+	  ->select($db->quoteName('m.awayscore','awayscore'))
+	  ->select($db->quoteName('l.shortname','location'))
+	  ->select($db->quoteName('m.pushback','pushback'))
+	  ->select($db->quoteName('m.status','status'));
+
+    $query->from($db->quoteName('#__cmmatch').' AS m');
+	$query->join('LEFT', $db->quoteName('#__cmgroup', 'h') . ' ON (' . $db->quoteName('m.hometeamID') . ' = ' . $db->quoteName('h.groupID') . ')');
+	$query->join('LEFT', $db->quoteName('#__cmgroup', 'a') . ' ON (' . $db->quoteName('m.awayteamID') . ' = ' . $db->quoteName('a.groupID') . ')');
+	$query->join('LEFT', $db->quoteName('#__cmlocation', 'l') . ' ON (' . $db->quoteName('m.locationID') . ' = ' . $db->quoteName('l.locationID') . ')');
+    
+	// Filter by search in title
+    $search = $this->getState('filter.search');
+    if (!empty($search))
+    {
+      if (stripos($search, 'id:') === 0)
+      {
+        $query->where('matchID= '.(int) substr($search, 3));
+      } else {
+        $search = $db->Quote('%'.$db->escape($search, true).'%');
+        $query->where('(h.groupname LIKE '.$search.' OR a.groupname LIKE '.$search.' OR l.shortname LIKE '.$search.')');
+      }
 	}
-}
+
+	$orderCol = $this->state->get('list.ordering');
+    $orderDirn = $this->state->get('list.direction');
+    $query->order('m.pushback');
+	return $query;
+  }
+}		

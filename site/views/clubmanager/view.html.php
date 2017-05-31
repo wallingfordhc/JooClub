@@ -24,10 +24,13 @@ class clubmanagerViewclubmanager extends JViewLegacy
 	 *
 	 * @return  void
 	 */
+
+	 protected $items;
+
 	function display($tpl = null)
 	{
 		// Assign data to the view
-		$this->msg = $this->get('Msg');
+		$this->items = $this->get('Items');
  
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
