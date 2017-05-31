@@ -50,7 +50,7 @@ class clubmanagerModelmatch extends JModelList
 	$query->join('LEFT', $db->quoteName('#__cmgroup', 'a') . ' ON (' . $db->quoteName('m.awayteamID') . ' = ' . $db->quoteName('a.groupID') . ')');
 	$query->join('LEFT', $db->quoteName('#__cmlocation', 'l') . ' ON (' . $db->quoteName('m.locationID') . ' = ' . $db->quoteName('l.locationID') . ')');
     
-    $query->where('m.matchID='$id);
+    $query->where('m.matchID='.$id);
 	return $query;
   }
 }		
