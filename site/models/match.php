@@ -46,11 +46,12 @@ class clubmanagerModelmatch extends JModelList
 	  ->select($db->quoteName('m.status','status'));
 
     $query->from($db->quoteName('#__cmmatch').' AS m');
+	$query->where('m.matchID='.$id);
 	$query->join('LEFT', $db->quoteName('#__cmgroup', 'h') . ' ON (' . $db->quoteName('m.hometeamID') . ' = ' . $db->quoteName('h.groupID') . ')');
 	$query->join('LEFT', $db->quoteName('#__cmgroup', 'a') . ' ON (' . $db->quoteName('m.awayteamID') . ' = ' . $db->quoteName('a.groupID') . ')');
 	$query->join('LEFT', $db->quoteName('#__cmlocation', 'l') . ' ON (' . $db->quoteName('m.locationID') . ' = ' . $db->quoteName('l.locationID') . ')');
     
-    $query->where('m.matchID='.$id);
+    
 	return $query;
   }
 }		
