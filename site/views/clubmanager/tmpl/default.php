@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
         $group_date = $item->pushback;
 		$displaydate = date_create($group_date);
 		
-		echo "<tr><td colspan=5><h1>date_format($group_date, 'l jS F Y')</h1></td></tr>\n";
+		echo "<tr><td colspan=5><h1>".date_format($group_date, 'l jS F Y')."</h1></td></tr>\n";
     }
     echo "${row['query']}<br>\n";
         ?>
