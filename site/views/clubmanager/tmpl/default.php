@@ -9,11 +9,11 @@ defined('_JEXEC') or die;
 	  $groupdate=null;
 	  foreach ($this->items as $i => $item) :
 
-	  if ($group_date !== $item->pushback) {
-        $group_date = $item->pushback;
+	  if ($group_date !== substr($item->pushback, 0, 10)) {
+        $group_date = substr($item->pushback, 0, 10);
 		$displaydate = date_create($group_date);
 		
-		echo "<tr><td colspan=5><h1>".date_format($group_date, 'l jS F Y')."</h1></td></tr>\n";
+		echo "<tr><td colspan=5><h1>" . date_format($displaydate, 'D M Y') . "</h1></td></tr>\n";
     }
     echo "${row['query']}<br>\n";
         ?>
