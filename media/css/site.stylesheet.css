@@ -1,4 +1,4 @@
-.cbmatchdate {
+.cmmatchdate {
     text-align: center;
     background: #058235;
     color: #ffffff;
@@ -6,6 +6,9 @@
     padding: 0.5em 0;
 }
 
+.cmmatch_statustitle {
+    width: 40px;
+}
 .cmmatches__sides {
     color: #000000;
     font-size: 1.0em;
