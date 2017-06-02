@@ -1,4 +1,7 @@
 .cbmatchdate {
-    color: forestgreen;
-    font-size: 8;
+    text-align: center;
+    background: #10dd0d;
+    color: #ffffff;
+    font-size: 1.4em;
+    padding: 0.5em 0;
 }
