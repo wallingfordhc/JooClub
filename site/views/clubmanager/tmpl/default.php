@@ -32,7 +32,7 @@ defined('_JEXEC') or die;
 		  if (intval($item->homescore) < intval($item->awayscore)) {
 		  	  echo "cmmatches_awaywin ";
 		  }
-		  if (intval($item->homescore) = intval($item->awayscore)) {
+		  if (intval($item->homescore) == intval($item->awayscore)) {
 		  	  echo "cmmatches_draw ";
 		  }
 		  ?>
