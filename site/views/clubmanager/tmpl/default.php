@@ -39,7 +39,6 @@ defined('_JEXEC') or die;
 
 		  ">
 		  <?php echo $this->escape($item->homescore); ?>
-		// important - between the scores
 		
 		-		
               <?php echo $this->escape($item->awayscore); ?>

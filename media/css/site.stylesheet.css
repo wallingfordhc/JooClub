@@ -38,13 +38,16 @@
 
 .cmmatches__homewin {
     background: #058235;
+    color: #ffffff;
     
 }
 
 .cmmatches_awaywin {
     background: #ff0000;
+    color: #ffffff;
 }
  
 .cmmatches_draw {
-    background: #ff0000;
+    background: #efe460
+    color: #000000;
 }
