@@ -26,13 +26,13 @@ defined('_JEXEC') or die;
 		  <td class="nowrap has-context cmmatches__scores 
 
 		  <?php
-		  if ($item->homescore > $item->awayscore) {
+		  if (intval($item->homescore)) > intval($item->awayscore)) {
 		  	  echo "cmmatches_homewin ";
 		  }
-		  if ($item->homescore < $item->awayscore) {
+		  if (intval($item->homescore)) < intval($item->awayscore)) {
 		  	  echo "cmmatches_awaywin ";
 		  }
-		  if ($item->homescore = $item->awayscore) {
+		  if (intval($item->homescore)) = intval($item->awayscore)) {
 		  	  echo "cmmatches_draw ";
 		  }
 		  ?>
