@@ -10,12 +10,27 @@
     color: #000000;
     font-size: 1.0em;
     text-overflow: ellipsis;
+    height: 35px;
 }
 
 .cmmatches__homeside {
     text-align: right;
+    
 }
 
 .cmmatches__awayside {
     text-align: left;
+    ::before: 
+}
+
+.cmmatches__status {
+    text-align: right;
+    width: 40px;
+    height: 35px;
+}
+
+.cmmatches__scores {
+    background: #ff0000;
+    colour: #ffffff;
+    width: 60px;
 }

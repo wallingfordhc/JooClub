@@ -18,24 +18,22 @@ defined('_JEXEC') or die;
         ?>
         <tr class="row<?php echo $i % 2; ?>">
 		  
-          <td class="nowrap has-context cmmatches__homeside">
+          <td class="nowrap has-context cmmatches_sides cmmatches__homeside ">
             <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&view=match&matchID='.(int) $item->matchID); ?>">
               <?php echo $this->escape($item->hometeamname); ?>
             </a>
           </td>
-		  <td class="nowrap has-context">
+		  <td class="nowrap has-context cmmatches__scores ">
               <?php echo $this->escape($item->homescore); ?>
-            
-          </td>
-		  <td class="nowrap has-context">
+			  -		
               <?php echo $this->escape($item->awayscore); ?>
             </a>
           </td>
-		  <td class="nowrap has-context cmmatches__awayside">
+		  <td class="nowrap has-context cmmatches__sides cmmatches__awayside">
               <?php echo $this->escape($item->awayteamname); ?>
             </a>
           </td>
-		  <td class="nowrap has-context cmmatches__status">
+		  <td class="nowrap has-context cmmatches__sides cmmatches__status">
               <?php echo $this->escape($item->location); ?>
             </a>
           </td>
