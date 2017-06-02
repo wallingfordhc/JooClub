@@ -30,7 +30,21 @@
 }
 
 .cmmatches__scores {
-    background: #ff0000;
-    colour: #ffffff;
+
     width: 60px;
+    text-align: center;
+    color: white;
+}
+
+.cmmatches__homewin {
+    background: #058235;
+    
+}
+
+.cmmatches_awaywin {
+    background: #ff0000;
+}
+ 
+.cmmatches_draw {
+    background: #ff0000;
 }

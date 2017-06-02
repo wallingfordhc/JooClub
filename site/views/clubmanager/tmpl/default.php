@@ -24,6 +24,18 @@ defined('_JEXEC') or die;
             </a>
           </td>
 		  <td class="nowrap has-context cmmatches__scores ">
+
+		  <?php
+		  if ($item->homescore > $item->awayscore) {
+		  	  echo "cmmatches_homewin ";
+		  }
+		  if ($item->homescore < $item->awayscore) {
+		  	  echo "cmmatches_awaywin ";
+		  }
+		  if ($item->homescore = $item->awayscore) {
+		  	  echo "cmmatches_draw ";
+		  }
+
               <?php echo $this->escape($item->homescore); ?>
 			  -		
               <?php echo $this->escape($item->awayscore); ?>
