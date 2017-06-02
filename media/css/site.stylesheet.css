@@ -13,9 +13,9 @@
 }
 
 .cmmatches__homeside {
-    text.align: right;
+    text-align: right;
 }
 
 .cmmatches__awayside {
-    text .align: left;
+    text-align: left;
 }
