@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
         $group_date = substr($item->pushback, 0, 10);
 		$displaydate = date_create($group_date);
 		
-		echo "<tr><td colspan=5><h1>" . date_format($displaydate, 'jS M') . "</h1></td></tr>\n";
+		echo "<tr><td colspan=5><h1 class='cbmatchdate'>" . date_format($displaydate, 'jS M') . "</h1></td></tr>\n";
     }
     echo "${row['query']}<br>\n";
         ?>
