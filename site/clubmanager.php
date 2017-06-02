@@ -12,6 +12,10 @@ defined('_JEXEC') or die('Restricted access');
  
 // Get an instance of the controller prefixed by clubmanager
 $controller = JControllerLegacy::getInstance('clubmanager');
+
+$document = JFactory::getDocument();
+$cssFile = "./media/com_clubmanager/css/site.stylesheet.css";
+$document->addStyleSheet($cssFile);
  
 // Perform the Request task
 $input = JFactory::getApplication()->input;
