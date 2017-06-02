@@ -42,12 +42,12 @@
     
 }
 
-.cmmatches_awaywin {
+.cmmatches__awaywin {
     background: #ff0000;
     color: #ffffff;
 }
  
-.cmmatches_draw {
+.cmmatches__draw {
     background: #efe460;
     color: #000000;
 }

@@ -27,13 +27,13 @@ defined('_JEXEC') or die;
 
 		  <?php
 		  if (intval($item->homescore) > intval($item->awayscore)) {
-		  	  echo "cmmatches_homewin ";
+		  	  echo "cmmatches__homewin ";
 		  }
 		  if (intval($item->homescore) < intval($item->awayscore)) {
-		  	  echo "cmmatches_awaywin ";
+		  	  echo "cmmatches__awaywin ";
 		  }
 		  if (intval($item->homescore) == intval($item->awayscore)) {
-		  	  echo "cmmatches_draw ";
+		  	  echo "cmmatches__draw ";
 		  }
 		  ?>
 
