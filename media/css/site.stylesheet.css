@@ -1,7 +1,21 @@
 .cbmatchdate {
     text-align: center;
-    background: #10dd0d;
+    background: #058235;
     color: #ffffff;
     font-size: 1.4em;
     padding: 0.5em 0;
+}
+
+.cmmatches__sides {
+    color: #000000;
+    font-size: 1.0em;
+    text-overflow: ellipsis;
+}
+
+.cmmatches__homeside {
+    text.align: right;
+}
+
+.cmmatches__awayside {
+    text .align: left;
 }
