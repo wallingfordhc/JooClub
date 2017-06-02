@@ -23,7 +23,7 @@ defined('_JEXEC') or die;
               <?php echo $this->escape($item->hometeamname); ?>
             </a>
           </td>
-		  <td class="nowrap has-context cmmatches__scores ">
+		  <td class="nowrap has-context cmmatches__scores 
 
 		  <?php
 		  if ($item->homescore > $item->awayscore) {
@@ -35,9 +35,13 @@ defined('_JEXEC') or die;
 		  if ($item->homescore = $item->awayscore) {
 		  	  echo "cmmatches_draw ";
 		  }
+		  ?>
 
-              <?php echo $this->escape($item->homescore); ?>
-			  -		
+		  ">
+		  <?php echo $this->escape($item->homescore); ?>
+		// important - between the scores
+		
+		-		
               <?php echo $this->escape($item->awayscore); ?>
             </a>
           </td>
