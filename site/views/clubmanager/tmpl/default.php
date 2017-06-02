@@ -12,12 +12,12 @@ defined('_JEXEC') or die;
         $group_date = substr($item->pushback, 0, 10);
 		$displaydate = date_create($group_date);
 		
-		echo "<tr><td colspan=5><h1 class='cmmatchdate'>" . date_format($displaydate, 'jS M') . "</h1></td><td class='cmmatches__statustitle'></td></tr>\n";
+		echo "<tr><td colspan=5><h1 class='cmmatchdate'>" . date_format($displaydate, 'jS M') . "</h1></td></tr>\n";
       }
     // echo "${row['query']}<br>\n";
         ?>
         <tr class="row<?php echo $i % 2; ?>">
-		  
+		  <td class='cmmatches_matchinfo'></td>
           <td class="nowrap has-context cmmatches_sides cmmatches__homeside ">
             <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&view=match&matchID='.(int) $item->matchID); ?>">
               <?php echo $this->escape($item->hometeamname); ?>
@@ -52,10 +52,7 @@ defined('_JEXEC') or die;
               <?php echo $this->escape($item->location); ?>
             </a>
           </td>
-		  <td class="nowrap has-context">
-              <?php echo $this->escape($item->status); ?>
-            </a>
-          </td>
+		 
         </tr>
         <?php endforeach; ?>
       </tbody>
