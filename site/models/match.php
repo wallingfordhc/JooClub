@@ -5,16 +5,6 @@ class clubmanagerModelmatch extends JModelList
 {
   public function __construct($config = array())
   {
-    if (empty($config['filter_fields']))
-    {
-      $config['filter_fields'] = array(
-        'matchID',
-		'pushback',
-		'hometeamname',
-		'awayteamname',
-		'location'
-      );
-    }
 
     parent::__construct($config);
   }
@@ -25,7 +15,7 @@ class clubmanagerModelmatch extends JModelList
     $this->setState('filter.search', $search);
 	parent::populateState('pushback', 'asc');
 	$id= JRequest::getInt('matchID');
-	
+	$this->setState('id', $id);
   }
 
   protected function getListQuery()

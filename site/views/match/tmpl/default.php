@@ -1,6 +1,6 @@
 <?php defined('_JEXEC') or die; ?>
 
-<div >
+<div class=cmmatchtest >
    <?php foreach ($this->items as $item) : ?>
       <div >
          <div >

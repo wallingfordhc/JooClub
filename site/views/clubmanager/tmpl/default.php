@@ -17,11 +17,12 @@ defined('_JEXEC') or die;
     // echo "${row['query']}<br>\n";
         ?>
         <tr class="row<?php echo $i % 2; ?>">
+		<a href="<?php echo JRoute::_('index.php?option=com_clubmanager&view=match&matchID='.(int)$item->matchID); ?>">
 		  <td class='cmmatches_matchinfo'></td>
           <td class="nowrap has-context cmmatches_sides cmmatches__homeside ">
-            <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&view=match&matchID='.(int) $item->matchID); ?>">
+             
               <?php echo $this->escape($item->hometeamname); ?>
-            </a>
+            
           </td>
 		  <td class="nowrap has-context cmmatches__scores 
 
@@ -52,7 +53,7 @@ defined('_JEXEC') or die;
               <?php echo $this->escape($item->location); ?>
             </a>
           </td>
-		 
+		 </a>
         </tr>
         <?php endforeach; ?>
       </tbody>

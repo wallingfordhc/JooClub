@@ -8,6 +8,7 @@ class clubmanagerViewmatch extends JViewLegacy
    public function display($tpl = null)
    {
       $this->items = $this->get('Items');
+	 
 
       $app = JFactory::getApplication();
       $params = $app->getParams();
