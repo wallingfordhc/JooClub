@@ -8,17 +8,12 @@ class clubmanagerModelmatch extends JModelList
 
     parent::__construct($config);
   }
-  
-  protected function populateState($ordering = null, $direction = null)
-  {
-	$id= JRequest::getInt('matchID');
-	$this->setState('id', $id);
-  }
 
   protected function getListQuery()
   {
     $db    = $this->getDbo();
     $query  = $db->getQuery(true);
+	$id= JRequest::getInt('matchID');
 
     $query
 	 
@@ -33,12 +28,14 @@ class clubmanagerModelmatch extends JModelList
 	  ->select($db->quoteName('m.status','status'));
 
     $query->from($db->quoteName('#__cmmatch').' AS m');
-	$query->where('m.matchID='.(int)$id);
+	
+    $query->where('m.matchid= '.(int) $id);
+    
 	$query->join('LEFT', $db->quoteName('#__cmgroup', 'h') . ' ON (' . $db->quoteName('m.hometeamID') . ' = ' . $db->quoteName('h.groupID') . ')');
 	$query->join('LEFT', $db->quoteName('#__cmgroup', 'a') . ' ON (' . $db->quoteName('m.awayteamID') . ' = ' . $db->quoteName('a.groupID') . ')');
 	$query->join('LEFT', $db->quoteName('#__cmlocation', 'l') . ' ON (' . $db->quoteName('m.locationID') . ' = ' . $db->quoteName('l.locationID') . ')');
     
-    JFactory::getApplication()->enqueueMessage('Some debug string(s)');
+   
 	return $query;
   }
 }		
