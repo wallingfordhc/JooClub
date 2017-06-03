@@ -9,6 +9,7 @@
 .cmmatch_statustitle {
     width: 40px;
 }
+
 .cmmatches__sides {
     color: #000000;
     font-size: 1.0em;
@@ -18,12 +19,11 @@
 
 .cmmatches__homeside {
     text-align: right;
-    
 }
 
 .cmmatches__awayside {
     text-align: left;
-    ::before: 
+    :: before:
 }
 
 .cmmatches__status {
@@ -33,7 +33,6 @@
 }
 
 .cmmatches__scores {
-
     width: 60px;
     text-align: center;
     color: white;
@@ -42,22 +41,23 @@
 .cmmatches__homewin {
     background: #058235;
     color: #ffffff;
-    
 }
 
 .cmmatches__awaywin {
     background: #ff0000;
     color: #ffffff;
 }
- 
+
 .cmmatches__draw {
     background: #efe460;
     color: #000000;
 }
 
 .cmmatch {
-background: #000000;
-colour: #ffffff;
+    background: #000038;
+    color: #ffffff;
+    padding: 10px;
+    margin: 5px;
 }
 
 .cmmatch_result {
@@ -72,13 +72,15 @@ colour: #ffffff;
 .cmmatch_teamlogo {
     width: 55px;
     height: auto;
+    padding: 5px;   
 }
 
 .cmmatch_hometeamname {
-
+    font-size: 1.6em;
 }
 
 .cmmatch_awayteam {
+    font-size: 1.6em;
 }
 
 .cmmatch_awayteamname {
@@ -86,10 +88,20 @@ colour: #ffffff;
 
 .cmmatch_homescore {
     background: #ff0000;
+    font-size: 2em;
+    width: 75px;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
 }
 
 .cmmatch_awayscore {
     background: #ff0000;
+    font-size: 2em;
+    width: 75px;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
 }
 
 .cmmatch_location {
