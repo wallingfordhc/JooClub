@@ -54,3 +54,46 @@
     background: #efe460;
     color: #000000;
 }
+
+.cmmatch {
+background: #000000;
+colour: #ffffff;
+}
+
+.cmmatch_result {
+}
+
+.cmmatch_pushbacktime {
+}
+
+.cmmatch_hometeam {
+}
+
+.cmmatch_teamlogo {
+    width: 55px;
+    height: auto;
+}
+
+.cmmatch_hometeamname {
+
+}
+
+.cmmatch_awayteam {
+}
+
+.cmmatch_awayteamname {
+}
+
+.cmmatch_homescore {
+    background: #ff0000;
+}
+
+.cmmatch_awayscore {
+    background: #ff0000;
+}
+
+.cmmatch_location {
+}
+
+.cmmatch_status {
+}
