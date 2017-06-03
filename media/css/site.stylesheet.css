@@ -58,6 +58,7 @@
     color: #ffffff;
     padding: 10px;
     margin: 5px;
+    display: table;
 }
 
 .cmmatch_result {
@@ -67,6 +68,7 @@
 }
 
 .cmmatch_hometeam {
+    width: 300px;
 }
 
 .cmmatch_teamlogo {
@@ -82,9 +84,10 @@
 }
 
 .cmmatch_awayteam {
-    font-size: 1.6em;
+ 
     float: left;
     clear: left;
+    width: 300px;
 }
 
 .cmmatch_awayteamname {
@@ -109,7 +112,6 @@
     text-align: center;
     margin: 5px;
     padding: 5px;
-    font-size: 1.6em;
     float: left;
 }
 
