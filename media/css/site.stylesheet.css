@@ -72,18 +72,24 @@
 .cmmatch_teamlogo {
     width: 55px;
     height: auto;
-    padding: 5px;   
+    padding: 5px;
+    float: left;
 }
 
 .cmmatch_hometeamname {
     font-size: 1.6em;
+    float: left;
 }
 
 .cmmatch_awayteam {
     font-size: 1.6em;
+    float: left;
+    clear: left;
 }
 
 .cmmatch_awayteamname {
+    font-size: 1.6em;
+    float: left;
 }
 
 .cmmatch_homescore {
@@ -93,6 +99,7 @@
     text-align: center;
     margin: 5px;
     padding: 5px;
+    float: left;
 }
 
 .cmmatch_awayscore {
@@ -102,6 +109,10 @@
     text-align: center;
     margin: 5px;
     padding: 5px;
+    font-size: 1.6em;
+    float: left;
+}
+
 }
 
 .cmmatch_location {

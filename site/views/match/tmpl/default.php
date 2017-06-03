@@ -5,7 +5,7 @@
       <div class=cmmatch_result >
          <div class="cmmatch_pushbacktime" >
             <?php 
-			$displaydate = date_format(datecreate($item->pushback),'jS M h:i');
+			$displaydate = date_format(date_create($item->pushback),'jS M h:i');
 			echo $displaydate; ?>
          </div>
          <div class="cmmatch_hometeam">
@@ -15,10 +15,12 @@
 		   <span class="cmmatch_hometeamname">
 			<?php echo $item->hometeamname; ?>
 		   </span>
-         </div>
-		 <div class="cmmatch_homescore">
-		   <?php echo $item->homescore; ?>
+         
+		   <div class="cmmatch_homescore">
+		     <?php echo $item->homescore; ?>
+		   </div>
 		 </div>
+		 
 		 <div class="cmmatch_awayteam">
 		   <span class="cmmatch_teamlogo">
 			<img class="cmmatch_teamlogo" src="<?php echo $item->awayteamlogo; ?>">
@@ -26,9 +28,10 @@
 		   <span class="cmmatch_awayteamname">
 			<?php echo $item->awayteamname; ?>
 		   </span>
-         </div>
-		 <div class="cmmatch_awayscore">
-		   <?php echo $item->awayscore; ?>
+         
+		   <div class="cmmatch_awayscore">
+		     <?php echo $item->awayscore; ?>
+		   </div>
 		 </div>
 		 <div class="cmmatch_location">
 		   <?php echo $item->location; ?>
