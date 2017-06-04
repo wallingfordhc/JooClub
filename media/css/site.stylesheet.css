@@ -70,6 +70,8 @@
 
 .cmmatch_hometeam {
     line-height: 60px;
+    float: left;
+    clear: left;
 }
 
 .cmmatch_teamlogo {
@@ -88,8 +90,9 @@
 }
 
 .cmmatch_awayteam {
-   
     line-height: 60px;
+    float: left;
+    clear: left;
 }
 
 .cmmatch_awayteamname {
@@ -97,7 +100,7 @@
     float: left;
     
     text-align: right;
-    padding: 0px 15px 0px 0px;
+    padding: 0px 15px 0px 10px;
 }
 
 .cmmatch_homescore {

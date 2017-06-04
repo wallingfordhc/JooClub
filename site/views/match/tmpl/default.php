@@ -40,5 +40,11 @@
 		   <?php echo $item->status; ?>
 		 </div>
       </div>
+	  <div class=cmmatch_players>
+	    <div class=cmatch_playerstitle>
+		Players
+	    </div>
+		<div>
+	  </div>
    <?php endforeach; ?>
 </div>
