@@ -6,7 +6,7 @@ defined('_JEXEC') or die;
       
       <tbody>
       <?php 
-	  $groupdate=null;
+	  $group_date=null;
 	  foreach ($this->items as $i => $item) :
 	  if ($group_date !== substr($item->pushback, 0, 10)) {
         $group_date = substr($item->pushback, 0, 10);

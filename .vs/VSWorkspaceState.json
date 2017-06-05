@@ -1,17 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\admin",
     "\\admin\\controllers",
     "\\admin\\models",
     "\\admin\\models\\forms",
     "\\media",
     "\\media\\css",
     "\\site",
-    "\\site\\controllers",
-    "\\site\\models",
     "\\site\\views",
     "\\site\\views\\match",
     "\\site\\views\\match\\tmpl"
   ],
+  "SelectedNode": "\\site\\views\\match\\view.html.php",
   "PreviewInSolutionExplorer": true
 }

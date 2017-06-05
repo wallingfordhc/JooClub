@@ -4,7 +4,7 @@ defined('_JEXEC') or die;
 class clubmanagerViewmatch extends JViewLegacy
 {
    protected $matchitems;
-   protected $playeritems;
+   protected $playersitems;
 
    public function display($tpl = null)
    {
@@ -25,9 +25,9 @@ class clubmanagerViewmatch extends JViewLegacy
 	  //  sets default model
         $this->setModel( $this->getModel( 'match' ), true );
 //  sets second model & uses 'JModelLegacy,' contrary to documentation
-        $this->setModel(JModelLegacy::getInstance('player', 'clubmanagerModel'));
+        $this->setModel(JModelLegacy::getInstance('players', 'clubmanagerModel'));
 //  assigns array from the second model to 'ItemsOtherModel.' there is no '$' sign used.
-        $this->playeritems = $this->get('Items','player');
+        $this->players items = $this->get('Items','players');
 
       parent::display($tpl);
    }
