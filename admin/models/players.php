@@ -46,7 +46,7 @@ class clubmanagerModelplayers extends JModelList
     $query->from($db->quoteName('#__cmperson').' AS p');
 	$query->join('LEFT', $db->quoteName('#__cmgrouproster', 'gr') . ' ON (' . $db->quoteName('p.personID') . ' = ' . $db->quoteName('gr.personID') . ')');
 	$query->join('LEFT', $db->quoteName('#__cmgroup', 'g') . ' ON (' . $db->quoteName('gr.groupID') . ' = ' . $db->quoteName('g.groupID') . ')');
-	$query->join('LEFT', $db->quoteName('#__cmlocation', 'l') . ' ON (' . $db->quoteName('m.locationID') . ' = ' . $db->quoteName('l.locationID') . ')');
+	
     
 	// Filter by search in title
     $search = $this->getState('filter.search');
