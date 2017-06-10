@@ -19,6 +19,10 @@
     <field name="status" type="text"  size="20"
                label="COM_CLUBMANGER_STATUS_LABEL"
                description="COM_CLUBMANAGER_STATUS_LABEL_DESC" />
+    <field name="gender" type="text"  size="5"
+           label="COM_CLUBMANGER_GENDER_LABEL"
+           description="COM_CLUBMANAGER_GENDER_LABEL_DESC" />
+
 
     <field name="DOB" type="calendar" default="1980-01-01"
            label="COM_CLUBMANAGER_DOB_LABEL"
