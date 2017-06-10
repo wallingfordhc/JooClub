@@ -74,7 +74,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
           </td>
 		  
           <td class="nowrap has-context">
-            <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=match.edit&personID='.(int) $item->personID); ?>">
+            <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=player.edit&personID='.(int) $item->personID); ?>">
               <?php echo $this->escape($item->firstname); ?>
             </a>
           </td>
