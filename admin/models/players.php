@@ -41,6 +41,7 @@ class clubmanagerModelplayers extends JModelList
 	  ->select($db->quoteName('p.email','email'))
 	  ->select($db->quoteName('p.phonenumber','phone'))
 	  ->select($db->quoteName('p.shirtnumber','shirtnumber'))
+	  ->select($db->quoteName('p.gender','gender'))
 	  ;
 
     $query->from($db->quoteName('#__cmperson').' AS p');

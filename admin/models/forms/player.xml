@@ -8,6 +8,7 @@
     <field name="memberID" type="sql" default="0"
   label="COM_CLUBMANAGER_FIELD_MEMBERID_LABEL"
   description="COM_CLUBMANAGER_FIELD_MEMEBRID_DESC"
+           header="COM_CLUBMANAGER_SELECT_MEMEBR"
   query="SELECT id AS value, CONCAT('(',id,') ',name) AS memberID FROM #__users" />
 
     <field name="firstname" type="text"  size="20"
@@ -19,9 +20,19 @@
     <field name="status" type="text"  size="20"
                label="COM_CLUBMANGER_STATUS_LABEL"
                description="COM_CLUBMANAGER_STATUS_LABEL_DESC" />
-    <field name="gender" type="text"  size="5"
+    <field name="mylistvalue" type="list" default="" required="true" label="Select an option" description="">
+      <option value="">Please Select</option>
+      <option value="0">Option 1</option>
+      <option value="1">Option 2</option>
+    </field>
+
+    <field name="gender" type="list"  default="" size="10"
            label="COM_CLUBMANGER_GENDER_LABEL"
-           description="COM_CLUBMANAGER_GENDER_LABEL_DESC" />
+           description="COM_CLUBMANAGER_GENDER_LABEL_DESC">
+      <option value="">Please select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      </field>
 
 
     <field name="DOB" type="calendar" default="1980-01-01"
