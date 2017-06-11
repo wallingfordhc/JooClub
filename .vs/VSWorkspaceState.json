@@ -2,17 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\admin",
+    "\\admin\\controllers",
+    "\\admin\\models",
     "\\admin\\models\\forms",
+    "\\admin\\tables",
     "\\admin\\views",
-    "\\admin\\views\\clubmanager",
-    "\\admin\\views\\clubmanager\\tmpl",
-    "\\admin\\views\\matches",
-    "\\admin\\views\\matches\\tmpl",
+    "\\admin\\views\\players",
+    "\\admin\\views\\players\\tmpl",
+    "\\admin\\views\\player\\tmpl",
     "\\site",
-    "\\site\\views",
-    "\\site\\views\\clubmanager",
-    "\\site\\views\\clubmanager\\tmpl"
+    "\\site\\models"
   ],
-  "SelectedNode": "\\admin\\views\\matches\\tmpl\\default.php",
   "PreviewInSolutionExplorer": true
 }

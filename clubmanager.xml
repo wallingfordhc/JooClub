@@ -61,6 +61,7 @@
       <menu link="option=com_clubmanager&amp;view=groups">Groups</menu>
       <menu link="option=com_clubmanager&amp;view=matches">matches</menu>
       <menu link="option=com_clubmanager&amp;view=attendance">Attendance</menu>
+      <menu link="option=com_clubmanager&amp;view=playerattendance">Player_Attendance</menu>
     </submenu>
     <!-- Administration Main File Copy Section -->
     <!-- Note the folder attribute: This attribute describes the folder
