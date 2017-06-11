@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class clubmanagerViewplayer extends JViewLegacy
+class clubmanagerViewplayerattendance extends JViewLegacy
 {
   protected $item;
 
@@ -26,7 +26,7 @@ class clubmanagerViewplayer extends JViewLegacy
   {
     JFactory::getApplication()->input->set('hidemainmenu', true);
 
-    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_PLAYER'), '');
+    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_PLAYERATTENDANCE'), '');
 
     JToolbarHelper::save('player.save');
 
