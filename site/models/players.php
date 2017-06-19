@@ -56,7 +56,7 @@ class clubmanagerModelplayers extends JModelList
 
 	$matchsubquery = $db->getQuery(true);
 	$matchsubquery
-	  ->select($db->quoteName('m.personID'))
+	  ->select($db->quoteName('a.personID'))
 	  ->from($db->quoteName('#__cmattendance').' AS a')
 	  ->where($db->quoteName('a.matchID').'='.$db->quote($matchid));
 
@@ -68,7 +68,7 @@ class clubmanagerModelplayers extends JModelList
     // find people associated with the particular group
 	$matchsubquery = $db->getQuery(true);
 	$matchsubquery
-	  ->select($db->quoteName('m.personID'))
+	  ->select($db->quoteName('gr.personID'))
 	  ->from($db->quoteName('#__cmgrouproster').' AS gr')
 	  ->where($db->quoteName('gr.groupID').'='.$db->quote($groupid));
 
