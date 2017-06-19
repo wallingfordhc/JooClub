@@ -61,7 +61,7 @@ class clubmanagerModelplayers extends JModelList
 	  ->where($db->quoteName('a.matchID').'='.$db->quote($matchid));
 
 	// find people associated with the match with matchid = $matchID - those with an entry in the attendance table (to be added --- OR those associated with the Group playing the match)
-    $query->where($db->quoteName('p.personID'.' IN (' .$matchsubquery.')','AND'));
+    $query->where($db->quoteName('p.personID').' IN (' .$matchsubquery.')','AND');
 	}
 
 	if (!empty($groupid)) {
@@ -73,7 +73,7 @@ class clubmanagerModelplayers extends JModelList
 	  ->where($db->quoteName('gr.groupID').'='.$db->quote($groupid));
 
 	// find people associated with the match with matchid = $matchID - those with an entry in the attendance table (to be added --- OR those associated with the Group playing the match)
-    $query->where($db->quoteName('p.personID'.' IN (' .$matchsubquery.')','AND'));
+    $query->where($db->quoteName('p.personID').' IN (' .$matchsubquery.')','AND');
 
 	}
     
