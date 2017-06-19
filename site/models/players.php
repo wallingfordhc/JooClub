@@ -47,7 +47,21 @@ class clubmanagerModelplayers extends JModelList
     $query->from($db->quoteName('#__cmperson').' AS p');
 	$query->join('LEFT', $db->quoteName('#__cmgrouproster', 'gr') . ' ON (' . $db->quoteName('p.personID') . ' = ' . $db->quoteName('gr.personID') . ')');
 	$query->join('LEFT', $db->quoteName('#__cmgroup', 'g') . ' ON (' . $db->quoteName('gr.groupID') . ' = ' . $db->quoteName('g.groupID') . ')');
+	$query->join('LEFT', $db->quoteName('#__cmmatch', 'm') . ' ON (' . $db->quoteName('m.groupID') . ' = ' . $db->quoteName('g.groupID') . ')');
+
 	
+	// Filter by fields in URL
+
+	$matchid= JRequest::getInt('matchID');
+	$groupid= JRequest::getInt('groupID');
+
+	if (!empty($matchid)) {
+    $query->where('m.matchid= '.(int) $matchid,'AND');
+	}
+
+	if (!empty($groupid)) {
+    $query->where('g.groupid= '.(int) $groupid,'AND');
+	}
     
 	// Filter by search in title
     $search = $this->getState('filter.search');
@@ -58,7 +72,7 @@ class clubmanagerModelplayers extends JModelList
         $query->where('personID= '.(int) substr($search, 3));
       } else {
         $search = $db->Quote('%'.$db->escape($search, true).'%');
-        $query->where('(p.firstname LIKE '.$search.' OR p.surname LIKE '.$search.' OR g.groupname LIKE '.$search.')');
+        $query->where('(p.firstname LIKE '.$search.' OR p.surname LIKE '.$search.' OR g.groupname LIKE '.$search.')','AND');
       }
 	}
 
