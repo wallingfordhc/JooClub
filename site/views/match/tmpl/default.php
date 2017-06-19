@@ -42,7 +42,7 @@
       </div>
 	  <?php endforeach; ?>
 
-	<?php foreach ($this->playeritems as $item2) : ?>
+	<?php foreach ($this->playersitems as $item2) : ?>
 	  <div class=cmmatch_players>
 	    <div class=cmatch_playerstitle>
 		Players
