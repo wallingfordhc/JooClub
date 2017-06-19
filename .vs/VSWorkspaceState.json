@@ -9,8 +9,7 @@
     "\\admin\\views",
     "\\admin\\views\\playerattendance",
     "\\admin\\views\\playerattendance\\tmpl",
-    "\\admin\\views\\players",
-    "\\admin\\views\\player\\tmpl"
+    "\\admin\\views\\players"
   ],
   "SelectedNode": "\\admin\\models\\matches.php",
   "PreviewInSolutionExplorer": true

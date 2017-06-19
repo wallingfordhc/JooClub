@@ -40,11 +40,18 @@
 		   <?php echo $item->status; ?>
 		 </div>
       </div>
+	  <?php endforeach; ?>
+
+	<?php foreach ($this->playeritems as $item2) : ?>
 	  <div class=cmmatch_players>
 	    <div class=cmatch_playerstitle>
 		Players
 	    </div>
+		<div class="cmmatch_firstname">
+		   <?php echo $item2->status; ?>
+		 </div>
 		<div>
 	  </div>
+
    <?php endforeach; ?>
 </div>
