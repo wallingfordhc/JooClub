@@ -3,14 +3,13 @@ defined('_JEXEC') or die;
 
 class clubmanagerViewplayerattendance extends JViewLegacy
 {
-  protected $item;
-
-  protected $form;
+  protected $items;
+  protected $state;
 
   public function display($tpl = null)
   {
-    $this->item    = $this->get('Item');
-    $this->form    = $this->get('Form');
+    $this->items = $this->get('Items');
+	$this->state = $this->get('State');
 
     if (count($errors = $this->get('Errors')))
     {
@@ -24,19 +23,25 @@ class clubmanagerViewplayerattendance extends JViewLegacy
 
   protected function addToolbar()
   {
-    JFactory::getApplication()->input->set('hidemainmenu', true);
+    $canDo  = clubmanagerHelper::getActions();
+    $bar = JToolBar::getInstance('toolbar');
 
-    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_PLAYERATTENDANCE'), '');
+    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_players'), '');
 
-    JToolbarHelper::save('player.save');
+    JToolbarHelper::addNew('player.add');
 
-    if (empty($this->item->matchID))
+    if ($canDo->get('core.edit'))
     {
-      JToolbarHelper::cancel('player.cancel');
+      JToolbarHelper::editList('player.edit');
     }
-    else
+	if ($canDo->get('core.delete'))
     {
-      JToolbarHelper::cancel('player.cancel', 'JTOOLBAR_CLOSE');
+      JToolBarHelper::deleteList('Are you sure?', 'players.delete', 'JTOOLBAR_DELETE');
+    }
+    if ($canDo->get('core.admin'))
+    {
+      JToolbarHelper::preferences('com_clubmanager');
     }
   }
+  
 }

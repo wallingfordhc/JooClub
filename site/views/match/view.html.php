@@ -27,7 +27,7 @@ class clubmanagerViewmatch extends JViewLegacy
 //  sets second model & uses 'JModelLegacy,' contrary to documentation
         $this->setModel(JModelLegacy::getInstance('players', 'clubmanagerModel'));
 //  assigns array from the second model to 'ItemsOtherModel.' there is no '$' sign used.
-        $this->players items = $this->get('Items','players');
+        $this->playersitems = $this->get('Items','players');
 
       parent::display($tpl);
    }
