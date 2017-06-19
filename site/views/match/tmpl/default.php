@@ -1,7 +1,7 @@
 <?php defined('_JEXEC') or die; ?>
 
 <div class=cmmatch >
-   <?php foreach ($this->items as $item) : ?>
+   <?php foreach ($this->matchitemsitems as $item) : ?>
       <div class=cmmatch_result >
          <div class="cmmatch_pushbacktime" >
             <?php 
