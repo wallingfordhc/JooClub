@@ -56,24 +56,24 @@ class clubmanagerModelplayers extends JModelList
 
 	$matchsubquery = $db->getQuery(true);
 	$matchsubquery
-	  ->select($db->quoteName('m.personid'))
+	  ->select($db->quoteName('m.personID'))
 	  ->from($db->quoteName('#__cmattendance').' AS a')
-	  ->where($db->quoteName('a.matchid').'='.$db->quote($matchid));
+	  ->where($db->quoteName('a.matchID').'='.$db->quote($matchid));
 
 	// find people associated with the match with matchid = $matchID - those with an entry in the attendance table (to be added --- OR those associated with the Group playing the match)
-    $query->where($db->quoteName('p.personid'.' IN (' .$matchsubquery.')','AND'));
+    $query->where($db->quoteName('p.personID'.' IN (' .$matchsubquery.')','AND'));
 	}
 
 	if (!empty($groupid)) {
     // find people associated with the particular group
 	$matchsubquery = $db->getQuery(true);
 	$matchsubquery
-	  ->select($db->quoteName('m.personid'))
+	  ->select($db->quoteName('m.personID'))
 	  ->from($db->quoteName('#__cmgrouproster').' AS gr')
-	  ->where($db->quoteName('gr.groupid').'='.$db->quote($groupid));
+	  ->where($db->quoteName('gr.groupID').'='.$db->quote($groupid));
 
 	// find people associated with the match with matchid = $matchID - those with an entry in the attendance table (to be added --- OR those associated with the Group playing the match)
-    $query->where($db->quoteName('p.personid'.' IN (' .$matchsubquery.')','AND'));
+    $query->where($db->quoteName('p.personID'.' IN (' .$matchsubquery.')','AND'));
 
 	}
     
