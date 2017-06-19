@@ -35,7 +35,7 @@ class clubmanagerModelmatch extends JModelList
 	}
 
 	if (!empty($groupid)) {
-    $query->where('h.groupid= '.(int) $groupid.'OR a.groupid= '.(int) $groupid,'AND');
+    $query->where('(h.groupid= '.(int) $groupid.' OR a.groupid= '.(int) $groupid.')','AND');
 	}
     
 	$query->join('LEFT', $db->quoteName('#__cmgroup', 'h') . ' ON (' . $db->quoteName('m.hometeamID') . ' = ' . $db->quoteName('h.groupID') . ')');
