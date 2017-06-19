@@ -52,8 +52,8 @@
 		<div class="cmmatch_firstname">
 		   <?php echo $item2->firstname; ?>
 		 </div>
-		 <div class="cmmatch_firstname">
-		   <?php echo $item2->firstname; ?>
+		 <div class="cmmatch_surname">
+		   <?php echo $item2->surname; ?>
 		 </div>
 
   </div>
