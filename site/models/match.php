@@ -28,8 +28,9 @@ class clubmanagerModelmatch extends JModelList
 	  ->select($db->quoteName('m.status','status'));
 
     $query->from($db->quoteName('#__cmmatch').' AS m');
-	
+	if (!empty($id)) {
     $query->where('m.matchid= '.(int) $id);
+	}
     
 	$query->join('LEFT', $db->quoteName('#__cmgroup', 'h') . ' ON (' . $db->quoteName('m.hometeamID') . ' = ' . $db->quoteName('h.groupID') . ')');
 	$query->join('LEFT', $db->quoteName('#__cmgroup', 'a') . ' ON (' . $db->quoteName('m.awayteamID') . ' = ' . $db->quoteName('a.groupID') . ')');
