@@ -123,6 +123,9 @@
     float: left;
 }
 
+.cmmatch_players {
+    float:left;
+    background: #ffffff;
 }
 
 .cmmatch_location {

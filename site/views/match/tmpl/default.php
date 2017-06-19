@@ -42,13 +42,15 @@
       </div>
 	  <?php endforeach; ?>
 
-	<?php foreach ($this->playersitems as $item2) : ?>
-	  <div class=cmmatch_players>
-	    <div class=cmatch_playerstitle>
+	  <div class=cmatch_playerstitle>
 		Players
 	    </div>
+
+	<?php foreach ($this->playersitems as $item2) : ?>
+	  <div class=cmmatch_players>
+	    
 		<div class="cmmatch_firstname">
-		   <?php echo $item2->status; ?>
+		   <?php echo $item2->firstname; ?>
 		 </div>
 		<div>
 	  </div>
