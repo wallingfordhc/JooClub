@@ -65,7 +65,16 @@ class clubmanagerModelplayers extends JModelList
 	}
 
 	if (!empty($groupid)) {
-    // find peopl associated with the particular group
+    // find people associated with the particular group
+	$matchsubquery = $db->getQuery(true);
+	$matchsubquery
+	  ->select($db->quoteName('m.personid'))
+	  ->from($db->quoteName('#__cmgrouproster').' AS gr')
+	  ->where($db->quoteName('gr.groupid').'='.$groupid);
+
+	// find people associated with the match with matchid = $matchID - those with an entry in the attendance table (to be added --- OR those associated with the Group playing the match)
+    $query->where($db->quoteName('p.personid'.' IN (' .$matchsubquery.')','AND');
+
 	}
     
 	// Filter by search in title
