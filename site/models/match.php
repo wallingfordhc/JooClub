@@ -13,7 +13,7 @@ class clubmanagerModelmatch extends JModelList
   {
     $db    = $this->getDbo();
     $query  = $db->getQuery(true);
-	$id= JRequest::getInt('matchID');
+	$matchid= JRequest::getInt('matchID');
 
     $query
 	 
@@ -28,8 +28,9 @@ class clubmanagerModelmatch extends JModelList
 	  ->select($db->quoteName('m.status','status'));
 
     $query->from($db->quoteName('#__cmmatch').' AS m');
-	if (!empty($id)) {
-    $query->where('m.matchid= '.(int) $id);
+	
+	if (!empty($matchid)) {
+    $query->where('m.matchid= '.(int) $matchid,'AND');
 	}
     
 	$query->join('LEFT', $db->quoteName('#__cmgroup', 'h') . ' ON (' . $db->quoteName('m.hometeamID') . ' = ' . $db->quoteName('h.groupID') . ')');
