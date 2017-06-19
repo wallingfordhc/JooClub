@@ -52,6 +52,10 @@
 		<div class="cmmatch_firstname">
 		   <?php echo $item2->firstname; ?>
 		 </div>
+		 <div class="cmmatch_firstname">
+		   <?php echo $item2->firstname; ?>
+		 </div>
+
   </div>
 
    <?php endforeach; ?>

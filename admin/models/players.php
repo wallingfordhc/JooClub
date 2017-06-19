@@ -37,7 +37,6 @@ class clubmanagerModelplayers extends JModelList
 	  ->select($db->quoteName('p.personID','personID'))
 	  ->select($db->quoteName('p.firstname','firstname'))
 	  ->select($db->quoteName('p.surname','surname'))
-	  ->select($db->quoteName('g.groupname','groupname'))
 	  ->select($db->quoteName('p.email','email'))
 	  ->select($db->quoteName('p.phonenumber','phone'))
 	  ->select($db->quoteName('p.shirtnumber','shirtnumber'))
@@ -45,8 +44,6 @@ class clubmanagerModelplayers extends JModelList
 	  ;
 
     $query->from($db->quoteName('#__cmperson').' AS p');
-	$query->join('LEFT', $db->quoteName('#__cmgrouproster', 'gr') . ' ON (' . $db->quoteName('p.personID') . ' = ' . $db->quoteName('gr.personID') . ')');
-	$query->join('LEFT', $db->quoteName('#__cmgroup', 'g') . ' ON (' . $db->quoteName('gr.groupID') . ' = ' . $db->quoteName('g.groupID') . ')');
 	
     
 	// Filter by search in title

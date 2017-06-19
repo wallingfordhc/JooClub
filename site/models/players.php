@@ -37,7 +37,6 @@ class clubmanagerModelplayers extends JModelList
 	  ->select($db->quoteName('p.personID','personID'))
 	  ->select($db->quoteName('p.firstname','firstname'))
 	  ->select($db->quoteName('p.surname','surname'))
-	  ->select($db->quoteName('g.groupname','groupname'))
 	  ->select($db->quoteName('p.email','email'))
 	  ->select($db->quoteName('p.phonenumber','phone'))
 	  ->select($db->quoteName('p.shirtnumber','shirtnumber'))
@@ -45,9 +44,7 @@ class clubmanagerModelplayers extends JModelList
 	  ;
 
     $query->from($db->quoteName('#__cmperson').' AS p');
-	$query->join('LEFT', $db->quoteName('#__cmgrouproster', 'gr') . ' ON (' . $db->quoteName('p.personID') . ' = ' . $db->quoteName('gr.personID') . ')');
-	$query->join('LEFT', $db->quoteName('#__cmgroup', 'g') . ' ON (' . $db->quoteName('gr.groupID') . ' = ' . $db->quoteName('g.groupID') . ')');
-	$query->join('LEFT', $db->quoteName('#__cmmatch', 'm') . ' ON (' . $db->quoteName('m.groupID') . ' = ' . $db->quoteName('g.groupID') . ')');
+	
 
 	
 	// Filter by fields in URL
@@ -56,11 +53,19 @@ class clubmanagerModelplayers extends JModelList
 	$groupid= JRequest::getInt('groupID');
 
 	if (!empty($matchid)) {
-    $query->where('m.matchid= '.(int) $matchid,'AND');
+
+	$matchsubquery = $db->getQuery(true);
+	$matchsubquery
+	  ->select($db->quoteName('m.personid'))
+	  ->from($db->quoteName('#__cmattendance').' AS a')
+	  ->where($db->quoteName('a.matchid').'='.$matchid);
+
+	// find people associated with the match with matchid = $matchID - those with an entry in the attendance table (to be added --- OR those associated with the Group playing the match)
+    $query->where($db->quoteName('p.personid'.' IN (' .$matchsubquery.')','AND');
 	}
 
 	if (!empty($groupid)) {
-    $query->where('g.groupid= '.(int) $groupid,'AND');
+    // find peopl associated with the particular group
 	}
     
 	// Filter by search in title
@@ -72,7 +77,7 @@ class clubmanagerModelplayers extends JModelList
         $query->where('personID= '.(int) substr($search, 3));
       } else {
         $search = $db->Quote('%'.$db->escape($search, true).'%');
-        $query->where('(p.firstname LIKE '.$search.' OR p.surname LIKE '.$search.' OR g.groupname LIKE '.$search.')','AND');
+        $query->where('(p.firstname LIKE '.$search.' OR p.surname LIKE '.$search.')','AND');
       }
 	}
 
