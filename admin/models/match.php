@@ -44,7 +44,7 @@ class clubmanagerModelmatch extends JModelAdmin
 	{
  
 		// perform whatever you want on each item checked in the list
- echoo 'Hello Hello';
+ echo 'Hello Hello';
 		return true;
  
 	}
