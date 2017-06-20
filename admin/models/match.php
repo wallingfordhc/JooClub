@@ -40,11 +40,29 @@ class clubmanagerModelmatch extends JModelAdmin
     $table->hometeamID    = htmlspecialchars_decode($table->hometeamID, ENT_QUOTES);
   }
 
-  public function extrahello($pks)
+  public function finalscore($pks)
 	{
  
 		// perform whatever you want on each item checked in the list
- echo 'Hello Hello';
+ $db = JFactory::getDbo();
+ 
+$query = $db->getQuery(true);
+ 
+// Fields to update.
+$fields = array(
+    $db->quoteName('status') . ' = ' . $db->quote('Full Time')
+);
+ 
+// Conditions for which records should be updated.
+$conditions = array(
+    $db->quoteName('matchID') . 'IN ('. implode(',',$pks).')' 
+);
+ 
+$query->update($db->quoteName('#__cmmatches'))->set($fields)->where($conditions);
+ 
+$db->setQuery($query);
+ 
+$result = $db->execute();
 		return true;
  
 	}
