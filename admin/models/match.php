@@ -39,4 +39,13 @@ class clubmanagerModelmatch extends JModelAdmin
   {
     $table->hometeamID    = htmlspecialchars_decode($table->hometeamID, ENT_QUOTES);
   }
+
+  public function extrahello($pks)
+	{
+ 
+		// perform whatever you want on each item checked in the list
+ echoo 'Hello Hello';
+		return true;
+ 
+	}
 }

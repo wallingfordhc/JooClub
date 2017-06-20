@@ -42,6 +42,9 @@ class clubmanagerViewmatches extends JViewLegacy
     {
       JToolbarHelper::preferences('com_clubmanager');
     }
+
+	// testing adding another toolbar button
+	JToolBarHelper::custom('matches.extrahello', 'extrahello.png', 'extrahello_f2.png', 'Extra Hello', true);
   }
   
 }
