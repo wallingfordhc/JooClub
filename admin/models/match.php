@@ -58,7 +58,7 @@ $conditions = array(
     $db->quoteName('matchID') . 'IN ('. implode(',',$pks).')' 
 );
  
-$query->update($db->quoteName('#__cmmatches'))->set($fields)->where($conditions);
+$query->update($db->quoteName('#__cmmatch'))->set($fields)->where($conditions);
  
 $db->setQuery($query);
  
