@@ -42,6 +42,12 @@ class clubmanagerModelmatch extends JModelAdmin
 
   public function finalscore($pks)
 	{
+
+	if (empty($pks))
+	{
+	$this->setError(JText::_('NO_MATCHIDS_SELECTED'));
+	return FALSE;
+	}
  
 		// perform whatever you want on each item checked in the list
  $db = JFactory::getDbo();
@@ -63,7 +69,8 @@ $query->update($db->quoteName('#__cmmatch'))->set($fields)->where($conditions);
 $db->setQuery($query);
  
 $result = $db->execute();
-		return true;
+		echo 'Hello Hello Hello';
+		//return true;
  
 	}
 }
