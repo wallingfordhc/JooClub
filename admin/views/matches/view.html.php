@@ -44,7 +44,7 @@ class clubmanagerViewmatches extends JViewLegacy
     }
 
 	// testing adding another toolbar button
-	JToolBarHelper::custom('matches.finalscore', 'extrahello.png', 'extrahello_f2.png', 'Extra Hello', true);
+	JToolBarHelper::custom('matches.finalscore', 'finalscore.png', 'finalscore_f2.png', 'Set Final Score', true);
   }
   
 }

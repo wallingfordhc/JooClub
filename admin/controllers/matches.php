@@ -23,7 +23,7 @@ class clubmanagerControllermatches extends JControllerAdmin
 		// Get the model
 		$model = $this->getModel();
  
-		$return = $model->extrahello($pks);
+		$return = $model->finalscore($pks);
  
 		// Redirect to the list screen.
 		$this->setRedirect(JRoute::_('index.php?option=com_clubmanager&view=matches', false));
