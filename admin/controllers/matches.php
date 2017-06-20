@@ -10,12 +10,12 @@ class clubmanagerControllermatches extends JControllerAdmin
   }
 
   // adds an extra button to the matches toolbar
-  public function extrahello()
+  public function finalscore()
 	{
  
 		// Get the input
 		$input = JFactory::getApplication()->input;
-		$pks = $input->post->get('cid', array(), 'array');
+		$pks = $input->post->get('matchID', array(), 'array');
  
 		// Sanitize the input
 		JArrayHelper::toInteger($pks);
