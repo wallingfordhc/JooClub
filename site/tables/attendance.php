@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class clubmanagerTablematch extends JTable
+class clubmanagerTableattendance extends JTable
 {
   public function __construct(&$db)
   {
