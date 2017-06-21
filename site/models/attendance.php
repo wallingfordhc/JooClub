@@ -5,7 +5,7 @@ class clubmanagerModelattendance extends JModelAdmin
 {
   protected $text_prefix = 'COM_CLUBMANAGER';
 
-  public function getTable($type = 'attendnace', $prefix = 'clubmanagerTable', $config = array())
+  public function getTable($type = 'attendance', $prefix = 'clubmanagerTable', $config = array())
   {
     return JTable::getInstance($type, $prefix, $config);
   }
