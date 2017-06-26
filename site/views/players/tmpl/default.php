@@ -5,7 +5,7 @@ $listOrder = $this->escape($this->state->get('list.ordering'));
 $listDirn = $this->escape($this->state->get('list.direction'));
 ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_clubmanager&view=matches'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_clubmanager&view=players'); ?>" method="post" name="adminForm" id="adminForm">
   <div id="j-main-container" class="span10">
 
   <div id="filter-bar" class="btn-toolbar">
@@ -34,7 +34,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
 -        </select>
 -      </div>
     <div class="clearfix"> </div>
-    <table class="table table-striped" id="matchList">
+    <table class="table table-striped" id="playerList">
       <thead>
         <tr>
           <th width="1%" class="hidden-phone">
@@ -42,22 +42,22 @@ $listDirn = $this->escape($this->state->get('list.direction'));
           </th>
 		  
           <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_HOMETEAM_TITLE', 'hometeamname', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_FIRSTNAME_TITLE', 'firstname', $listDirn, $listOrder); ?>
           </th>
 		  <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_HOMETEAM_SCORE', 'homescore', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_SURNAME_TITLE', 'surname', $listDirn, $listOrder); ?>
           </th>
 		  <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_AWAYTEAM_SCORE', 'awayscore', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PERSON_EMAIL', 'email', $listDirn, $listOrder); ?>
           </th>
 		  <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_AWAYTEAM_TITLE', 'awayteamname', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PERSON_PHONE', 'phone', $listDirn, $listOrder); ?>
           </th>
 		  <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_LOCATION_TITLE', 'location', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PERSON_GENDER', 'gender', $listDirn, $listOrder); ?>
           </th>
 		  <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_matchesTATUS_TITLE', 'status', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PERSON_SHIRT', 'shirtnumber', $listDirn, $listOrder); ?>
           </th>
 		  
         </tr>
@@ -66,42 +66,36 @@ $listDirn = $this->escape($this->state->get('list.direction'));
       <?php 
 	  $group_date=null;
 	  foreach ($this->items as $i => $item) :
-
-	  if ($group_date !== substr($item->pushback, 0, 10)) {
-        $group_date = substr($item->pushback, 0, 10);
-        echo "<tr><td colspan=5><h1>$group_date</h1></td></tr>\n";
-    }
     
         ?>
         <tr class="row<?php echo $i % 2; ?>">
           <td class="center hidden-phone">
-            <?php echo JHtml::_('grid.id', $i, $item->matchID); ?>
+            <?php echo JHtml::_('grid.id', $i, $item->personID); ?>
           </td>
 		  
           <td class="nowrap has-context">
-            <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=match.edit&matchID='.(int) $item->matchID); ?>">
-              <?php echo $this->escape($item->hometeamname); ?>
+            <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=player.edit&personID='.(int) $item->personID); ?>">
+              <?php echo $this->escape($item->firstname); ?>
             </a>
           </td>
 		  <td class="nowrap has-context">
-              <?php echo $this->escape($item->homescore); ?>
+              <?php echo $this->escape($item->surname); ?>
             </a>
           </td>
 		  <td class="nowrap has-context">
-              <?php echo $this->escape($item->awayscore); ?>
+              <?php echo $this->escape($item->email); ?>
             </a>
           </td>
 		  <td class="nowrap has-context">
-              <?php echo $this->escape($item->awayteamname); ?>
+              <?php echo $this->escape($item->phone); ?>
             </a>
           </td>
 		  <td class="nowrap has-context">
-              <?php echo $this->escape($item->location); ?>
+              <?php echo $this->escape($item->gender); ?>
             </a>
           </td>
 		  <td class="nowrap has-context">
-				<?php echo JHtml::_('match.status', $row->status, $i);
-              <?php echo $this->escape($item->status); ?>
+              <?php echo $this->escape($item->shirtnumber); ?>
             </a>
           </td>
         </tr>

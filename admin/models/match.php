@@ -40,6 +40,7 @@ class clubmanagerModelmatch extends JModelAdmin
     $table->hometeamID    = htmlspecialchars_decode($table->hometeamID, ENT_QUOTES);
   }
 
+	// set the status field of the match
   public function finalscore($pks)
 	{
 

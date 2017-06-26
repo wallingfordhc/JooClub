@@ -39,6 +39,26 @@ class clubmanagerModelattendance extends JModelAdmin
   {
     $table->hometeamID    = htmlspecialchars_decode($table->hometeamID, ENT_QUOTES);
   }
-
+ 
+  //set the status field in the cmattendance table for a given array of attendanceIDs
+  function setattendance($attendanceID, $status)
+ {
+   if (count($attendanceID))
+   {
+     JArrayHelper::toInteger($attendanceID);
+    //create a comma separated lis of the array of IDs passed to the function
+     $attendanceIDs = implode(',',$attendanceID);
+     $query = 'UPDTE #__cmattendance'
+       . ' SET status = '.(int) $status
+       . ' WHERE attendanceID IN ( '.attendanceIDs' )';
+     $this->_db->setQuery($query);
+     if (!$this->_db->query())
+     {
+       $this->setError($this->_db->getErrorMsg());
+       return false;
+     }
+  return true;
+   }
+ }
   
 }
