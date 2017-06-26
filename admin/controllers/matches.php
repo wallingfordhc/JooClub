@@ -29,4 +29,36 @@ class clubmanagerControllermatches extends JControllerAdmin
 		$this->setRedirect(JRoute::_('index.php?option=com_clubmanager&view=matches', false));
  
 	}
+	
+	// method to change the status view of matches
+	
+	function status()
+	{
+		// initislise variables
+		$user = JFactory::getUser();
+		$ids = JRequest::getVar('cid', array(), '','array');
+		$values = array('future' => 1, 'finished' => 0);
+		$task = $this->getTask();
+		$value = JArrayHelper::getValue($values, $task , 0, 'int');
+		
+		if (empty($ids))
+		{
+			JError::raiseWarning(500, JText::_('JERROR_NO_ITEMS_SELECTED'));
+		}
+		else
+		{
+			// get the model
+			$model = $this->getModel('matches');
+			
+			// Publish the items
+			if (!model->status($ids, $value))
+			{
+				JError::raiseWarning(500, $model->getError());
+			}
+			
+		}
+		
+		$redirectTo = JRoute::_('index.php?option='.JRequest::getVar('option'));
+		$this->setRedirect($redirectTo);
+	}
 }

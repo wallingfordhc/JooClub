@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class clubmanagerViewplayers extends JViewLegacy
+class clubmanagerViewmatches extends JViewLegacy
 {
   protected $items;
   protected $state;
@@ -26,24 +26,25 @@ class clubmanagerViewplayers extends JViewLegacy
     $canDo  = clubmanagerHelper::getActions();
     $bar = JToolBar::getInstance('toolbar');
 
-    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_PLAYERS'), '');
+    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_matches'), '');
 
-    JToolbarHelper::addNew('player.add');
+    JToolbarHelper::addNew('match.add');
 
     if ($canDo->get('core.edit'))
     {
-      JToolbarHelper::editList('player.edit');
+      JToolbarHelper::editList('match.edit');
     }
 	if ($canDo->get('core.delete'))
     {
-      JToolBarHelper::deleteList('Are you sure?', 'players.delete', 'JTOOLBAR_DELETE');
+      JToolBarHelper::deleteList('Are you sure?', 'matches.delete', 'JTOOLBAR_DELETE');
     }
     if ($canDo->get('core.admin'))
     {
       JToolbarHelper::preferences('com_clubmanager');
     }
 
-	
+	// testing adding another toolbar button
+	JToolBarHelper::custom('matches.finalscore', 'finalscore.png', 'finalscore_f2.png', 'Set Final Score', true);
   }
   
 }
