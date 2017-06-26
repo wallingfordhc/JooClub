@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\admin",
-    "\\admin\\controllers",
     "\\admin\\models",
     "\\admin\\models\\forms",
-    "\\admin\\views",
-    "\\admin\\views\\matches",
-    "\\admin\\views\\matches\\tmpl",
-    "\\admin\\views\\players",
-    "\\site\\models"
+    "\\admin\\tables",
+    "\\site",
+    "\\site\\controllers",
+    "\\site\\models",
+    "\\site\\models\\forms",
+    "\\site\\tables"
   ],
+  "SelectedNode": "\\admin\\models\\forms\\match.xml",
   "PreviewInSolutionExplorer": true
 }
