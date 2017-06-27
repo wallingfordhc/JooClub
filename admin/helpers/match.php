@@ -8,7 +8,7 @@ abstract class JHtmlmatch
   // function that formats the drop down for changing the status of a match
   // $value is the current value of the status field
   // $i is the row number from the list
-  static function statusdd($value = 0,$i)
+  static function status($value = 0,$i)
   {
     // array of image, task to be called, alt text for image, title for the <a> 
     $states = array(
@@ -17,7 +17,7 @@ abstract class JHtmlmatch
     );
     
     // get the values from $states based on the int value passed in as $value, or $states[1] as a default
-    $state = JArrayHelper::getValues($states, (int) $value, $states[1]);
+    $state = JArrayHelper::getValue($states, (int) $value, $states[1]);
     
     // form the image part of the html return
     $html = JHtml::_('image','admin/'.$state[0], JText::_(state[2]),NULL,true);
