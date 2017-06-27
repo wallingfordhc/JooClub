@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-require_once JPATH_COMPONENT.'helpers/match.php';
+require_once JPATH_COMPONENT.'\helpers\match.php';
 
 class clubmanagerViewmatches extends JViewLegacy
 {
