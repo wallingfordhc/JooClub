@@ -20,7 +20,7 @@ abstract class JHtmlmatch
     $state = JArrayHelper::getValue($states, (int) $value, $states[1]);
     
     // form the image part of the html return
-    $html = JHtml::_('image','admin/'.$state[0], JText::_(state[2]),NULL,true);
+    $html = JHtml::_('image','admin/'.$state[0], JText::_($state[2]),NULL,true);
     
     // if the user can change the value add an <a> tag and the required onclick functionality
     //if ($canchange) {
@@ -33,18 +33,3 @@ abstract class JHtmlmatch
     return $html;
   }
 }
-
-/*
-
-html from contents page in joomla back end
-<td class="center nav-hover">
-  <div class="btn-group open">
-    <a class="btn btn-micro active hasTooltip" href="javascript:void(0);" onclick="return listItemTask('cb2','articles.unpublish')" title="" data-original-title="Published and is Current.<br />Start: 2017-06-03 11:51:29"><span class="icon-publish"></span></a>								
-    <a href="#" onclick="return listItemTask('cb2','articles.featured')" class="btn btn-micro hasTooltip" title="" data-original-title="Toggle featured status."><span class="icon-unfeatured"></span></a>								
-  <button data-toggle="dropdown" class="dropdown-toggle btn btn-micro"><span class="caret"></span><span class="element-invisible">Actions for: Wallingford Mens 1st XI take on the Hockey for Heroes team</span></button>
-    <ul class="dropdown-menu">
-    <li><a href="javascript://" onclick="listItemTask('cb2', 'articles.archive')"><span class="icon-archive"></span> Archive</a></li>
-    <li><a href="javascript://" onclick="listItemTask('cb2', 'articles.trash')"><span class="icon-trash"></span> Trash</a></li></ul>							
-    </div>
-</td>
-*/
