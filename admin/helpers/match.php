@@ -8,28 +8,30 @@ abstract class JHtmlmatch
   // function that formats the drop down for changing the status of a match
   // $value is the current value of the status field
   // $i is the row number from the list
-  static function status($value = 0,$i)
+  static function status($value = 'unset',$i)
   {
-    // array of image, task to be called, alt text for image, title for the <a> 
-    $states = array(
-      0 => array('future.png','future','Match is in the future','choose the match status'),
-      1 => array('completed.png','completed','Match has completed','choose the match status')
+    // array of allowed statuses image, task to be called, alt text for image, title for the <a>
+    $statuses = array(
+      'unset' => array('unset.png','unset','no status set','choose the match status'),
+      //'future' => array('future.png','unset','future match','choose the match status'),
+      //'underway' => array('underway.png','unset','underway','choose the match status'),
+      'cancelled' => array('cancelled.png','status','cancelled','choose the match status'),
+      'completed' => array('completed.png','finalscore','final score','choose the match status')
     );
     
     // get the values from $states based on the int value passed in as $value, or $states[1] as a default
-    $state = JArrayHelper::getValue($states, (int) $value, $states[1]);
-    
-    // form the image part of the html return
-    $html = JHtml::_('image','admin/'.$state[0], JText::_($state[2]),NULL,true);
-    
-    // if the user can change the value add an <a> tag and the required onclick functionality
-    //if ($canchange) {
-    
-    //listItemTask calls the task from the $state array against the row item given by $i - the task is in the 
-    $html = '<a href="#" onclick="return listItemTask(\'cb'.$i.'\',\''.$state[1].'\')" title="'.JText::_($state[3]).'">'
-      .$html.'</a>';
-   
-    //}
-    return $html;
+    //$currentstatus = JArrayHelper::getValue($states, (int) $value, $states[1]);
+
+	  $html = '
+<div class="btn-group">
+<button data-toggle="dropdown" class="dropdown-toggle btn btn-micro">
+<span class="caret"></span><span class="element-invisible">Actions for: Getting Started</span></button>
+<ul class="dropdown-menu">';
+
+	  foreach ($statuses as $status) :
+		  $html = $html.'<li><a href="javascript://" onclick=" return `listItemTask(\'cb'.$i.'\',\''.$status[1].'\')"><span class="icon-archive"></span>'.$status[2].'</a></li>';
+	  endforeach;
+    $html=$html.'</ul></div>';
+	  return $html;
   }
 }
