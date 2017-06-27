@@ -32,7 +32,12 @@ class clubmanagerControllermatches extends JControllerAdmin
 	
 	// method to change the status view of matches
 	// -- should be called from the list views to allow update of values in the list views
-	
+
+	/**
+	 *
+	 *
+	 * @since version
+	 */
 	function status()
 	{
 		// initislise variables
@@ -63,7 +68,7 @@ class clubmanagerControllermatches extends JControllerAdmin
 			$model = $this->getModel('matches');
 			
 			// Publish the items - call the status function in the model to update the values
-			if (!model->status($ids, $value))
+			if (!$model->status($ids, $value))
 			{
 				JError::raiseWarning(500, $model->getError());
 			}
