@@ -100,6 +100,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
             </a>
           </td>
 		  <td class="nowrap has-context">
+				// calls the helper class JHtmlmatch and runs the function status - returns some additionally formatted html
 				<?php echo JHtml::_('match.status', $row->status, $i);
               <?php echo $this->escape($item->status); ?>
             </a>

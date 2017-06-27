@@ -31,16 +31,28 @@ class clubmanagerControllermatches extends JControllerAdmin
 	}
 	
 	// method to change the status view of matches
+	// -- should be called from the list views to allow update of values in the list views
 	
 	function status()
 	{
 		// initislise variables
+		
+		//get current user object
 		$user = JFactory::getUser();
+		
+		//get array of ids to update
 		$ids = JRequest::getVar('cid', array(), '','array');
+		
+		//prepare an array of values to update the status to
 		$values = array('future' => 1, 'finished' => 0);
+		
+		// get the value of the requested task
 		$task = $this->getTask();
+		
+		// get the value to store associated with the given task - not sure this is the right approach
 		$value = JArrayHelper::getValue($values, $task , 0, 'int');
 		
+		//check to see if there are any ids passed
 		if (empty($ids))
 		{
 			JError::raiseWarning(500, JText::_('JERROR_NO_ITEMS_SELECTED'));
@@ -50,14 +62,14 @@ class clubmanagerControllermatches extends JControllerAdmin
 			// get the model
 			$model = $this->getModel('matches');
 			
-			// Publish the items
+			// Publish the items - call the status function in the model to update the values
 			if (!model->status($ids, $value))
 			{
 				JError::raiseWarning(500, $model->getError());
 			}
 			
 		}
-		
+		// reload the page based on teh option value in the request
 		$redirectTo = JRoute::_('index.php?option='.JRequest::getVar('option'));
 		$this->setRedirect($redirectTo);
 	}
