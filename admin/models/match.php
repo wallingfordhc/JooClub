@@ -70,8 +70,8 @@ $query->update($db->quoteName('#__cmmatch'))->set($fields)->where($conditions);
 $db->setQuery($query);
  
 $result = $db->execute();
-		echo 'Hello Hello Hello';
-		//return true;
+
+	  return true;
  
 	}
 }
