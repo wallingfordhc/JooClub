@@ -51,8 +51,8 @@ class clubmanagerModelplayers extends JModelList
 	
 	// TODO filter on only those records the user can see
 	// somethign like
- $personIDs = implode('\',\'',clubmanageraccess::personlist());
-        $query->where('(p.personID IN (\''.$personIDs.'\'))');
+ $allowedIDs = implode('\',\'',clubmanageraccess::personlist());
+        $query->where('(p.personID IN (\''.$allowedIDs.'\'))');
 	
 	// Filter by fields in URL
 
