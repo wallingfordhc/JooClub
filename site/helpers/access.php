@@ -37,7 +37,7 @@ $query  = $db->getQuery(true);
 	
 	
 	// if they are a registered user - should be everyone TODO check to ensure they are in good standing
-	if(in_array("Registered"),$levels)
+	if(in_array("Registered",$levels)
 		{
 		$query  = $db->getQuery(true);
 		$query
