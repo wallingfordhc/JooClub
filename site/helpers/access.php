@@ -14,6 +14,7 @@ defined('_JEXEC') or die('Restricted access');
 // uses the __cmconsent table which should contain a set of links between personID and CMS_userID
 
 class clubmanageraccess
+{
 
 function personlist($userID)
 {
@@ -35,4 +36,5 @@ function personlist($userID)
 	
 	return $query;
 
+}
 }
