@@ -23,7 +23,8 @@ function personlist($userID)
  // if no personID sent to the function set it to be the current user
 	if (empty($userID))
 	{
-	$userID = JFactory::getUser();
+	$user = JFactory::getUser();
+	$userID = $user->id;
 	}
 
 	$db    = JFactory::getDbo();
