@@ -48,7 +48,7 @@ $query  = $db->getQuery(true);
 		}
 
 	// if they are a team captain 
-	if (in_array("Team Captain",$levels)
+	if (in_array("Team Captain",$levels))
 		{
 		// append a list of all personIDs in the teamcaptains team
 		$query2 = $db->getQuery(true);
@@ -64,7 +64,7 @@ $query  = $db->getQuery(true);
 		}
 
 	//if they are a super user
-	if (in_array("Super Users",$levels)
+	if (in_array("Super Users",$levels))
 		{
 		// append a list of all personIDs
 		$query3 = $db->getQuery(true);
