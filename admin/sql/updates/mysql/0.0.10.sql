@@ -280,13 +280,6 @@ CREATE TABLE IF NOT EXISTS `#__cmscorer` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `#__cmleague`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `#__cmleague` (
-)
-ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `#__cmphoto`
