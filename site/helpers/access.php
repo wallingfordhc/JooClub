@@ -34,7 +34,11 @@ function personlist($userID)
 	  ->from($db->quoteName('#__cmconsent').' AS c')
 	  ->where('(c.cmsuserID LIKE '.$userID.')');
 	
-	return $query;
+	$db->setQuery($query);
+	// get the data from the first column using JDatabase
+	$results = $db->loadcolumn()
+
+	return $results;
 
 }
 }
