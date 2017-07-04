@@ -260,7 +260,6 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `#__cmscorer` (
   `scorerID` INT NOT NULL AUTO_INCREMENT,
-  `` VARCHAR(45) NULL,
   `matchID` INT NOT NULL,
   `personID` INT NOT NULL,
   `time` INT NULL,
