@@ -17,7 +17,7 @@ class clubmanagerController extends JControllerLegacy
 {
 public function display($cachable = false, $urlparams = false)
   {
-    require_once JPATH_COMPONENT.'/helpers/clubmanager2.php';
+    require_once JPATH_COMPONENT.'/helpers/access.php';
 
     // $view   = $this->input->get('view', 'matches');
     // $layout = $this->input->get('layout', 'default');

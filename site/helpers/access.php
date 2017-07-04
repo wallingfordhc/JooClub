@@ -26,7 +26,8 @@ function personlist($userID)
 	$userID = JFactory::getUser();
 	}
 
-	$db    = $this->getDbo();
+	$db    = JFactory::getDbo();
+
     $query  = $db->getQuery(true);
 
     $query
@@ -36,7 +37,7 @@ function personlist($userID)
 	
 	$db->setQuery($query);
 	// get the data from the first column using JDatabase
-	$results = $db->loadcolumn()
+	$results = $db->loadcolumn();
 
 	return $results;
 
