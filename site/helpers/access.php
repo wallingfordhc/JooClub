@@ -70,7 +70,8 @@ $query  = $db->getQuery(true);
 		$query3 = $db->getQuery(true);
 		$query3
 		->select($db->quoteName('p.personID','personID'))
-		->from(($db->quoteName('#__cmperson').' AS p')
+		->from(($db->quoteName('#__cmperson').' AS p');
+
 		$query->union($query3);
 		}
 	
