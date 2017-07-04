@@ -49,10 +49,9 @@ class clubmanagerModelplayers extends JModelList
 // chain the 'from' part of the query
     $query->from($db->quoteName('#__cmperson').' AS p');
 	
-	// TODO filter on only those records the user can see
-	// somethign like
- $allowedIDs = implode('\',\'',clubmanageraccess::personlist());
-        $query->where('(p.personID IN (\''.$allowedIDs.'\'))');
+	// get a subquery of the list of allowed personIDs
+ $subquery = clubmanageraccess::personlist();
+        $query->where('(p.personID IN ('.$subquery->__toString().'))');
 	
 	// Filter by fields in URL
 

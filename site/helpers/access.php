@@ -10,19 +10,19 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
  
-// provide a list of person_ids the given user can access
-// uses the __cmconsent table which should contain a set of links between personID and CMS_userID
+// provide a subquery that provides list of person_ids the given user can access
 
 class clubmanageraccess
 {
 
-function personlist($userID)
+
+function personlist($userID = null)
 {
 
 
- 
+
  // if no personID sent to the function set it to be the current user
-	if (empty($userID))
+	if (isempty($userID))
 	{
 	$user = JFactory::getUser();
 	$userID = $user->id;
@@ -33,11 +33,10 @@ $levels = JAccess::getAuthorisedViewLevels($userID);
 	
 // set up the database
 $db    = JFactory::getDbo();
-$query  = $db->getQuery(true);	
 	
 	
 	// if they are a registered user - should be everyone TODO check to ensure they are in good standing
-	if(in_array("Registered",$levels))
+	if(in_array("1",$levels))
 		{
 		$query  = $db->getQuery(true);
 		$query
@@ -64,7 +63,7 @@ $query  = $db->getQuery(true);
 		}
 
 	//if they are a super user
-	if (in_array("Super Users",$levels))
+	if (in_array(6,$levels))
 		{
 		// append a list of all personIDs
 		$query3 = $db->getQuery(true);
@@ -74,14 +73,8 @@ $query  = $db->getQuery(true);
 
 		$query->union($query3);
 		}
-	
-    
-	$db->setQuery($query);
-		// get the data from the first column using JDatabase
-		$results = $db->loadcolumn();
-    
 
-	return $results;
 
-}
+	return $query;
+
 }
