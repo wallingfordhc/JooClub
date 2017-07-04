@@ -28,11 +28,15 @@ class clubmanagerModelplayers extends JModelList
 	
   }
 
+  // return the data for the players this user can see
   protected function getListQuery()
   {
-    $db    = $this->getDbo();
+    // prepare for a database connection
+	$db    = $this->getDbo();
+	//set this as a new query
     $query  = $db->getQuery(true);
 
+	// set the select statement fo the query
     $query
 	  ->select($db->quoteName('p.personID','personID'))
 	  ->select($db->quoteName('p.firstname','firstname'))
@@ -42,9 +46,12 @@ class clubmanagerModelplayers extends JModelList
 	  ->select($db->quoteName('p.shirtnumber','shirtnumber'))
 	  ->select($db->quoteName('p.gender','gender'))
 	  ;
-
+// chain the 'from' part of the query
     $query->from($db->quoteName('#__cmperson').' AS p');
 	
+	// TODO filter on only those records the user can see
+	// somethign like
+	// $personID = 
 
 	
 	// Filter by fields in URL
