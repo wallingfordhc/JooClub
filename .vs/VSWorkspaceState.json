@@ -4,10 +4,12 @@
     "\\admin",
     "\\admin\\models\\forms",
     "\\site",
-    "\\site\\controllers",
+    "\\site\\helpers",
     "\\site\\models",
-    "\\site\\models\\forms",
-    "\\site\\tables"
+    "\\site\\views\\clubmanager\\tmpl",
+    "\\site\\views\\match\\tmpl",
+    "\\site\\views\\players",
+    "\\site\\views\\players\\tmpl"
   ],
   "PreviewInSolutionExplorer": true
 }
