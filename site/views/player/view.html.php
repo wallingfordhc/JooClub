@@ -18,7 +18,7 @@ class clubmanagerViewplayer extends JViewLegacy
       return false;
     }
 
-    $this->addToolbar();
+    //$this->addToolbar();
     parent::display($tpl);
   }
 
