@@ -48,5 +48,9 @@
            label="COM_CLUBMANGER_SHIRTNUMBER_LABEL"
            description="COM_CLUBMANAGER_SHIRTNUMBER_LABEL_DESC" />
 
+    <field name="img_url" type="file" size="40"
+           label="Image upload" 
+           description=""  accept="image/*"  />
+
   </fieldset>
 </form>
