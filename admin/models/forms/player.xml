@@ -7,8 +7,8 @@
 
     <field name="memberID" type="sql" default="0"
   label="COM_CLUBMANAGER_FIELD_MEMBERID_LABEL"
-  description="COM_CLUBMANAGER_FIELD_MEMEBRID_DESC"
-           header="COM_CLUBMANAGER_SELECT_MEMEBR"
+  description="COM_CLUBMANAGER_FIELD_MEMBERID_DESC"
+           header="COM_CLUBMANAGER_SELECT_MEMBER"
   query="SELECT id AS value, CONCAT('(',id,') ',name) AS memberID FROM #__users" />
 
     <field name="firstname" type="text"  size="20"
