@@ -4,7 +4,6 @@ defined('_JEXEC') or die;
 class clubmanagerViewplayer extends JViewLegacy
 {
   protected $item;
-
   protected $form;
 
   public function display($tpl = null)

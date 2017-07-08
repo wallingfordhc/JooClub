@@ -48,7 +48,7 @@ defined('_JEXEC') or die;
 
       <input type="hidden" name="task" value="" />
       <?php echo JHtml::_('form.token'); ?>
-
+	  <input type="submit" value="Update Record">
     <?php echo JHtml::_('bootstrap.endPane'); ?>
     </fieldset>
     </div>
