@@ -35,8 +35,8 @@ defined('_JEXEC') or die;
           <div class="controls"><?php echo $this->form->getInput('email'); ?></div>
         </div>
 	<div class = "control-group">
-          <div class="control-label"><?php echo $this->form->getLabel('img_url'); ?></div>
-          <div class="controls"><?php echo $this->form->getInput('img_url'); ?></div>
+          <div class="control-label"><?php echo $this->form->getLabel('profileimg_url'); ?></div>
+          <div class="controls"><?php echo $this->form->getInput('profileimg_url'); ?></div>
       </div>
 
 	

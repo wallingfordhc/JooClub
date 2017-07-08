@@ -26,7 +26,7 @@ class clubmanagerViewattendance extends JViewLegacy
   {
     JFactory::getApplication()->input->set('hidemainmenu', true);
 
-    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_MATCH'), '');
+    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_ATTENDANCE'), '');
 
     JToolbarHelper::save('attendance.save');
 
