@@ -3,7 +3,7 @@ defined('_JEXEC') or die;
 
 ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_clubmanager&layout=edit&personID='.(int) $this->item->personID); ?>" method="post" name="adminForm" id="adminForm" class="form-validate">
+<form action="<?php echo JRoute::_('index.php?option=com_clubmanager&layout=edit&personID='.(int) $this->item->personID); ?>" method="post" name="adminForm" id="adminForm" class="form-validate" enctype="multipart/form-data">
   <div class="row-fluid">
     <div class="span10 form-horizontal">
 	<?php echo $this->addToolbar(); ?>

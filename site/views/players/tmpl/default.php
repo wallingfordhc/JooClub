@@ -101,12 +101,9 @@ $listDirn = $this->escape($this->state->get('list.direction'));
               <?php echo $this->escape($item->shirtnumber); ?>
             </a>
           </td>
+		 
 		  <td class="nowrap has-context">
-              <?php echo $this->escape($item->profileimage_url); ?>
-            </a>
-          </td>
-		  <td class="nowrap has-context">
-		    <img src="<?php echo $this->escape($item->profileimage_url); ?>" alt = "logo for <?php echo $this->escape($item->surname); ?>" width=100>
+		    <img src="<?php echo $this->escape($item->profileimage_url); ?>" alt = "<?php echo $this->escape($item->profileimage_url); ?>" width=100>
               
             </a>
           </td>

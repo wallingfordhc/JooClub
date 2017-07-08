@@ -14,7 +14,7 @@ function save($key = null, $urlVar = null){
     $jinput = JFactory::getApplication()->input;
     $files = $jinput->files->get('jform');
     $filename = $files['profileimage_url']['name'];
-    $folder = JPATH_SITE . "/" . "images" . "/" . "profileimages";
+    $folder =  "images" . "/" . "profileimages";
 
     // Create the folder if not exists in images folder
     if ( !JFolder::exists( $folder ) ) {
@@ -22,10 +22,12 @@ function save($key = null, $urlVar = null){
     }
 
     $src = $files['profileimage_url']['tmp_name'];
-    $dest = JPATH_SITE . "/" . "images" . "/" . "courselist" . "/" . $filename;
+    
+	$dest = $folder . "/" . $filename;
+	$fulldest = JPATH_SITE."/". $dest;
 
     if (isset($files['profileimage_url'])) {
-        JFile::upload( $src, $dest );
+        JFile::upload( $src, $fulldest );
     }
 
     $db = JFactory::getDBO();
