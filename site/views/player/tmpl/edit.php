@@ -35,8 +35,8 @@ defined('_JEXEC') or die;
           <div class="controls"><?php echo $this->form->getInput('email'); ?></div>
         </div>
 	<div class = "control-group">
-          <div class="control-label"><?php echo $this->form->getLabel('profileimg_url'); ?></div>
-          <div class="controls"><?php echo $this->form->getInput('profileimg_url'); ?></div>
+          <div class="control-label"><?php echo $this->form->getLabel('profileimage_url'); ?></div>
+          <div class="controls"><?php echo $this->form->getInput('profileimage_url'); ?></div>
       </div>
 
 	
@@ -53,7 +53,6 @@ defined('_JEXEC') or die;
 
       <input type="hidden" name="task" value="" />
       <?php echo JHtml::_('form.token'); ?>
-	  <input type="submit" value="Update Record">
     <?php echo JHtml::_('bootstrap.endPane'); ?>
     </fieldset>
     </div>
