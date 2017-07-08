@@ -45,6 +45,7 @@ class clubmanagerModelplayers extends JModelList
 	  ->select($db->quoteName('p.phonenumber','phone'))
 	  ->select($db->quoteName('p.shirtnumber','shirtnumber'))
 	  ->select($db->quoteName('p.gender','gender'))
+	  ->select($db->quoteName('p.profileimage_url','profileimage_url'))
 	  ;
 // chain the 'from' part of the query
     $query->from($db->quoteName('#__cmperson').' AS p');

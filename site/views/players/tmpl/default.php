@@ -59,6 +59,9 @@ $listDirn = $this->escape($this->state->get('list.direction'));
 		  <th class="title">
             <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PERSON_SHIRT', 'shirtnumber', $listDirn, $listOrder); ?>
           </th>
+		  <th class="title">
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PERSON_SHIRT', 'profileimage_url', $listDirn, $listOrder); ?>
+          </th>
 		  
         </tr>
       </thead>
