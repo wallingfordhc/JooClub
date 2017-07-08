@@ -60,7 +60,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
             <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PERSON_SHIRT', 'shirtnumber', $listDirn, $listOrder); ?>
           </th>
 		  <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PERSON_SHIRT', 'profileimage_url', $listDirn, $listOrder); ?>
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PROLFILE_IMAGE', 'profileimage_url', $listDirn, $listOrder); ?>
           </th>
 		  
         </tr>
@@ -99,6 +99,10 @@ $listDirn = $this->escape($this->state->get('list.direction'));
           </td>
 		  <td class="nowrap has-context">
               <?php echo $this->escape($item->shirtnumber); ?>
+            </a>
+          </td>
+		  <td class="nowrap has-context">
+              <?php echo $this->escape($item->profileimage_url); ?>
             </a>
           </td>
         </tr>
