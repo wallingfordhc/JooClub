@@ -39,4 +39,9 @@ class clubmanagerModelplayer extends JModelAdmin
   {
     $table->personID    = htmlspecialchars_decode($table->personID, ENT_QUOTES);
   }
+
+  public function updateThisItem($data)
+	{
+		// function to update the player table 
+	}
 }

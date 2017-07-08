@@ -16,8 +16,8 @@ class clubmanagerViewplayer extends JViewLegacy
       JError::raiseError(500, implode("\n", $errors));
       return false;
     }
-
-    //$this->addToolbar();
+	$this->includeAdminEnv();
+    $this->addToolbar();
     parent::display($tpl);
   }
 
