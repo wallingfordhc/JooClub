@@ -40,14 +40,14 @@ class clubmanagerViewplayer extends JViewLegacy
   }
 
   private function includeAdminEnv()
- +	{
- +		// load the language files for the admin messages as well
- +		$language	= JFactory::getLanguage();
- +		$language->load('joomla', JPATH_ADMINISTRATOR, null, true);
- +		$language->load('com_clubmanager', JPATH_ADMINISTRATOR, null, true);
- +
- +		JLoader::register('JToolBarHelper',   JPATH_ADMINISTRATOR . '/includes/toolbar.php');
- +		JLoader::register('JSubMenuHelper',   JPATH_ADMINISTRATOR . '/includes/subtoolbar.php');
- +		JLoader::register('clubmanagerHelper', JPATH_COMPONENT_ADMINISTRATOR . '/helpers/clubmanager.php');
+ 	{
+ 		// load the language files for the admin messages as well
+ 		$language	= JFactory::getLanguage();
+ 		$language->load('joomla', JPATH_ADMINISTRATOR, null, true);
+ 		$language->load('com_clubmanager', JPATH_ADMINISTRATOR, null, true);
+ 
+ 		JLoader::register('JToolBarHelper',   JPATH_ADMINISTRATOR . '/includes/toolbar.php');
+ 		JLoader::register('JSubMenuHelper',   JPATH_ADMINISTRATOR . '/includes/subtoolbar.php');
+ 		JLoader::register('clubmanagerHelper', JPATH_COMPONENT_ADMINISTRATOR . '/helpers/clubmanager.php');
   	}
 }
