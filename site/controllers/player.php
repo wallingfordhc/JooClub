@@ -1,4 +1,4 @@
-<?php
+
 <?php
 defined('_JEXEC') or die;
 class clubmanagerControllerplayer extends JControllerForm
@@ -30,10 +30,10 @@ function save($key = null, $urlVar = null){
 
     $db = JFactory::getDBO();
     $query = $db->getQuery(true);
-    $cid =  $jinput->get('person_id');
+    $cid =  $jinput->get('personID');
 
     $fields = array($db->quoteName('profileimage_url') . " = " . $db->quote($dest));
-    $conditions = array($db->quoteName('person_id') . " = " . $cid);
+    $conditions = array($db->quoteName('personID') . " = " . $cid);
 
     $query
         ->update($db->quoteName('#__cmperson'))->set($fields)->where($conditions);
@@ -43,5 +43,4 @@ function save($key = null, $urlVar = null){
 
     return parent::save($key = null, $urlVar = null);
    }
-}
 }
