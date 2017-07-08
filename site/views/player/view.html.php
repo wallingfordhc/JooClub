@@ -23,7 +23,9 @@ class clubmanagerViewplayer extends JViewLegacy
 
   protected function addToolbar()
   {
-    JFactory::getApplication()->input->set('hidemainmenu', true);
+    
+	
+	JFactory::getApplication()->input->set('hidemainmenu', true);
 
     JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_PLAYER'), '');
 
@@ -37,6 +39,9 @@ class clubmanagerViewplayer extends JViewLegacy
     {
       JToolbarHelper::cancel('player.cancel', 'JTOOLBAR_CLOSE');
     }
+
+	//generate the Html and return the toolbar
+	return JToolBar::getInstance('toolbar')->render();
   }
 
   private function includeAdminEnv()
@@ -47,7 +52,6 @@ class clubmanagerViewplayer extends JViewLegacy
  		$language->load('com_clubmanager', JPATH_ADMINISTRATOR, null, true);
  
  		JLoader::register('JToolBarHelper',   JPATH_ADMINISTRATOR . '/includes/toolbar.php');
- 		JLoader::register('JSubMenuHelper',   JPATH_ADMINISTRATOR . '/includes/subtoolbar.php');
- 		JLoader::register('clubmanagerHelper', JPATH_COMPONENT_ADMINISTRATOR . '/helpers/clubmanager.php');
+ 		
   	}
 }
