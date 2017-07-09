@@ -1,17 +1,18 @@
 {
   "ExpandedNodes": [
     "",
-    "\\admin",
-    "\\admin\\controllers",
-    "\\admin\\models",
-    "\\admin\\views\\player",
+    "\\admin\\views\\group",
+    "\\admin\\views\\groups",
+    "\\admin\\views\\groups\\tmpl",
+    "\\admin\\views\\group\\tmpl",
+    "\\admin\\views\\player\\tmpl",
     "\\site",
-    "\\site\\controllers",
+    "\\site\\tables",
     "\\site\\views",
+    "\\site\\views\\matches\\tmpl",
     "\\site\\views\\player",
-    "\\site\\views\\players",
-    "\\site\\views\\players\\tmpl",
-    "\\site\\views\\player\\tmpl"
+    "\\site\\views\\players"
   ],
+  "SelectedNode": "\\site\\models\\forms\\player.xml",
   "PreviewInSolutionExplorer": true
 }
