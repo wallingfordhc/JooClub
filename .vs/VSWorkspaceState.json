@@ -1,18 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\admin\\views\\group",
-    "\\admin\\views\\groups",
-    "\\admin\\views\\groups\\tmpl",
-    "\\admin\\views\\group\\tmpl",
-    "\\admin\\views\\player\\tmpl",
     "\\site",
+    "\\site\\controllers",
+    "\\site\\models\\forms",
     "\\site\\tables",
     "\\site\\views",
-    "\\site\\views\\matches\\tmpl",
     "\\site\\views\\player",
-    "\\site\\views\\players"
+    "\\site\\views\\player\\tmpl"
   ],
-  "SelectedNode": "\\site\\models\\forms\\player.xml",
+  "SelectedNode": "\\site\\views\\player\\tmpl\\edit.php",
   "PreviewInSolutionExplorer": true
 }

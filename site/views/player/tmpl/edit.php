@@ -1,5 +1,8 @@
 <?php
-defined('_JEXEC') or die;	
+defined('_JEXEC') or die;
+// include the genderapi js plugin
+$document = JFactory::getDocument();
+$document->addScript('https://gender-api.com/js/jquery/gender.js');
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_clubmanager&layout=edit&personID='.(int) $this->item->personID); ?>" method="post" name="adminForm" id="adminForm" class="form-validate" enctype="multipart/form-data">
@@ -12,7 +15,7 @@ defined('_JEXEC') or die;
 
 
       <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'general', empty($this->item->matchID) ? JText::_('COM_CLUBMANAGER_NEW_PLAYER', true) : JText::sprintf('COM_CLUBMANAGER_EDIT_PLAYER', $this->item->personID, true)); ?>
-        <fieldset>
+        <>
         <div class="control-group">
           <div class="control-label"><?php echo $this->form->getLabel('firstname'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('firstname'); ?></div>
@@ -37,15 +40,19 @@ defined('_JEXEC') or die;
           <div><img src="<?php echo $this->escape($this->item->profileimage_url); ?>" alt = "<?php echo $this->escape($this->item->profileimage_url); ?>" width=100></div>
           <div class="control-label"><?php echo $this->form->getLabel('profileimage_url'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('profileimage_url'); ?></div>
-        </div>
-	    <div class="control-group">
+          <div class=""control-label"><?php echo Jtext::_('COM_CLUBMANAGER_DELETE_IMAGE')?></div>
+        <div class="controls"><input type="checkbox" name="deleteimage"><span>'"COM_JSN_DELETE_IMAGE"</span></div>
+
+            </div>
+
+            <div class="control-group">
           <div class="control-label"><?php echo $this->form->getLabel('memberID'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('memberID'); ?></div>
         </div>
 
 		<?php $user = JFactory::getUser(); ?>
 		<?php echo("<input type='hidden' name='memberID' value='".$user->id."' />"); ?>
-        <?php echo("<input type='hidden' name='oldprofilephotoimage_url' value='".$this->escape($this->item->profileimage_url)."' />"); ?>
+        <?php echo("<input type='hidden' name='oldprofileimage_url' value='".$this->escape($this->item->profileimage_url)."' />"); ?>
         <input type="hidden" name="task" value="" />
         <?php echo JHtml::_('form.token'); ?>
 	        <?php echo JHtml::_('bootstrap.endTab'); ?>
