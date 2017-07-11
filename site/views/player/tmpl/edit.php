@@ -59,9 +59,10 @@ $document->addScript('https://gender-api.com/js/jquery/gender.js');
     </fieldset>
 
 
-	    <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'other', JText::_('COM_CLUBMANAGER_PLAYER_TAB_1_NAME', true)); ?>
-More detail
+	    <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'card', JText::_('COM_CLUBMANAGER_PLAYER_TAB_1_NAME', true)); ?>
+            <?php echo card::getcardimage(); ?>
 	    <?php echo JHtml::_('bootstrap.endTab'); ?>
+
 	    <?php echo JHtml::_('bootstrap.endTabSet'); ?>
 	</div>
   </div>
