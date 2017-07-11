@@ -50,7 +50,7 @@ class clubmanagerModelattendance extends JModelAdmin
      $attendanceIDs = implode(',',$attendanceID);
      $query = 'UPDTE #__cmattendance'
        . ' SET status = '.(int) $status
-       . ' WHERE attendanceID IN ( '.attendanceIDs' )';
+       . ' WHERE attendanceID IN ( '.$attendanceIDs.' )';
      $this->_db->setQuery($query);
      if (!$this->_db->query())
      {
