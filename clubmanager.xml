@@ -48,6 +48,7 @@
     <folder>tables</folder>
     <folder>helpers</folder>
     <folder>controllers</folder>
+    <folder>media</folder>
   </files>
 
   <media destination="com_clubmanager" folder="media">
