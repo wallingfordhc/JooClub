@@ -14,8 +14,14 @@ defined('_JEXEC') or die('Restricted access');
 
 class card
 {
- function getcardimage()
+ function creatememcard()
  {
-      echo "hello";
+     $personid = 1234; 
+     $templatepath = JPATH_COMPONENT."/media/";
+      $templatefile = "Membership card front - Blank_FrontFace.png";
+      
+      $outputimage = imagecreatefrompng($templatepath.$templatefile);
+      imagepng($outputimage, $templatepath."memcard".$personid.".png");
+      imagedestroy($outputimage);
  }
 }

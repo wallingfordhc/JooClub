@@ -60,7 +60,8 @@ $document->addScript('https://gender-api.com/js/jquery/gender.js');
 
 
 	    <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'card', JText::_('COM_CLUBMANAGER_PLAYER_TAB_1_NAME', true)); ?>
-            <?php echo card::getcardimage(); ?>
+            <?php echo card::creatememcard(); ?>
+    <img src="/media/memcard1234.png">
 	    <?php echo JHtml::_('bootstrap.endTab'); ?>
 
 	    <?php echo JHtml::_('bootstrap.endTabSet'); ?>

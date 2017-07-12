@@ -3,12 +3,12 @@
     "",
     "\\site",
     "\\site\\controllers",
-    "\\site\\models\\forms",
+    "\\site\\helpers",
     "\\site\\tables",
     "\\site\\views",
     "\\site\\views\\player",
     "\\site\\views\\player\\tmpl"
   ],
-  "SelectedNode": "\\site\\views\\player\\tmpl\\edit.php",
+  "SelectedNode": "\\site\\helpers\\card.php",
   "PreviewInSolutionExplorer": true
 }
