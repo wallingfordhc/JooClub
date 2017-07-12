@@ -18,7 +18,7 @@ class card
  {
      $personid = 1234; 
      $templatepath = JPATH_COMPONENT."/media/";
-      $templatefile = "Membership card front -Blank_FrontFace.png";
+      $templatefile = "Membership card front - Blank_FrontFace.png";
       
       $outputimage = imagecreatefrompng($templatepath.$templatefile);
       imagepng($outputimage, $templatepath."memcard".$personid.".png");
