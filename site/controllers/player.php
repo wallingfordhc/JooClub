@@ -16,14 +16,14 @@ $cmsuserID = JFactory::getuser();
 $personID = $jinput->get('personID');
 
 // set consent - if you have saved the info you must have consent to see it
-addconsent($cmsuserID,$personID);
+$this->addconsent($cmsuserID,$personID);
 // save the profile image file if one has been included
-saveprofileimage();
+$this->saveprofileimage();
     
     return parent::save($key = null, $urlVar = null);
    }
 
-   function saveprofileimage(){
+function saveprofileimage(){
        
         $files = $jinput->files->get('jform');
         $filename = $files['profileimage_url']['name'];
