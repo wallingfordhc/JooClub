@@ -25,7 +25,7 @@ class card
          $player = new person($personID);
 
 	 // Add age group
-	 imagettftext( $outputimage,60,0,600,100,$black,$fontfile,"U12");
+	 imagettftext( $outputimage,60,0,600,100,$black,$fontfile,$player->agegroup);
 
 	 // Add photo or avatar
 
@@ -42,7 +42,10 @@ class card
 	 // Add membership number
 	 $fontfile = $fontfolder."CODE39U.TTF";
 	 imagettftext( $outputimage,80,0,400,600,$black,$fontfile,$player->membershipnumber);
+         // Add QR code
          
+         QRcode::png('Wildcats forever', 'test.png', 'L', 4, 2);
+         $qrimage = imagecreatefrompng('test.png');
 
 	 // Add badges
 
