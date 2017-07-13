@@ -23,7 +23,7 @@ $query = $db->getQuery(true);
 
 // Select all records from the user profile table where key begins with "custom.".
 // Order it by the ordering field.
-$query->select($db->quoteName(array('personID', 'firstname', 'surname')));
+$query->select($db->quoteName('*'));
 $query->from($db->quoteName('#__cmperson'));
 $query->where($db->quoteName('personID') . ' = '. $personID);
 

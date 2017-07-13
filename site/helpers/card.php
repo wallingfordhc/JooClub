@@ -37,7 +37,7 @@ class card
 	 imagettftext( $outputimage,50,0,400,380,$black,$fontfile,$player->icenumber);
 
 	 // Add emergency contact name and relationship
-	 imagettftext( $outputimage,20,0,450,410,$black,$fontfile,$player->icename." - ".$person->icerelationship);
+	 imagettftext( $outputimage,20,0,450,410,$black,$fontfile,$player->icename." - ".$player->icerelationship);
 
 	 // Add membership number
 	 $fontfile = $fontfolder."CODE39U.TTF";
@@ -61,4 +61,3 @@ class card
 	 imagedestroy($outputimage);
  }
 }
-
