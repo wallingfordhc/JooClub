@@ -21,7 +21,7 @@ $db = JFactory::getDbo();
 // Create a new query object.
 $query = $db->getQuery(true);
 
-// Select all records from the user profile table where key begins with "custom.".
+// Select all fields from the person table where the personID is correct".
 // Order it by the ordering field.
 $query->select($db->quoteName('*'));
 $query->from($db->quoteName('#__cmperson'));
