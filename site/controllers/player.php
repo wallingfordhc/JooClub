@@ -5,16 +5,28 @@ class clubmanagerControllerplayer extends JControllerForm
 // overrides the standard save to include the file upload of profile image
 
 function save($key = null, $urlVar = null){
-    // save the profile image file if one has been included
-    // Neccesary libraries and variables
+
+jimport('joomla.filesystem.folder' );
+jimport('joomla.filesystem.file');    
+
+$jinput = JFactory::getApplication()->input;
 
 
-    jimport( 'joomla.filesystem.folder' );
-    jimport('joomla.filesystem.file');
+$cmsuserID = JFactory::getuser();
+$personID = $jinput->get('personID');
 
-    $jinput = JFactory::getApplication()->input;
-    $files = $jinput->files->get('jform');
-    $filename = $files['profileimage_url']['name'];
+// set consent - if you have saved the info you must have consent to see it
+addconsent($cmsuserID,$personID);
+// save the profile image file if one has been included
+saveprofileimage();
+    
+    return parent::save($key = null, $urlVar = null);
+   }
+
+   function saveprofileimage(){
+       
+        $files = $jinput->files->get('jform');
+        $filename = $files['profileimage_url']['name'];
 	$folder = "images" . "/" . "profileimages";
 	$newprofileimage_url = $folder . "/" . $filename;
 	$oldprofileimage_url = $jinput->get('oldprofileimage_url');
@@ -66,9 +78,22 @@ function save($key = null, $urlVar = null){
 
 		$db->setQuery($query);
 		$db->execute($query);
-	}
-    return parent::save($key = null, $urlVar = null);
+	}     
    }
+   
+   
+   function addconsent($personID,$cmsuserID){
+       // add consent for cmsuser to see personID information
+       
+       // Create and populate an object.
+$profile = new stdClass();
+$profile->personID = $personID;
+$profile->cmsuserID= $cmsuserID;
+$profile->givendate=date('Y-m-d H:i:s');
+$profile->expires='';
 
+// Insert the object into the user profile table.
+$result = JFactory::getDbo()->insertObject('#__cmconsent', $profile);
+   }
 }
 

@@ -19,39 +19,33 @@ $document->addScript('https://gender-api.com/js/jquery/gender.js');
         <div class="control-group">
           <div class="control-label"><?php echo $this->form->getLabel('firstname'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('firstname'); ?></div>
-		  <div class="control-label"><?php echo $this->form->getLabel('surname'); ?></div>
+          <div class="control-label"><?php echo $this->form->getLabel('surname'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('surname'); ?></div>
         </div>
-		<div class="control-group">
+	<div class="control-group">
           <div class="control-label"><?php echo $this->form->getLabel('gender'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('gender'); ?></div>
         </div>
-		<div class="control-group">
+	<div class="control-group">
           <div class="control-label"><?php echo $this->form->getLabel('DOB'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('DOB'); ?></div>
         </div>
-		<div class="control-group">
+	<div class="control-group">
           <div class="control-label"><?php echo $this->form->getLabel('phonenumber'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('phonenumber'); ?></div>
 		  <div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('email'); ?></div>
         </div>
-	    <div class="control-group">
+	<div class="control-group">
           <div><img src="<?php echo $this->escape($this->item->profileimage_url); ?>" alt = "<?php echo $this->escape($this->item->profileimage_url); ?>" width=100></div>
           <div class="control-label"><?php echo $this->form->getLabel('profileimage_url'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('profileimage_url'); ?></div>
           <div class=""control-label"><?php echo Jtext::_('COM_CLUBMANAGER_DELETE_IMAGE')?></div>
-        <div class="controls"><input type="checkbox" name="deleteimage"><span>'"COM_JSN_DELETE_IMAGE"</span></div>
-
-            </div>
-
-            <div class="control-group">
-          <div class="control-label"><?php echo $this->form->getLabel('memberID'); ?></div>
-          <div class="controls"><?php echo $this->form->getInput('memberID'); ?></div>
+          <div class="controls"><input type="checkbox" name="deleteimage"><span>'"COM_CLUBMANAGER_DELETE_IMAGE"</span></div>
         </div>
 
-		<?php $user = JFactory::getUser(); ?>
-		<?php echo("<input type='hidden' name='memberID' value='".$user->id."' />"); ?>
+	<?php $user = JFactory::getUser(); ?>
+	<?php echo("<input type='hidden' name='memberID' value='".$user->id."' />"); ?>
         <?php echo("<input type='hidden' name='oldprofileimage_url' value='".$this->escape($this->item->profileimage_url)."' />"); ?>
         <input type="hidden" name="task" value="" />
         <?php echo JHtml::_('form.token'); ?>
