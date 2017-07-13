@@ -19,7 +19,10 @@ class card
 	 $black = imagecolorallocate($outputimage, 0, 0, 0);
 	 // set the default font
 	 $fontfile = $fontfolder."ERASDEMI.TTF";
-
+         
+         //get player info
+         
+         $player = new person($personID);
 
 	 // Add age group
 	 imagettftext( $outputimage,60,0,600,100,$black,$fontfile,"U12");
@@ -27,7 +30,7 @@ class card
 	 // Add photo or avatar
 
 	 // Add name
-	 imagettftext( $outputimage,50,0,400,250,$black,$fontfile,"lucy Shannon");
+	 imagettftext( $outputimage,50,0,400,250,$black,$fontfile,$player->firstname);
 
 
 	 // Add emergency contact
