@@ -6,8 +6,7 @@ class clubmanagerControllerplayer extends JControllerForm
 
 function save($key = null, $urlVar = null){
 
-jimport('joomla.filesystem.folder' );
-jimport('joomla.filesystem.file');    
+   
 
 $jinput = JFactory::getApplication()->input;
 
@@ -25,6 +24,11 @@ $this->saveprofileimage();
 
 function saveprofileimage(){
        
+    jimport('joomla.filesystem.folder' );
+    jimport('joomla.filesystem.file');    
+
+    $jinput = JFactory::getApplication()->input;
+    
         $files = $jinput->files->get('jform');
         $filename = $files['profileimage_url']['name'];
 	$folder = "images" . "/" . "profileimages";
