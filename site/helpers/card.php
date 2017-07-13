@@ -1,3 +1,4 @@
+<?php
 class card
 {
  function creatememcard($personID = null)

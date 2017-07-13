@@ -34,9 +34,6 @@ $db->setQuery($query);
 $this = $db->loadObject();
     
 
-
-
-
     }
     
     
