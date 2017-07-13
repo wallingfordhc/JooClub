@@ -19,15 +19,12 @@ class clubmanageraccess
 function personlist($userID = null)
 {
 
-
-
  // if no personID sent to the function set it to be the current user
 	if (empty($userID))
 	{
 	$user = JFactory::getUser();
 	$userID = $user->id;
 	}
-
 // look to see what viewing rights the user has
 $levels = JAccess::getAuthorisedViewLevels($userID);
 	
