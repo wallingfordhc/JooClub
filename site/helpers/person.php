@@ -30,8 +30,12 @@ $query->where($db->quoteName('personID') . ' = '. $personID);
 // Reset the query using our newly populated query object.
 $db->setQuery($query);
 
-// Load the results as a list of stdClass objects (see later for more options on retrieving data).
-$this = $db->loadObject();
+
+$results = $db->loadObject();
+
+foreach($results in $key=>$value){
+    $this->$key = $value;
+}
     
 
     }
