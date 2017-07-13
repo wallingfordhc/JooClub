@@ -19,6 +19,7 @@ public function display($cachable = false, $urlparams = false)
   {
     require_once JPATH_COMPONENT.'/helpers/access.php';
     require_once JPATH_COMPONENT.'/helpers/card.php';
+    require_once JPATH_COMPONENT.'/helpers/person.php';
 
     // $view   = $this->input->get('view', 'matches');
     // $layout = $this->input->get('layout', 'default');
