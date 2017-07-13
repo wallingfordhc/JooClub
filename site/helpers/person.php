@@ -33,7 +33,7 @@ $db->setQuery($query);
 
 $results = $db->loadObject();
 
-foreach($results in $key=>$value){
+foreach($results as $key=>$value){
     $this->$key = $value;
 }
     
