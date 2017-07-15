@@ -91,7 +91,7 @@ class card
          
          
          //add expiry date
-         imagettftext( $outputimage,60,0,650,700,$black,$fontfile,$player->expiredate);
+         imagettftext( $outputimage,60,0,650,700,$black,$fontfile,"06/18");
          
         
          $now = date("Y-m-d H:i:s");
