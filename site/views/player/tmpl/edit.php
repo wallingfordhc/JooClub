@@ -38,6 +38,15 @@ $document->addScript('https://gender-api.com/js/jquery/gender.js');
         </div>
         
         <div class="control-group">
+          <div class="control-label"><?php echo $this->form->getLabel('icenumber'); ?></div>
+          <div class="controls"><?php echo $this->form->getInput('icenumber'); ?></div>
+          <div class="control-label"><?php echo $this->form->getLabel('icename'); ?></div>
+          <div class="controls"><?php echo $this->form->getInput('icename'); ?></div>
+          <div class="control-label"><?php echo $this->form->getLabel('icerelationship'); ?></div>
+          <div class="controls"><?php echo $this->form->getInput('icerelationship'); ?></div>
+        </div>
+        
+        <div class="control-group">
           <div class="control-label"><?php echo $this->form->getLabel('startdate'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('startdate'); ?></div>
           <div class="control-label"><?php echo $this->form->getLabel('expiredate'); ?></div>
