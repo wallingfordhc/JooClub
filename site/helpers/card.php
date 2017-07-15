@@ -96,7 +96,7 @@ class card
          $expire = $player->expiredate;
          if ($expire < $now){
              $expiredimage = JPATH_SITE.$templatefolder."/blank/expired.png";
-             imagecopy($outputimage, $expiredimg, 0, 0, 1000, 640, $profileimgx, $profileimgy);
+             imagecopy($outputimage, $expiredimage, 0, 0, 1000, 640, $profileimgx, $profileimgy);
          }
 
 
