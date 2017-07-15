@@ -36,6 +36,13 @@ $document->addScript('https://gender-api.com/js/jquery/gender.js');
 		  <div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('email'); ?></div>
         </div>
+        
+        <div class="control-group">
+          <div class="control-label"><?php echo $this->form->getLabel('startdate'); ?></div>
+          <div class="controls"><?php echo $this->form->getInput('startdate'); ?></div>
+          <div class="control-label"><?php echo $this->form->getLabel('expiredate'); ?></div>
+          <div class="controls"><?php echo $this->form->getInput('expiredate'); ?></div>
+        </div>
 	<div class="control-group">
           <div><img src="<?php echo $this->escape($this->item->profileimage_url); ?>" alt = "<?php echo $this->escape($this->item->profileimage_url); ?>" width=100></div>
           <div class="control-label"><?php echo $this->form->getLabel('profileimage_url'); ?></div>

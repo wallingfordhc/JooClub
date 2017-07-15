@@ -51,6 +51,18 @@
     <field name="profileimage_url" type="file" size="40"
            label="Image upload" 
            description=""  accept="image/*"  />
+    
+    <field name="startdate" type="calendar" default="2017-09-01"
+           label="COM_CLUBMANAGER_STARTDATE_LABEL"
+      description="COM_CLUBMANAGER_STARTDATE_DESC"
+      class="inputbox" size="22" format="%Y-%m-%d"
+  filter="user_utc"  showtime="false"      />
+    
+    <field name="expiredate" type="calendar" default="2018-07-01"
+           label="COM_CLUBMANAGER_EXPIRES_LABEL"
+      description="COM_CLUBMANAGER_EXPIRES_DESC"
+      class="inputbox" size="22" format="%Y-%m-%d"
+  filter="user_utc"  showtime="false"      />
 
   </fieldset>
 </form>
