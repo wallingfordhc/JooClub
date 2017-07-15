@@ -59,6 +59,9 @@
     <field name="shirtnumber" type="text"  size="5"
            label="COM_CLUBMANGER_SHIRTNUMBER_LABEL"
            description="COM_CLUBMANAGER_SHIRTNUMBER_LABEL_DESC" />
+    <field name="status" type="text"  size="5"
+           label="COM_CLUBMANGER_STATUS_LABEL"
+           description="COM_CLUBMANAGER_STATUS_LABEL_DESC" />
 
     <field name="profileimage_url" type="file" size="40"
            label="Image upload" 

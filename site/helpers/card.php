@@ -91,11 +91,17 @@ class card
          
          
          //add expiry date
-         imagettftext( $outputimage,60,0,650,700,$black,$fontfile,"06/18");
          
-        
          $now = date("Y-m-d H:i:s");
          $expire = $player->expiredate;
+         // get the month and year of the expiry date
+         $expiremy = DateTime::createFromFormat('Y-m-d', $expire)->format('m/y');
+         
+         
+         imagettftext( $outputimage,60,0,650,700,$black,$fontfile,$player->expiremy);
+         
+        
+         
          if ($expire < $now){
              $expiredimage = imagecreatefrompng(JPATH_SITE.$templatefolder."/blank/expired.png");
              imagecopy($outputimage, $expiredimage, 0, 0, 0, 0, 1008, 642);
