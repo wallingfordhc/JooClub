@@ -92,10 +92,12 @@ class card
          
          //add expiry date
          imagettftext( $outputimage,60,0,400,800,$black,$fontfile,$player->expiredate);
+         
+        
          $now = date("Y-m-d H:i:s");
          $expire = $player->expiredate;
          if ($expire < $now){
-             $expiredimage = JPATH_SITE.$templatefolder."/blank/expired.png";
+             $expiredimage = imagecreatefrompng(JPATH_SITE.$templatefolder."/blank/expired.png");
              imagecopy($outputimage, $expiredimage, 0, 0, 1000, 640, $profileimgx, $profileimgy);
          }
 
