@@ -88,7 +88,14 @@ class card
 	 imagecopy($outputimage, $qrimage, 830, 470, 0, 0, 150, 150);
 
 	 // Add badges
-
+         
+         
+         //add expiry date
+         imagettftext( $outputimage,60,0,400,800,$black,$fontfile,$player->expiredate);
+         if ($player->expiredate < date()){
+             $expiredimage = JPATH_SITE.$templatefolder."/blank/expired.png";
+             imagecopy($outputimage, $expiredimg, 0, 0, 1000, 640, $profileimgx, $profileimgy);
+         }
 
 
 	 //save image
