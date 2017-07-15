@@ -22,7 +22,7 @@ class card
      // set folder paths for the membership card images
 	 // set location to find the blank card
      $templatefolder = "/media/com_clubmanager/membershipcards/";
-	 $templatefile = "blank/Membershipcardfront-Blank_FrontFace.png";
+	 $templatefile = "blank/blankcard.png";
 	 // set location to save the updated card
 	 $ouputimagepath = $templatefolder . "memcard" . $personID . ".png";
 	 // set location of the font files
@@ -91,7 +91,7 @@ class card
          
          
          //add expiry date
-         imagettftext( $outputimage,60,0,400,800,$black,$fontfile,$player->expiredate);
+         imagettftext( $outputimage,60,0,650,700,$black,$fontfile,$player->expiredate);
          
         
          $now = date("Y-m-d H:i:s");
