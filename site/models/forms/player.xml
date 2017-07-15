@@ -17,9 +17,6 @@
     <field name="surname" type="text"  size="20"
                label="COM_CLUBMANGER_SURNAME_LABEL"
                description="COM_CLUBMANAGER_SURNAME_LABEL_DESC" />
-    <field name="status" type="text"  size="20"
-               label="COM_CLUBMANGER_STATUS_LABEL"
-               description="COM_CLUBMANAGER_STATUS_LABEL_DESC" />
 
     <field name="gender" type="list"  default="" size="2"
            label="COM_CLUBMANGER_GENDER_LABEL"
@@ -42,12 +39,12 @@
       <option value="">Please select AgeGroup</option>
       <option value="U6">U6</option>
       <option value="U8">U8</option>
-      <option value="U10">U6</option>
-      <option value="U12">U8</option>
-      <option value="U14">U6</option>
-      <option value="U16">U8</option>
-      <option value="U18">U6</option>
-      <option value="Adult">U8</option>     
+      <option value="U10">U10</option>
+      <option value="U12">U12</option>
+      <option value="U14">U14</option>
+      <option value="U16">U16</option>
+      <option value="U18">U18</option>
+      <option value="Adult">Adult</option>     
       </field>
 
     <field name="phonenumber" type="text"  size="20"
@@ -73,7 +70,7 @@
     <field name="shirtnumber" type="text"  size="5"
            label="COM_CLUBMANGER_SHIRTNUMBER_LABEL"
            description="COM_CLUBMANAGER_SHIRTNUMBER_LABEL_DESC" />
-    <field name="status" type="text"  size="5"
+    <field name="status" type="text"  size="15" readonly="true"
            label="COM_CLUBMANGER_STATUS_LABEL"
            description="COM_CLUBMANAGER_STATUS_LABEL_DESC" />
 
@@ -88,7 +85,7 @@
       class="inputbox" size="22" format="%Y-%m-%d"
   filter="user_utc"  showtime="false"      />
     
-    <field name="expiredate" type="calendar" default="2018-07-01"
+    <field name="expiredate" type="calendar" default="2018-07-01" readonly="true"
            label="COM_CLUBMANAGER_EXPIRES_LABEL"
       description="COM_CLUBMANAGER_EXPIRES_DESC"
       class="inputbox" size="22" format="%Y-%m-%d"

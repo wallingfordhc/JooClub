@@ -90,13 +90,13 @@ class card
 	 // Add badges
          
          
-         //add expiry date
+         //add expiry date  
          
          $now = date("Y-m-d H:i:s");
          $expire = $player->expiredate;
          // get the month and year of the expiry date
          $expiremy = DateTime::createFromFormat('Y-m-d', $expire)->format('m/y');
-         imagettftext( $outputimage,60,0,650,700,$black,$fontfile,$expiremy);
+         imagettftext( $outputimage,60,0,550,587,$black,$fontfile,$expiremy);
          
         
          // add expired flash image if expiry date is in the past
