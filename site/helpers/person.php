@@ -24,7 +24,7 @@ $query = $db->getQuery(true);
 // Select all fields from the person table where the personID is correct".
 // Order it by the ordering field.
 //$query->select($db->quoteName(array('firstname','surname','agegroup','icenumber','icename','icerelationship','membershipnumber','profileimage_url','startdate','expiredate')));
-$query->select($db->quoteName(array('*')));
+$query->select(array('*'));
 $query->from($db->quoteName('#__cmperson'));
 $query->where($db->quoteName('personID') . ' = '. $personID);
 
