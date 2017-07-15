@@ -29,6 +29,8 @@ $document->addScript('https://gender-api.com/js/jquery/gender.js');
 	<div class="control-group">
           <div class="control-label"><?php echo $this->form->getLabel('DOB'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('DOB'); ?></div>
+          <div class="control-label"><?php echo $this->form->getLabel('agegroup'); ?></div>
+          <div class="controls"><?php echo $this->form->getInput('agegroup'); ?></div>
         </div>
 	<div class="control-group">
           <div class="control-label"><?php echo $this->form->getLabel('phonenumber'); ?></div>

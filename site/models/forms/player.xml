@@ -21,7 +21,7 @@
                label="COM_CLUBMANGER_STATUS_LABEL"
                description="COM_CLUBMANAGER_STATUS_LABEL_DESC" />
 
-    <field name="gender" type="list"  default="" size="10"
+    <field name="gender" type="list"  default="" size="2"
            label="COM_CLUBMANGER_GENDER_LABEL"
            description="COM_CLUBMANAGER_GENDER_LABEL_DESC">
       <option value="">Please select Gender</option>
@@ -33,8 +33,22 @@
     <field name="DOB" type="calendar" default="1980-01-01"
            label="COM_CLUBMANAGER_DOB_LABEL"
       description="COM_CLUBMANAGER_DOB_DESC"
-      class="inputbox" size="22" format="%Y-%m-%d %H:%M:%S"
+      class="inputbox" size="22" format="%Y-%m-%d"
   filter="user_utc"  showtime="true"      />
+    
+    <field name="agegroup" type="list"  default="" size="4"
+           label="COM_CLUBMANGER_AGEGROUP_LABEL"
+           description="COM_CLUBMANAGER_AGEGROUP_LABEL_DESC">
+      <option value="">Please select AgeGroup</option>
+      <option value="U6">U6</option>
+      <option value="U8">U8</option>
+      <option value="U10">U6</option>
+      <option value="U12">U8</option>
+      <option value="U14">U6</option>
+      <option value="U16">U8</option>
+      <option value="U18">U6</option>
+      <option value="Adult">U8</option>     
+      </field>
 
     <field name="phonenumber" type="text"  size="20"
            label="COM_CLUBMANGER_PHONENUMBER_LABEL"
