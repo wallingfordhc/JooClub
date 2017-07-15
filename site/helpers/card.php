@@ -96,17 +96,21 @@ class card
          $expire = $player->expiredate;
          // get the month and year of the expiry date
          $expiremy = DateTime::createFromFormat('Y-m-d', $expire)->format('m/y');
-         
-         
-         imagettftext( $outputimage,60,0,650,700,$black,$fontfile,$player->expiremy);
+         imagettftext( $outputimage,60,0,650,700,$black,$fontfile,$expiremy);
          
         
-         
-         if ($expire < $now){
+         // add expired flash image if expiry date is in the past
+         if (!empty($expire) && $expire < $now){
              $expiredimage = imagecreatefrompng(JPATH_SITE.$templatefolder."/blank/expired.png");
              imagecopy($outputimage, $expiredimage, 0, 0, 0, 0, 1008, 642);
          }
-
+         
+         // add waitlist flash image if player on the waitlist
+         $status = $player->status;
+         if ($status == "waitlist") {
+             $waitlistimage = imagecreatefrompng(JPATH_SITE.$templatefolder."/blank/waitlist.png");
+             imagecopy($outputimage, $waitlistimage, 0, 0, 0, 0, 1008, 642);
+         }
 
 	 //save image
 	 imagepng($outputimage, JPATH_SITE.$ouputimagepath);
