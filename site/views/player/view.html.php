@@ -25,7 +25,7 @@ class clubmanagerViewplayer extends JViewLegacy
   {
     
 	
-	JFactory::getApplication()->input->set('hidemainmenu', true);
+    JFactory::getApplication()->input->set('hidemainmenu', true);
 
     JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_PLAYER'), '');
 

@@ -3,7 +3,7 @@ defined('_JEXEC') or die;
 class clubmanagerControllerplayer extends JControllerForm
 {
 // overrides the standard save to include the file upload of profile image
-
+protected $view_list = 'player';
 function save($key = null, $urlVar = null){
 
    
