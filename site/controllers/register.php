@@ -17,6 +17,9 @@ class clubmanagerControllerregister extends JControllerForm
 {
   function shout()
   {
+      $session = &JFactory::getSession();
+      $session->set("register","true");
+
     echo "<p>THIS IS ME SHOUTING!</p>";
   }
 }
