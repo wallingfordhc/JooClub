@@ -54,6 +54,8 @@
   <media destination="com_clubmanager" folder="media">
     <filename>index.html</filename>
     <folder>css</folder>
+    <folder>fonts</folder>
+    <folder>membershipcards</folder>
   </media>
 
   <administration>
