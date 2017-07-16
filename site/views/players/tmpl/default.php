@@ -103,7 +103,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
           </td>
 		 
 		  <td class="nowrap has-context">
-		    <img src="<?php echo $this->escape($item->profileimage_url); ?>" alt = "<?php echo $this->escape($item->profileimage_url); ?>" width=100>
+		    <img src="/media/comclubmanager/membershipcards/memcard<?php echo $this->escape($item->personID); ?>.png" alt = "<?php echo $this->escape($item->profileimage_url); ?>" width=100>
               
             </a>
           </td>

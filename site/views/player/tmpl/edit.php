@@ -15,7 +15,6 @@ $document->addScript('https://gender-api.com/js/jquery/gender.js');
 
 
       <?php echo JHtml::_('bootstrap.addTab', 'myTab', 'general', empty($this->item->matchID) ? JText::_('COM_CLUBMANAGER_NEW_PLAYER', true) : JText::sprintf('COM_CLUBMANAGER_EDIT_PLAYER', $this->item->personID, true)); ?>
-        <>
         <div class="control-group">
           <div class="control-label"><?php echo $this->form->getLabel('firstname'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('firstname'); ?></div>
@@ -36,6 +35,7 @@ $document->addScript('https://gender-api.com/js/jquery/gender.js');
           <div class="control-label"><?php echo $this->form->getLabel('phonenumber'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('phonenumber'); ?></div>
 		  <div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
+                  <img src="../../../../media/membershipcards/blank/defaultavatar.png" alt=""/>
           <div class="controls"><?php echo $this->form->getInput('email'); ?></div>
         </div>
         
@@ -67,6 +67,7 @@ $document->addScript('https://gender-api.com/js/jquery/gender.js');
 	<?php $user = JFactory::getUser(); ?>
 	<?php echo("<input type='hidden' name='memberID' value='".$user->id."' />"); ?>
         <?php echo("<input type='hidden' name='oldprofileimage_url' value='".$this->escape($this->item->profileimage_url)."' />"); ?>
+        <?php echo("<input type='hidden' name='personID' value='".$this->item->personID."' />"); ?>
         <input type="hidden" name="task" value="" />
         <?php echo JHtml::_('form.token'); ?>
 	        <?php echo JHtml::_('bootstrap.endTab'); ?>

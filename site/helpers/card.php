@@ -46,6 +46,11 @@ class card
 	 // Add photo or avatar
 
 	 $profileimagefile = $player->profileimage_url;
+         
+         if (empty($profileimagefile)){
+	 	$profileimagefile = $templatefolder."/blank/defaultavatar.png";
+	 }
+         
 	 $profileimg = imagecreatefrompng(JURI::BASE().$profileimagefile);
 	 $profileimg = card::fitimagetobox($profileimg,300,600);
 	 $profileimgx= imagesx($profileimg);
@@ -94,10 +99,12 @@ class card
          
          $now = date("Y-m-d H:i:s");
          $expire = $player->expiredate;
+         
          // get the month and year of the expiry date
+         if (!empty($expire)){
          $expiremy = DateTime::createFromFormat('Y-m-d', $expire)->format('m/y');
          imagettftext( $outputimage,60,0,550,587,$black,$fontfile,$expiremy);
-         
+         }
         
          // add expired flash image if expiry date is in the past
          if (!empty($expire) && $expire < $now){

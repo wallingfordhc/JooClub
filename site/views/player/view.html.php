@@ -30,6 +30,7 @@ class clubmanagerViewplayer extends JViewLegacy
     JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_PLAYER'), '');
 
     JToolbarHelper::save('player.save');
+    JToolbarHelper::apply('player.apply');
 
     if (empty($this->item->matchID))
     {
