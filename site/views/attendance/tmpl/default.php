@@ -5,6 +5,8 @@ $listOrder = $this->escape($this->state->get('list.ordering'));
 $listDirn = $this->escape($this->state->get('list.direction'));
 ?>
 
+
+
 <form action="<?php echo JRoute::_('index.php?option=com_clubmanager&view=players'); ?>" method="post" name="adminForm" id="adminForm">
   <div id="j-main-container" class="span10">
 <?php echo $this->addToolbar(); ?>  
@@ -34,13 +36,16 @@ $listDirn = $this->escape($this->state->get('list.direction'));
 -        </select>
 -      </div>
     <div class="clearfix"> </div>
-    <table class="table table-striped" id="playerList">
+    <table class="table table-striped" id="attendanceList">
       <thead>
         <tr>
           <th width="1%" class="hidden-phone">
             <input type="checkbox" name="checkall-toggle" value="" title="<?php echo JText::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)" />
           </th>
-		  
+	<th class="title">
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_TIME_TITLE', 'arrived', $listDirn, $listOrder); ?>
+          </th>
+          
           <th class="title">
             <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_FIRSTNAME_TITLE', 'firstname', $listDirn, $listOrder); ?>
           </th>
@@ -48,17 +53,8 @@ $listDirn = $this->escape($this->state->get('list.direction'));
             <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_SURNAME_TITLE', 'surname', $listDirn, $listOrder); ?>
           </th>
 		  <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PERSON_EMAIL', 'email', $listDirn, $listOrder); ?>
-          </th>
-		  <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PERSON_PHONE', 'phone', $listDirn, $listOrder); ?>
-          </th>
-		  <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PERSON_GENDER', 'gender', $listDirn, $listOrder); ?>
-          </th>
-		  <th class="title">
-            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PERSON_SHIRT', 'shirtnumber', $listDirn, $listOrder); ?>
-          </th>
+            <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PERSON_AGEGROUP', 'agegroup', $listDirn, $listOrder); ?>
+          </th>	  
 		  <th class="title">
             <?php echo JHtml::_('grid.sort', 'COM_CLUBMANAGER_PROLFILE_IMAGE', 'profileimage_url', $listDirn, $listOrder); ?>
           </th>
@@ -66,46 +62,46 @@ $listDirn = $this->escape($this->state->get('list.direction'));
         </tr>
       </thead>
       <tbody>
-      <?php 
+          
+          <?php 
 	  $group_date=null;
 	  foreach ($this->items as $i => $item) :
-    
+	  if ($group_date !== substr($item->arrived, 0, 10)) {
+        $group_date = substr($item->arrived, 0, 10);
+		$displaydate = date_create($group_date);
+		
+		echo "<tr><td colspan=5><h1 class='cmattendancedate'>" . date_format($displaydate, 'jS M') . "</h1></td></tr>\n";
+      }
+ 
         ?>
+        
         <tr class="row<?php echo $i % 2; ?>">
           <td class="center hidden-phone">
-            <?php echo JHtml::_('grid.id', $i, $item->personID); ?>
+            <?php echo JHtml::_('grid.id', $i, $item->attendanceID); ?>
           </td>
 		  
           <td class="nowrap has-context">
-            <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=player.edit&personID='.(int) $item->personID); ?>">
+            <a href="<?php echo JRoute::_('index.php?option=com_clubmanager&task=attendance.edit&attendanceID='.(int) $item->attendanceID); ?>">
+              <?php echo $this->escape($item->arrived); ?>
+            </a>
+          </td>
+	<td class="nowrap has-context">
               <?php echo $this->escape($item->firstname); ?>
-            </a>
-          </td>
-		  <td class="nowrap has-context">
+            
+          </td>	  
+          <td class="nowrap has-context">
               <?php echo $this->escape($item->surname); ?>
-            </a>
+            
           </td>
 		  <td class="nowrap has-context">
-              <?php echo $this->escape($item->email); ?>
-            </a>
+              <?php echo $this->escape($item->agegroup); ?>
+            
           </td>
-		  <td class="nowrap has-context">
-              <?php echo $this->escape($item->phone); ?>
-            </a>
-          </td>
-		  <td class="nowrap has-context">
-              <?php echo $this->escape($item->gender); ?>
-            </a>
-          </td>
-		  <td class="nowrap has-context">
-              <?php echo $this->escape($item->shirtnumber); ?>
-            </a>
-          </td>
+		  
 		 
 		  <td class="nowrap has-context">
-		    <img src="/media/com_clubmanager/membershipcards/memcard<?php echo $this->escape($item->personID); ?>.png" alt = "<?php echo $this->escape($item->profileimage_url); ?>" width=100>
-              
-            </a>
+		    <img src="<?php echo $this->escape($item->profileimage_url); ?>" alt = "photo of <?php echo $this->escape($item->firstname); ?>" width=60>
+            
           </td>
         </tr>
         <?php endforeach; ?>

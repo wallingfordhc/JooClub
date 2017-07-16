@@ -23,18 +23,28 @@ class card
 	 // set location to find the blank card
      $templatefolder = "/media/com_clubmanager/membershipcards/";
 	 $templatefile = "blank/blankcard.png";
-	 // set location to save the updated card
-	 $ouputimagepath = $templatefolder . "memcard" . $personID . ".png";
+	 
+
+
+// set location to save the updated card
+	 $outputimagepath = $templatefolder . "memcard" . $personID . ".png";
 	 // set location of the font files
 	 $fontfolder = JPATH_SITE."/media/com_clubmanager/fonts/";
 
 
+         // only try if a personID has been supplied
+         if (!empty($personID)){
+         
 	 //get blank card
 	 $outputimage = imagecreatefrompng(JPATH_SITE.$templatefolder.$templatefile);
 	// set the default color
 	 $black = imagecolorallocate($outputimage, 0, 0, 0);
 	 // set the default font
 	 $fontfile = $fontfolder."ERASDEMI.TTF";
+         
+         // add latest player info to the card
+         
+         
          
          //get player info
          
@@ -91,6 +101,8 @@ class card
          $qrimage = imagescale($qrimage,150);
 
 	 imagecopy($outputimage, $qrimage, 830, 470, 0, 0, 150, 150);
+         // release the memory
+          imagedestroy($qrimage);
 
 	 // Add badges
          
@@ -118,17 +130,24 @@ class card
              $waitlistimage = imagecreatefrompng(JPATH_SITE.$templatefolder."/blank/waitlist.png");
              imagecopy($outputimage, $waitlistimage, 0, 0, 0, 0, 1008, 642);
          }
+         
+         
+	 //save image - even if its blank
+	 imagepng($outputimage, JPATH_SITE.$outputimagepath);
+         // release the memory
+         imagedestroy($outputimage);
+         }
+         else
+         {
+             $outputimagepath = $templatefolder.$templatefile;
+         }
+	 // echo image to html
+	 echo ("<img src=".JURI::base().$outputimagepath.">");
 
-	 //save image
-	 imagepng($outputimage, JPATH_SITE.$ouputimagepath);
-
-	 // echo image to html0
-	 echo ("<img src=".JURI::base().$ouputimagepath.">");
-
-	 // release the memory
-	 imagedestroy($outputimage);
-	 imagedestroy($qrimage);
+	
+	 
+	
  }
 
-
+ 
 }

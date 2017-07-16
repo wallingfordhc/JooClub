@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class clubmanagerViewplayers extends JViewLegacy
+class clubmanagerViewattendances extends JViewLegacy
 {
   protected $items;
   protected $state;
@@ -29,19 +29,10 @@ $this->includeAdminEnv();
 
     JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_PLAYERS'), '');
 
-    JToolbarHelper::save('player.add');
-    JToolbarHelper::apply('player.edit');
-    
-    // @todo add player.retire functrionality
-
-    if (empty($this->item->matchID))
-    {
-      JToolbarHelper::cancel('player.cancel');
-    }
-    else
-    {
-      JToolbarHelper::cancel('player.cancel', 'JTOOLBAR_CLOSE');
-    }
+    JToolbarHelper::addNew('player.add');
+    JToolbarHelper::editList('player.edit');   
+    JToolbarHelper::cancel('player.cancel');
+   
 
 	//generate the Html and return the toolbar
 	return JToolBar::getInstance('toolbar')->render();

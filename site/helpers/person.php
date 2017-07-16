@@ -14,6 +14,10 @@
 class Person {
     // get details on a person
     function __construct( $personID= null) {
+     
+     // only search if a personId has been provided
+        
+        if (!empty($personID)){
         
         // Get a db connection.
 $db = JFactory::getDbo();
@@ -39,6 +43,6 @@ foreach($results as $key=>$value){
     
 
     }
-    
+    } 
     
 }
