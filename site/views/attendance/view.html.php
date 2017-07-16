@@ -1,43 +1,50 @@
 <?php
 defined('_JEXEC') or die;
 
-class clubmanagerViewattendances extends JViewLegacy
+class clubmanagerViewattendance extends JViewLegacy
 {
-  protected $items;
-  protected $state;
+  protected $item;
+  protected $form;
 
   public function display($tpl = null)
   {
-    $this->items = $this->get('Items');
-    $this->state = $this->get('State');
+    $this->item    = $this->get('Item');
+    $this->form    = $this->get('Form');
 
     if (count($errors = $this->get('Errors')))
     {
       JError::raiseError(500, implode("\n", $errors));
       return false;
     }
-$this->includeAdminEnv();
- 
+	$this->includeAdminEnv();
+    //$this->addToolbar();
     parent::display($tpl);
   }
 
- protected function addToolbar()
+  protected function addToolbar()
   {
     
 	
     JFactory::getApplication()->input->set('hidemainmenu', true);
 
-    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_ATTENDANCES'), '');
+    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_PLAYER'), '');
 
-    JToolbarHelper::addNew('attendance.add');
-    JToolbarHelper::editList('attendance.edit');
-    JToolbarHelper::cancel('attendance.cancel', 'JTOOLBAR_CLOSE');
-   
+    JToolbarHelper::save('attendance.save');
+    JToolbarHelper::apply('attendance.apply');
+
+    if (empty($this->item->matchID))
+    {
+      JToolbarHelper::cancel('attendance.cancel');
+    }
+    else
+    {
+      JToolbarHelper::cancel('attendance.cancel', 'JTOOLBAR_CLOSE');
+    }
 
 	//generate the Html and return the toolbar
 	return JToolBar::getInstance('toolbar')->render();
-  } 
-  
+  }
+
   private function includeAdminEnv()
  	{
  		// load the language files for the admin messages as well

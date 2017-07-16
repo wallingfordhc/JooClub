@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+  <fieldset>
+    <field name="attendanceID" type="text" default="0" label="COM_CLUBMANAGER_FIELD_ID_LABEL"
+      readonly="true" class="readonly"
+      description="JGLOBAL_FIELD_ID_DESC"/>
+
+    <field name="registeredbyID" type="sql" default="0"
+  label="COM_CLUBMANAGER_FIELD_REGISTEREDBYID_LABEL"
+  description="COM_CLUBMANAGER_FIELD_REGISTEREDBYID_DESC"
+           header="COM_CLUBMANAGER_SELECT_REGISTEREDBYID"
+  query="SELECT id AS value, CONCAT('(',id,') ',name) AS memberID FROM #__users" />
+
+    <field name="firstname" type="text"  size="20" readonly="true"
+               label="COM_CLUBMANGER_FIRSTNAME_LABEL"
+               description="COM_CLUBMANAGER_FIRSTNAME_LABEL_DESC" />
+    <field name="surname" type="text"  size="20" readonly="true"
+               label="COM_CLUBMANGER_SURNAME_LABEL"
+               description="COM_CLUBMANAGER_SURNAME_LABEL_DESC" />
+
+    
+
+
+    <field name="arrived" type="calendar" 
+           label="COM_CLUBMANAGER_ARRIVED_LABEL"
+      description="COM_CLUBMANAGER_ARRIVED_DESC"
+      class="inputbox" size="22" format="%Y-%m-%d"
+  filter="user_utc"  showtime="true"      />
+    
+   
+  <field name="comments" type="textarea" cols="10" rows="10"
+  label="COM_CLUBMANGER_COMMENTS_LABEL"
+  description="COM_CLUBMANAGER_COMMENTS_DESC"
+ />
+    
+
+
+    
+    <field name="departed" type="calendar" default="2017-09-01"
+           label="COM_CLUBMANAGER_DEPARTED_LABEL"
+      description="COM_CLUBMANAGER_DEPARTED_DESC"
+      class="inputbox" size="22" format="%Y-%m-%d"
+  filter="user_utc"  showtime="false"      />
+    
+ 
+
+  </fieldset>
+</form>
