@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class clubmanagerViewplayers extends JViewLegacy
+class clubmanagerViewattendance extends JViewLegacy
 {
   protected $items;
   protected $state;
@@ -9,7 +9,7 @@ class clubmanagerViewplayers extends JViewLegacy
   public function display($tpl = null)
   {
     $this->items = $this->get('Items');
-	$this->state = $this->get('State');
+    $this->state = $this->get('State');
 
     if (count($errors = $this->get('Errors')))
     {
