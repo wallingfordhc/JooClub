@@ -24,7 +24,7 @@ class clubmanagerModelplayers extends JModelList
   {
     $search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
     $this->setState('filter.search', $search);
-	parent::populateState('surname', 'asc');
+	parent::populateState('attended', 'asc');
 	
   }
 

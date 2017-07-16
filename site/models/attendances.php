@@ -75,7 +75,7 @@ class clubmanagerModelattendances extends JModelList
 
 	$orderCol = $this->state->get('list.ordering');
     $orderDirn = $this->state->get('list.direction');
-    $query->order('p.surname');
+    $query->order('a.arrived');
 	return $query;
   }
 }		

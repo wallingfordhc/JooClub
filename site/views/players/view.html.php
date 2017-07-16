@@ -1,7 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 
-class clubmanagerViewattendances extends JViewLegacy
+class clubmanagerViewplayers extends JViewLegacy
 {
   protected $items;
   protected $state;
