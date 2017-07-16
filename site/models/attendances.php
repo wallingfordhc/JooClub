@@ -1,19 +1,18 @@
 <?php
 defined('_JEXEC') or die;
 
-class clubmanagerModelplayers extends JModelList
+class clubmanagerModelattendances extends JModelList
 {
   public function __construct($config = array())
   {
     if (empty($config['filter_fields']))
     {
       $config['filter_fields'] = array(
-        'personID',
-		'firstname',
+        'attendanceID',
+		'arrived',
 		'surname',
-		'shirtnumber',
-		'email',
-		'phone'
+		'firstname'
+		
       );
     }
 
@@ -24,11 +23,11 @@ class clubmanagerModelplayers extends JModelList
   {
     $search = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
     $this->setState('filter.search', $search);
-	parent::populateState('surname', 'asc');
+	parent::populateState('arrived', 'asc');
 	
   }
 
-  // return the data for the players this user can see
+  // return the data for the attendances this user can see
   protected function getListQuery()
   {
     // prepare for a database connection
@@ -38,6 +37,8 @@ class clubmanagerModelplayers extends JModelList
 
 	// set the select statement fo the query
     $query
+          ->select($db->quoteName('a.attendanceID','attendanceID'))
+          ->select($db->quoteName('a.arrived','arrived'))
 	  ->select($db->quoteName('p.personID','personID'))
 	  ->select($db->quoteName('p.firstname','firstname'))
 	  ->select($db->quoteName('p.surname','surname'))
@@ -46,43 +47,18 @@ class clubmanagerModelplayers extends JModelList
 	  ->select($db->quoteName('p.shirtnumber','shirtnumber'))
 	  ->select($db->quoteName('p.gender','gender'))
 	  ->select($db->quoteName('p.profileimage_url','profileimage_url'))
+            ->select($db->quoteName('p.agegroup','agegroup'))
 	  ;
 // chain the 'from' part of the query
-    $query->from($db->quoteName('#__cmperson').' AS p');
+    
+    $query->from($db->quoteName('#__cmattendance').' AS a');
+    $query->join('LEFT', $db->quoteName('#__cmperson', 'p') . ' ON (' . $db->quoteName('a.personID') . ' = ' . $db->quoteName('p.personID') . ')');
+    
 	
-	// get a subquery of the list of allowed personIDs
- $subquery = clubmanageraccess::personlist();
-        $query->where('(p.personID IN ('.$subquery->__toString().'))');
 	
-	// Filter by fields in URL
+	
+	// @todo Filter by location
 
-	$matchid= JRequest::getInt('matchID');
-	$groupid= JRequest::getInt('groupID');
-
-	if (!empty($matchid)) {
-
-	$matchsubquery = $db->getQuery(true);
-	$matchsubquery
-	  ->select($db->quoteName('a.personID'))
-	  ->from($db->quoteName('#__cmattendance').' AS a')
-	  ->where($db->quoteName('a.matchID').'='.$db->quote($matchid));
-
-	// find people associated with the match with matchid = $matchID - those with an entry in the attendance table (to be added --- OR those associated with the Group playing the match)
-    $query->where($db->quoteName('p.personID').' IN (' .$matchsubquery.')','AND');
-	}
-
-	if (!empty($groupid)) {
-    // find people associated with the particular group
-	$matchsubquery = $db->getQuery(true);
-	$matchsubquery
-	  ->select($db->quoteName('gr.personID'))
-	  ->from($db->quoteName('#__cmgrouproster').' AS gr')
-	  ->where($db->quoteName('gr.groupID').'='.$db->quote($groupid));
-
-	// find people associated with the match with matchid = $matchID - those with an entry in the attendance table (to be added --- OR those associated with the Group playing the match)
-    $query->where($db->quoteName('p.personID').' IN (' .$matchsubquery.')','AND');
-
-	}
     
 	// Filter by search in title
     $search = $this->getState('filter.search');
