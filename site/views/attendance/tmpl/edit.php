@@ -5,7 +5,7 @@ $document = JFactory::getDocument();
 $document->addScript('https://gender-api.com/js/jquery/gender.js');
 ?>
 
-<form action="<?php echo JRoute::_('index.php?option=com_clubmanager&layout=edit&attendanceID='.(int) $this->item->attendanceID); ?>" method="post" name="adminForm" id="adminForm" class="form-validate" enctype="multipart/form-data">
+<form action="<?php echo JRoute::_('index.php?option=com_clubmanager&view=attendance&layout=edit&attendanceID='.(int) $this->item->attendanceID); ?>" method="post" name="adminForm" id="adminForm" class="form-validate" enctype="multipart/form-data">
   <div class="row-fluid">
     <div class="span10 form-horizontal">
 	<?php echo $this->addToolbar(); ?>
