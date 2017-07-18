@@ -42,6 +42,6 @@ class clubmanagerModelattendance extends JModelAdmin
 
   public function updateThisItem($data)
 	{
-		// function to update the player table 
+		// function to update the attendance table 
 	}
 }

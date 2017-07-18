@@ -7,7 +7,7 @@ $listDirn = $this->escape($this->state->get('list.direction'));
 
 
 
-<form action="<?php echo JRoute::_('index.php?option=com_clubmanager&view=players'); ?>" method="post" name="adminForm" id="adminForm">
+<form action="<?php echo JRoute::_('index.php?option=com_clubmanager&view=attendances'); ?>" method="post" name="adminForm" id="adminForm">
   <div id="j-main-container" class="span10">
 <?php echo $this->addToolbar(); ?>  
   <div id="filter-bar" class="btn-toolbar">

@@ -27,19 +27,12 @@ class clubmanagerViewattendance extends JViewLegacy
 	
     JFactory::getApplication()->input->set('hidemainmenu', true);
 
-    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_PLAYER'), '');
+    JToolbarHelper::title(JText::_('COM_CLUBMANAGER_MANAGER_ATTENDANCE'), '');
 
     JToolbarHelper::save('attendance.save');
     JToolbarHelper::apply('attendance.apply');
-
-    if (empty($this->item->matchID))
-    {
-      JToolbarHelper::cancel('attendance.cancel');
-    }
-    else
-    {
-      JToolbarHelper::cancel('attendance.cancel', 'JTOOLBAR_CLOSE');
-    }
+    JToolbarHelper::cancel('attendance.cancel', 'JTOOLBAR_CLOSE');
+    
 
 	//generate the Html and return the toolbar
 	return JToolBar::getInstance('toolbar')->render();
