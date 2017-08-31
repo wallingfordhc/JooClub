@@ -6,12 +6,18 @@ class clubmanagerViewplayer extends JViewLegacy
   protected $item;
   protected $form;
 
-  public function display($tpl = null)
+
+
+public function display($tpl = null)
   {
     $this->item    = $this->get('Item');
     $this->form    = $this->get('Form');
 
-    if (count($errors = $this->get('Errors')))
+	  // @TODO check the user has view consent on the player
+
+
+
+	  if (count($errors = $this->get('Errors')))
     {
       JError::raiseError(500, implode("\n", $errors));
       return false;

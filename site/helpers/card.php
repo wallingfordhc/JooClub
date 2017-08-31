@@ -21,7 +21,7 @@ class card
  {
      // set folder paths for the membership card images
 	 // set location to find the blank card
-     $templatefolder = "/media/com_clubmanager/membershipcards/";
+     $templatefolder = "media/com_clubmanager/membershipcards/";
 	 $templatefile = "blank/blankcard.png";
 	 
 
@@ -133,7 +133,7 @@ class card
          
          
 	 //save image - even if its blank
-	 imagepng($outputimage, JPATH_SITE.$outputimagepath);
+	 imagepng($outputimage, JPATH_SITE.'/'.$outputimagepath);
          // release the memory
          imagedestroy($outputimage);
          }
