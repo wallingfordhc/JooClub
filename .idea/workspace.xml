@@ -18,8 +18,8 @@
       <file leaf-file-name="player.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/site/controllers/player.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state relative-caret-position="237">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -489,7 +489,7 @@
       <workItem from="1498861994859" duration="693000" />
       <workItem from="1498903951893" duration="171000" />
       <workItem from="1499188907756" duration="278000" />
-      <workItem from="1504184168030" duration="2433000" />
+      <workItem from="1504184168030" duration="2703000" />
     </task>
     <task id="LOCAL-00001" summary="COnsent added to admin">
       <created>1504184582978</created>
@@ -498,11 +498,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504184582978</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="lock down player view">
+      <created>1504186625068</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1504186625068</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4079000" />
+    <option name="totallyTimeSpent" value="4349000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -544,7 +551,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="COnsent added to admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="COnsent added to admin" />
+    <MESSAGE value="lock down player view" />
+    <option name="LAST_COMMIT_MESSAGE" value="lock down player view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -953,8 +961,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/site/controllers/player.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        <state relative-caret-position="237">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>

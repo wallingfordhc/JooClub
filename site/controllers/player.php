@@ -7,7 +7,7 @@ class clubmanagerControllerplayer extends JControllerForm
 //
 //
 function display(){
-	$this->setRedirect(JRoute::_('index.php?option='.$this->_option.'&view='.$this->_view_list, false));
+	return false;
 }
 
 // overrides the standard save to include the file upload of profile image
