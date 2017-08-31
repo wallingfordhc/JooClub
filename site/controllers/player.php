@@ -10,11 +10,12 @@ function save($key = null, $urlVar = null){
 $jinput = JFactory::getApplication()->input;
 
 
-$cmsuserID = JFactory::getuser();
+$cmsuser = JFactory::getuser();
+$cmsuserID = $cmsuser ->get('id');
 $personID = $jinput->get('personID');
 
 // set consent - if you have saved the info you must have consent to see it
-$this->addconsent($cmsuserID,$personID);
+$this->addconsent($personID,$cmsuserID);
 // save the profile image file if one has been included
 $this->saveprofileimage();
     
