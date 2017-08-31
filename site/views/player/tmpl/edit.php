@@ -35,7 +35,6 @@ $document->addScript('https://gender-api.com/js/jquery/gender.js');
           <div class="control-label"><?php echo $this->form->getLabel('phonenumber'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('phonenumber'); ?></div>
 		  <div class="control-label"><?php echo $this->form->getLabel('email'); ?></div>
-                  <img src="../../../../media/membershipcards/blank/defaultavatar.png" alt=""/>
           <div class="controls"><?php echo $this->form->getInput('email'); ?></div>
         </div>
         
@@ -61,7 +60,7 @@ $document->addScript('https://gender-api.com/js/jquery/gender.js');
           <div class="control-label"><?php echo $this->form->getLabel('profileimage_url'); ?></div>
           <div class="controls"><?php echo $this->form->getInput('profileimage_url'); ?></div>
           <div class=""control-label"><?php echo Jtext::_('COM_CLUBMANAGER_DELETE_IMAGE')?></div>
-          <div class="controls"><input type="checkbox" name="deleteimage"><span>'"COM_CLUBMANAGER_DELETE_IMAGE"</span></div>
+          <div class="controls"><input type="checkbox" name="deleteimage"></div>
         </div>
 
 	<?php $user = JFactory::getUser(); ?>
@@ -70,7 +69,8 @@ $document->addScript('https://gender-api.com/js/jquery/gender.js');
         <?php echo("<input type='hidden' name='personID' value='".$this->item->personID."' />"); ?>
         <input type="hidden" name="task" value="" />
         <?php echo JHtml::_('form.token'); ?>
-	        <?php echo JHtml::_('bootstrap.endTab'); ?>
+
+      <?php echo JHtml::_('bootstrap.endTab'); ?>
     </fieldset>
 
 
