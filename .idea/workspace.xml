@@ -108,8 +108,8 @@
       <file leaf-file-name="card.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/site/helpers/card.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="34" column="62" lean-forward="true" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
+            <state relative-caret-position="390">
+              <caret line="147" column="61" lean-forward="true" selection-start-line="147" selection-start-column="61" selection-end-line="147" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -553,7 +553,7 @@
       <workItem from="1498861994859" duration="693000" />
       <workItem from="1498903951893" duration="171000" />
       <workItem from="1499188907756" duration="278000" />
-      <workItem from="1504184168030" duration="10940000" />
+      <workItem from="1504184168030" duration="11062000" />
     </task>
     <task id="LOCAL-00001" summary="COnsent added to admin">
       <created>1504184582978</created>
@@ -597,11 +597,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504202106580</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="lock down player view">
+      <created>1504203799564</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1504203799564</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12586000" />
+    <option name="totallyTimeSpent" value="12708000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1055,8 +1062,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/site/helpers/card.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="34" column="62" lean-forward="true" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
+        <state relative-caret-position="390">
+          <caret line="147" column="61" lean-forward="true" selection-start-line="147" selection-start-column="61" selection-end-line="147" selection-end-column="61" />
           <folding />
         </state>
       </provider>

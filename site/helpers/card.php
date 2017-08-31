@@ -142,10 +142,10 @@ class card
          }
          else
          {
-             $outputimagepath = $templatefolder.$templatefile;
+             $outputimagepathURL = $templatefolderURL.$templatefile;
          }
 	 // echo image to html
-	 echo ("<img src=".JURI::root().$outputimagepath.">");
+	 echo ("<img src=".JURI::root().$outputimagepathURL.">");
 
 	
 	 
