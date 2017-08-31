@@ -14,7 +14,7 @@ class clubmanagerViewplayer extends JViewLegacy
 
     // check the user has view consent on the player
 	  $canview = false;
-	  if ($canview== false)
+	  if ($canview == false)
 	  {
 	  	return false;
 	  }

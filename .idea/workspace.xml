@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5ce658ea-585b-4ee6-a6ad-891008b6cb45" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/sql/install.mysql.utf8.sql" afterPath="$PROJECT_DIR$/admin/sql/install.mysql.utf8.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/views/player/view.html.php" afterPath="$PROJECT_DIR$/admin/views/player/view.html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/controllers/player.php" afterPath="$PROJECT_DIR$/site/controllers/player.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,8 +48,8 @@
       <file leaf-file-name="view.html.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/views/player/view.html.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            <state relative-caret-position="130">
+              <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -580,7 +578,7 @@
       <workItem from="1498861994859" duration="693000" />
       <workItem from="1498903951893" duration="171000" />
       <workItem from="1499188907756" duration="278000" />
-      <workItem from="1504184168030" duration="5255000" />
+      <workItem from="1504184168030" duration="5892000" />
     </task>
     <task id="LOCAL-00001" summary="COnsent added to admin">
       <created>1504184582978</created>
@@ -603,11 +601,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504186876840</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="lock down player view">
+      <created>1504198109533</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1504198109533</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6901000" />
+    <option name="totallyTimeSpent" value="7538000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1061,8 +1066,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/views/player/view.html.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        <state relative-caret-position="130">
+          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
           <folding />
         </state>
       </provider>
