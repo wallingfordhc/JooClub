@@ -254,11 +254,6 @@ CREATE TABLE IF NOT EXISTS `#__cmconsent` (
   `status` VARCHAR(50) NULL DEFAULT NULL,
   PRIMARY KEY (`consentID`),
   INDEX `fk_#__cmconsent_#__cmperson1_idx` (`personID` ASC),
-  CONSTRAINT `fk_#__cmconsent_#__cmperson1`
-    FOREIGN KEY (`personID`)
-    REFERENCES `#__cmperson` (`personID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION);
 
 
 -- -----------------------------------------------------
