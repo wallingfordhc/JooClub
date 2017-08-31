@@ -2,6 +2,14 @@
 defined('_JEXEC') or die;
 class clubmanagerControllerplayer extends JControllerForm
 {
+
+// overrides the standard display to check the user has consent to view player
+//
+//
+function display(){
+	$this->setRedirect(JRoute::_('index.php?option='.$this->_option.'&view='.$this->_view_list, false));
+}
+
 // overrides the standard save to include the file upload of profile image
 function save($key = null, $urlVar = null){
 
