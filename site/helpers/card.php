@@ -21,13 +21,16 @@ class card
  {
      // set folder paths for the membership card images
 	 // set location to find the blank card
-     $templatefolder = "media/com_clubmanager/membershipcards/";
+     $templatefolder = "/media/com_clubmanager/membershipcards/";
+     // Below variable fixes issue with slashes in URL and folder structure
+     $templatefolderURL = "media/com_clubmanager/membershipcards/";
 	 $templatefile = "blank/blankcard.png";
 	 
 
 
 // set location to save the updated card
 	 $outputimagepath = $templatefolder . "memcard" . $personID . ".png";
+	 $outputimagepathURL = $templatefolderURL . "memcard" . $personID . ".png";
 	 // set location of the font files
 	 $fontfolder = JPATH_SITE."/media/com_clubmanager/fonts/";
 
@@ -120,20 +123,20 @@ class card
         
          // add expired flash image if expiry date is in the past
          if (!empty($expire) && $expire < $now){
-             $expiredimage = imagecreatefrompng(JPATH_SITE.$templatefolder."/blank/expired.png");
+             $expiredimage = imagecreatefrompng(JPATH_SITE.$templatefolder."blank/expired.png");
              imagecopy($outputimage, $expiredimage, 0, 0, 0, 0, 1008, 642);
          }
          
          // add waitlist flash image if player on the waitlist
          $status = $player->status;
          if ($status == "waitlist") {
-             $waitlistimage = imagecreatefrompng(JPATH_SITE.$templatefolder."/blank/waitlist.png");
+             $waitlistimage = imagecreatefrompng(JPATH_SITE.$templatefolder."blank/waitlist.png");
              imagecopy($outputimage, $waitlistimage, 0, 0, 0, 0, 1008, 642);
          }
          
          
 	 //save image - even if its blank
-	 imagepng($outputimage, JPATH_SITE.'/'.$outputimagepath);
+	 imagepng($outputimage, JPATH_SITE.$outputimagepath);
          // release the memory
          imagedestroy($outputimage);
          }
@@ -142,7 +145,7 @@ class card
              $outputimagepath = $templatefolder.$templatefile;
          }
 	 // echo image to html
-	 echo ("<img src=".JURI::base().$outputimagepath.">");
+	 echo ("<img src=".JURI::root().$outputimagepath.">");
 
 	
 	 

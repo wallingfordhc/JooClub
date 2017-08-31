@@ -4,7 +4,6 @@
     <list default="true" id="5ce658ea-585b-4ee6-a6ad-891008b6cb45" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/helpers/card.php" afterPath="$PROJECT_DIR$/site/helpers/card.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/views/player/view.html.php" afterPath="$PROJECT_DIR$/site/views/player/view.html.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -109,8 +108,8 @@
       <file leaf-file-name="card.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/site/helpers/card.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="135" column="43" lean-forward="false" selection-start-line="135" selection-start-column="43" selection-end-line="135" selection-end-column="43" />
+            <state relative-caret-position="527">
+              <caret line="34" column="62" lean-forward="true" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -554,7 +553,7 @@
       <workItem from="1498861994859" duration="693000" />
       <workItem from="1498903951893" duration="171000" />
       <workItem from="1499188907756" duration="278000" />
-      <workItem from="1504184168030" duration="9249000" />
+      <workItem from="1504184168030" duration="10940000" />
     </task>
     <task id="LOCAL-00001" summary="COnsent added to admin">
       <created>1504184582978</created>
@@ -591,11 +590,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504198751706</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="lock down player view">
+      <created>1504202106580</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1504202106580</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10895000" />
+    <option name="totallyTimeSpent" value="12586000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1049,8 +1055,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/site/helpers/card.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="135" column="43" lean-forward="false" selection-start-line="135" selection-start-column="43" selection-end-line="135" selection-end-column="43" />
+        <state relative-caret-position="527">
+          <caret line="34" column="62" lean-forward="true" selection-start-line="34" selection-start-column="62" selection-end-line="34" selection-end-column="62" />
           <folding />
         </state>
       </provider>
