@@ -11,7 +11,7 @@ $jinput = JFactory::getApplication()->input;
 
 
 $cmsuser = JFactory::getuser();
-$cmsuserID = $cmsuser ->get('id');
+$cmsuserID = $cmsuser ->id;
 $personID = $jinput->get('personID');
 
 // set consent - if you have saved the info you must have consent to see it
