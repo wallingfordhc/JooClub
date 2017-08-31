@@ -98,9 +98,9 @@ class card
 	 imagettftext( $outputimage,80,0,400,600,$black,$fontfile,$player->membershipnumber);
          // Add QR code
          
-         QRcode::png('http://www.wallingfordhc.org.uk/register/id=12345678', JPATH_SITE.$templatefolder.'qrcodes/test2.png', 'L', 4, 2);
+         QRcode::png('http://www.wallingfordhc.org.uk/scan.php?id='.$personID, JPATH_SITE.$templatefolder.'qrcodes/player'.$personID.'.png', 'L', 4, 2);
 
-         $qrimage = imagecreatefrompng(JPATH_SITE.$templatefolder.'qrcodes/test2.png');
+         $qrimage = imagecreatefrompng(JPATH_SITE.$templatefolder.'qrcodes/player'.$personID.'.png');
          $qrimage = imagescale($qrimage,150);
 
 	 imagecopy($outputimage, $qrimage, 830, 470, 0, 0, 150, 150);
