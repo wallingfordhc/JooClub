@@ -12,6 +12,24 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
+-- Table `#__cmphoto`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `#__cmphoto` ;
+
+CREATE TABLE IF NOT EXISTS `#__cmphoto` (
+  `photoID` INT NOT NULL AUTO_INCREMENT,
+  `filename` VARCHAR(45) NULL,
+  `location` VARCHAR(45) NULL,
+  `thumbname` VARCHAR(45) NULL,
+  `thumblocation` VARCHAR(45) NULL,
+  `ownerID` INT NULL,
+  `description` VARCHAR(500) NULL,
+  PRIMARY KEY (`photoID`),
+  UNIQUE INDEX `photoID_UNIQUE` (`photoID` ASC))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `#__cmperson`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `#__cmperson` ;
@@ -36,6 +54,7 @@ CREATE TABLE IF NOT EXISTS `#__cmperson` (
   `agegroup` VARCHAR(45) NULL,
   `profileimage_url` VARCHAR(200) NULL,
   PRIMARY KEY (`personID`));
+
 
 
 -- -----------------------------------------------------
